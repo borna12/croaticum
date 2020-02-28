@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Upisivanje nastavaka za glagole</title>
+    <meta charset="utf-8">
+
+
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta name="description" content="Prepoznaj cvijet sa slike te nauči nešto o cvijeću.">
+    <meta name="author" content="Josip Mihaljević, Mario Marković">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Flamenco|Asap:400,700' rel='stylesheet'
+        type='text/css'>
+    <link rel='stylesheet prefetch' href='https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src='js/jquery.min.js'></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <meta property="og:title" content="Kviz znanja" />
+    <meta property="og:description" content="Upiši ispravan nastavak za osnovu glagola na temlju zadanog oblika te lica i broja." />
+    <meta property="og:image" content="og-slika.jpg" />
+
+
+</head>
+
+<body>
+
+        <audio class="audios" id="tocno" preload="none">
+                <source src="zvuk/tocno.mp3" type="audio/mpeg">
+            </audio>
+        <audio class="audios" id="pogresno" preload="none">
+            <source src="zvuk/krivo.mp3" type="audio/mpeg">
+        </audio>
+        <audio class="audios" id="zvono" preload="none">
+                <source src="zvuk/zvono.mp3" type="audio/mpeg">
+            </audio>
+
+    <div class="init-page">
+        <div class="container container2">
+            <h1 class="init-page__title">Upisivanje ispravnih oblika riječi</h1>
+            <p>Upiši ispravan oblik riječi.</p><br>
+            <img src="slike/uvodna.png" style="width: 100%;
+    margin-left: auto;
+    display: block;
+    margin-right: auto; margin-top:20px"
+                 />
+            <button class="init-page__btn btn" id="bez">igra bez vremenskog ograničenja</button>
+                        <button class="init-page__btn btn" id="40">igra s ograničenjem od 40 sekundi po pitanju</button>
+            <button class="init-page__btn btn" id="20">igra s ograničenjem od 20 sekundi po pitanju</button>
+
+        </div>
+    </div>
+    <div class="questions-page ">
+          
+        <div class="container container2">
+            <h2 class="questions-page__question"></h2>
+            <img class="init-page__icon slikica" src="/slike/uvodna.png"/>
+            <div class="popuni">
+                    <h2 id="glagol"></h2><br>
+                    <h3 id="oblik"></h3>
+                   <p class="ispunjavanje"> <span id="osnova"></span><input type="text" id="odgovor" placeholder="..." onkeyup = "if (event.keyCode == 13){ $('.mrzim').click();}" autofocus><span id="osnova2"></span></p>
+                </div>
+            <div class="row begin-countdown">
+                <div class="col-md-12 text-center vrijeme">
+                </div>
+            </div>
+
+            
+            <ul class="questions-page__answer-list">
+                <!--  Letter A  -->
+                <!--  Answer div  -->
+
+                <div class="questions-page__answer-div questions-page__answer-div-a">
+                    <!--  Selector div  -->
+                    <div class="questions-page__selection-div"></div>
+                    <!--  Feedback div -->
+                    <div class="questions-page__feedback-div"></div>
+                    <!--  Answer -->
+                    <li class="questions-page__answer-line">• <span class="questions-page__answer-span questions-page__answer-A"></span></li>
+                </div>
+
+                <!--  Letter B  -->
+                <!--  Answer div  -->
+                <div class="questions-page__answer-div questions-page__answer-div-b">
+                    <!--  Selector div  -->
+                    <div class="questions-page__selection-div"></div>
+                    <!--  Feedback div -->
+                    <div class="questions-page__feedback-div"></div>
+                    <!--  Answer -->
+                    <li class="questions-page__answer-line">• <span class="questions-page__answer-span questions-page__answer-B"></span></li>
+                </div>
+
+
+
+                <!--  Letter C  -->
+                <!--  Answer div  -->
+                <div class="questions-page__answer-div questions-page__answer-div-c">
+                    <!--  Selector div  -->
+                    <div class="questions-page__selection-div"></div>
+                    <!--  Feedback div -->
+                    <div class="questions-page__feedback-div"></div>
+                    <!--  Answer -->
+                    <li class="questions-page__answer-line">• <span class="questions-page__answer-span questions-page__answer-C"></span></li>
+                </div>
+
+                <!--  Letter D  -->
+                <!--  Answer div  -->
+                <div class="questions-page__answer-div questions-page__answer-div-d">
+                    <!--  Selector div  -->
+                    <div class="questions-page__selection-div"></div>
+                    <!--  Feedback div -->
+                    <div class="questions-page__feedback-div"></div>
+                    <!--  Answer -->
+                    <li class="questions-page__answer-line">• <span class="questions-page__answer-span questions-page__answer-D"></span></li>
+                </div>
+            </ul>
+
+            <!--  ICON NAMES: x is   ion-close-round  , check is   ion-checkmark-round-->
+            <div class="btn-holder">
+                <button class="questions-page__submit-btn btn mrzim">potvrdi odgovor</button>
+                <button class="questions-page__continue-btn btn">nastavi</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="results-page">
+        <div class="container" style="top: 60%;
+    position: relative;
+    transition: translate (-50%);
+    transform: translateY(-50%);">
+            <h3 class="results-page__info2">Hvala Vam na sudjelovanju u kvizu!</h3><br>
+            <p class="results-page__info">Odgovorili ste točno na <span class="results-page__score">100%</span>
+                postavljenih pitanja.</p>
+            <br>
+            <p class="results-page__info">S obzirom na količinu točnih odgovora i vrijeme ostvraili ste idući broj
+                bodova:</p>
+            <h3 class="results-page__bodovi">postavljenih pitanja!</h3>
+
+            <br>
+
+            <p>
+                    <form class="jedan" action="https://docs.google.com/forms/d/e/1FAIpQLSfZAGfZbd555B--pkkOU2cZZwrOVEcC1lRRQwF4j58t5lP8yA/formResponse"
+                    target="_self" id="bootstrapForm" method="POST">
+                    <legend for="736982347"> <select id="ikona" style="height:30px"></select> Ime: <input id="312289462"
+                            type="text" name="entry.312289462" class="form-control" required id="input-q1" style="height:30px">
+                    </legend>
+                    <div class="form-group"> <input style="display:none" id="60656686" type="text"
+                            name="entry.60656686" class="form-control" required> </div><input type="hidden" name="fvv"
+                        value="1"> <input type="hidden" name="fbzx" value="4484478125650916779"><input type="hidden"
+                        name="pageHistory" value="0"><br><input class="btn" type="submit" id="predaj" value="predaj">
+                </form>
+                
+                <button class="results-page__retake-btn btn">ponovite kviz</button>
+                <script src="js/emoji.js" charset="utf-8"></script>
+                <script src="js/jquery.form.js"></script>
+                  <script src="js/index.js"></script>
+                <script>
+
+                        var target = document.getElementById("ikona");
+                        var emojiCount = emoji.length;
+    
+                        for (var index = 0; index < emojiCount; index++) {
+                            addEmoji(emoji[index]);
+                        }
+    
+                        function addEmoji(code) {
+                            var option = document.createElement('option');
+                            option.innerHTML = code;
+                            option.value = code;
+                            target.appendChild(option);
+                        }
+    
+                        if (localStorage.getItem("ime") != null) {
+                            $('#312289462').val(localStorage.getItem("ime"))
+                            $('#ikona').val(localStorage.getItem("ikona"))
+                        }
+    
+    
+                        $('#bootstrapForm').submit(function (event) {
+                            localStorage.setItem("ime", $('#312289462').val())
+                            localStorage.setItem("ikona", $('#ikona').val())
+                            localStorage.setItem('pokrenuto', "da")
+                            event.preventDefault()
+                            $('#312289462').val(
+                                document.getElementById("ikona").value + document.getElementById("312289462").value
+                            )
+                            $("#predaj").hide(300)
+                            event.preventDefault()
+                            var extraData = {}
+                            $('#bootstrapForm').ajaxSubmit({
+                                data: extraData,
+                                dataType: 'jsonp', // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+                                error: function () {
+                                    // Submit of form should be successful but JSONP callback will fail because Google Forms
+                                    // does not support it, so this is handled as a failure.
+                                    if(r1==1){ window.open("rez2.html", "_self");}
+                                    else if(r1==2){window.open("rez3.html", "_self");}
+                                    else{ window.open("rez.html", "_self");}
+                                   
+                                }
+                            })
+                        })
+    
+    
+    
+                    </script>
+        </div>
+    </div>
+   
+
+
+</body>
+
+</html>
