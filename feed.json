@@ -1,0 +1,74 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Croaticum - igre",
+    "description": "",
+    "home_page_url": "https://borna12.github.io/croaticum",
+    "feed_url": "https://borna12.github.io/croaticum/feed.json",
+    "user_comment": "",
+    "icon": "https://borna12.github.io/croaticum/media/website/logo-croaticum-igre.png",
+    "author": {
+        "name": "Josip Mihaljević"
+    },
+    "items": [
+        {
+            "id": "https://borna12.github.io/croaticum/kviz-dativ-licnih-zamjenica.html",
+            "url": "https://borna12.github.io/croaticum/kviz-dativ-licnih-zamjenica.html",
+            "title": "Kviz (dativ ličnih zamjenica)",
+            "summary": "Odaberi riječ u dativu kako bi ispravno nadopunio rečenicu.",
+            "content_html": "<p class=\"opis\">Odaberi riječ u dativu kako bi ispravno nadopunio rečenicu.</p>",
+            "image": "https://borna12.github.io/croaticum/media/posts/4/njima.JPG",
+            "author": {
+                "name": "Josip Mihaljević"
+            },
+            "tags": [
+            ],
+            "date_published": "2020-02-28T12:07:36+01:00",
+            "date_modified": "2020-02-28T12:53:36+01:00"
+        },
+        {
+            "id": "https://borna12.github.io/croaticum/dijelovi-automobila.html",
+            "url": "https://borna12.github.io/croaticum/dijelovi-automobila.html",
+            "title": "Dijelovi automobila",
+            "summary": "Dovuci nazive za određene dijelove automobila.",
+            "content_html": "<p>Dovuci nazive za određene dijelove automobila.</p>\n<iframe width=\"1091\" height=\"725\" src=\"https://h5p.org/h5p/embed/673519\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>\n<script src=\"https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js\" charset=\"UTF-8\"></script>",
+            "image": "https://borna12.github.io/croaticum/media/posts/3/auto.jpg",
+            "author": {
+                "name": "Josip Mihaljević"
+            },
+            "tags": [
+            ],
+            "date_published": "2020-02-27T15:01:19+01:00",
+            "date_modified": "2020-02-28T10:53:11+01:00"
+        },
+        {
+            "id": "https://borna12.github.io/croaticum/igra-nadopunjavanja.html",
+            "url": "https://borna12.github.io/croaticum/igra-nadopunjavanja.html",
+            "title": "Igra nadopunjavanja (dativ pridjeva i imenica)",
+            "summary": "Nadopuni rečenicu s ispravnim oblikom riječi.",
+            "content_html": "<div>\n<div>Nadopuni rečenicu s ispravnim oblikom riječi.</div>\n</div>",
+            "image": "https://borna12.github.io/croaticum/media/posts/2/napisivanje.jpg",
+            "author": {
+                "name": "Josip Mihaljević"
+            },
+            "tags": [
+            ],
+            "date_published": "2020-02-27T14:59:14+01:00",
+            "date_modified": "2020-02-28T12:06:48+01:00"
+        },
+        {
+            "id": "https://borna12.github.io/croaticum/igra-dovlacenja.html",
+            "url": "https://borna12.github.io/croaticum/igra-dovlacenja.html",
+            "title": "Igra dovlačenja riječi u rečenicu",
+            "summary": "Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu.",
+            "content_html": "<div>\n<div>Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu.</div>\n</div>",
+            "image": "https://borna12.github.io/croaticum/media/posts/1/dovlacenje.jpg",
+            "author": {
+                "name": "Josip Mihaljević"
+            },
+            "tags": [
+            ],
+            "date_published": "2020-02-27T14:57:09+01:00",
+            "date_modified": "2020-02-28T11:26:39+01:00"
+        }
+    ]
+}

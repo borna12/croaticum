@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Croaticum - igre</title>
+    <link href="https://borna12.github.io/croaticum/feed.xml" rel="self" />
+    <link href="https://borna12.github.io/croaticum" />
+    <updated>2020-02-28T13:29:08+01:00</updated>
+    <author>
+        <name>Josip Mihaljević</name>
+    </author>
+    <id>https://borna12.github.io/croaticum</id>
+
+    <entry>
+        <title>Kviz (dativ ličnih zamjenica)</title>
+        <author>
+            <name>Josip Mihaljević</name>
+        </author>
+        <link href="https://borna12.github.io/croaticum/kviz-dativ-licnih-zamjenica.html"/>
+        <id>https://borna12.github.io/croaticum/kviz-dativ-licnih-zamjenica.html</id>
+
+        <updated>2020-02-28T12:53:36+01:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://borna12.github.io/croaticum/media/posts/4/njima.JPG" alt="" />
+                    Odaberi riječ u dativu kako bi ispravno nadopunio rečenicu.
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://borna12.github.io/croaticum/media/posts/4/njima.JPG" alt="" />
+                <p class="opis">Odaberi riječ u dativu kako bi ispravno nadopunio rečenicu.</p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Dijelovi automobila</title>
+        <author>
+            <name>Josip Mihaljević</name>
+        </author>
+        <link href="https://borna12.github.io/croaticum/dijelovi-automobila.html"/>
+        <id>https://borna12.github.io/croaticum/dijelovi-automobila.html</id>
+
+        <updated>2020-02-28T10:53:11+01:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://borna12.github.io/croaticum/media/posts/3/auto.jpg" alt="" />
+                    Dovuci nazive za određene dijelove automobila.
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://borna12.github.io/croaticum/media/posts/3/auto.jpg" alt="" />
+                <p>Dovuci nazive za određene dijelove automobila.</p>
+<iframe width="1091" height="725" src="https://h5p.org/h5p/embed/673519" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<script src="https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js" charset="UTF-8"></script>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Igra nadopunjavanja (dativ pridjeva i imenica)</title>
+        <author>
+            <name>Josip Mihaljević</name>
+        </author>
+        <link href="https://borna12.github.io/croaticum/igra-nadopunjavanja.html"/>
+        <id>https://borna12.github.io/croaticum/igra-nadopunjavanja.html</id>
+
+        <updated>2020-02-28T12:06:48+01:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://borna12.github.io/croaticum/media/posts/2/napisivanje.jpg" alt="" />
+                    Nadopuni rečenicu s ispravnim oblikom riječi.
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://borna12.github.io/croaticum/media/posts/2/napisivanje.jpg" alt="" />
+                <div>
+<div>Nadopuni rečenicu s ispravnim oblikom riječi.</div>
+</div>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Igra dovlačenja riječi u rečenicu</title>
+        <author>
+            <name>Josip Mihaljević</name>
+        </author>
+        <link href="https://borna12.github.io/croaticum/igra-dovlacenja.html"/>
+        <id>https://borna12.github.io/croaticum/igra-dovlacenja.html</id>
+
+        <updated>2020-02-28T11:26:39+01:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://borna12.github.io/croaticum/media/posts/1/dovlacenje.jpg" alt="" />
+                    Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu.
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://borna12.github.io/croaticum/media/posts/1/dovlacenje.jpg" alt="" />
+                <div>
+<div>Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu.</div>
+</div>
+            ]]>
+        </content>
+    </entry>
+</feed>
