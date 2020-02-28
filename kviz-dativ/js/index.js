@@ -589,13 +589,13 @@ document.getElementsByClassName('sakri')[0].style.display = "block"
       question: "Dugo smo stanovali nasuprot <span class='nadopuni'>_______</span>. (oni)",
       answers: ["njima", "njih","njega","njemu","njim",""],
       correctAnswer: "njima",
-      napomena: "<div class='odg_nap'><p> Uz prijedlog nasuprot ide dativ.</p></div>",
+      napomena: "<div class='odg_nap'><p> Neka pametna napomena za igrača.</p></div>",
       boja_pozadine: "#FCE4EC"
   },{
     question: "Unatoč <span class='nadopuni'>_______</span> dolazim na vrijeme. (ona)",
     answers: ["njoj", "nju","njom","","",""],
     correctAnswer: "njoj",
-    napomena: "<div class='odg_nap'><p> Uz prijedlog unatoč ide dativ.</p></div>",
+    napomena: "<div class='odg_nap'><p> Neka pametna napomena za igrača.</p></div>",
     boja_pozadine: "#FCE4EC"
 }];
   shuffle(p1)
