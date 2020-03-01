@@ -408,7 +408,7 @@ $(document).ready(function () {
                 if (prezent[questionCounter].correctAnswer[1].length == 0) {
                     swal({
                         title: "Isteklo je vrijeme.",
-                        html: "<p class='dodatak'><strong>Točan odgovor je: " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[0] + "</span></strong><br></p><br><img src='slike/vrijeme.png'class='slikica2'/>",
+                        html: "<p class='dodatak'><strong>Točan odgovor je: " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[0] + "</span></strong>"+ prezent[questionCounter].osnova2+"<br></p><br><img src='slike/vrijeme.png'class='slikica2'/>",
                         showCloseButton: true,
                         confirmButtonText: ' dalje',
                         backdrop: false,
@@ -418,7 +418,7 @@ $(document).ready(function () {
                 } else {
                     swal({
                         title: "Isteklo je vrijeme.",
-                        html: "<p class='dodatak'><strong>Točani odgovori su: " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[0] + "</span>, " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[1] + " </strong><br></p><br><img src='slike/vrijeme.png'class='slikica2'/>",
+                        html: "<p class='dodatak'><strong>Točani odgovori su: " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[0] + "</span> "+prezent[questionCounter].osnova2+", " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[1] + " </strong>"+prezent[questionCounter].osnova2+"<br></p><br><img src='slike/vrijeme.png'class='slikica2'/>",
                         showCloseButton: true,
                         confirmButtonText: ' dalje',
                         backdrop: false,
@@ -780,6 +780,81 @@ $(document).ready(function () {
         "time": 20,
         "pin": "",
         "slika": "torte.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "prijateljica",
+        "correctAnswer": [
+            "prijateljici",
+            "prijateljicama"
+        ],
+        "osnova": "Idem k ",
+        "osnova2": ".",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "pin": "",
+        "slika": "prijateljice.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "auomobil",
+        "correctAnswer": [
+            "automobilom",
+            ""
+        ],
+        "osnova": "Usprkos zabrani otišao sam ",
+        "osnova2": ".",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "pin": "",
+        "slika": "auto.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "kiša",
+        "correctAnswer": [
+            "kiši",
+            ""
+        ],
+        "osnova": "Unatoč ",
+        "osnova2": " otišli smo u kino.",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "pin": "",
+        "slika": "kisa.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "kazalište",
+        "correctAnswer": [
+            "kazalištu",
+            ""
+        ],
+        "osnova": "Moja je kuća nasuprot ",
+        "osnova2": ".",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "pin": "",
+        "slika": "kazaliste.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "mi",
+        "correctAnswer": [
+            "nama",
+            ""
+        ],
+        "osnova": "Hoćeš li doći k ",
+        "osnova2": " u subotu.",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "pin": "",
+        "slika": "knama.jpg"
     }
     ];
 

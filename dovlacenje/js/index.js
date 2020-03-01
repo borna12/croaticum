@@ -39,7 +39,7 @@
       question: "Putovanje automobilom",
       answers: ["osobe", "gužve", "odlučimo", "kolegom", "štedimo", "se umaramo"],
       slika: ["slike/auto.jpg"],
-      opisi: ["Najčešče jednim automobilom putuje jedna, ponekad dvije {q}. Zbog toga nastanu velike {q} na gradskim cestama. To je i skupo. Ako {q} na posao putovati sa susjedom ili {q}, jedan dan putovat ćemo svojim automobilom, drugi dan njegovim. Tako {q} novac i automobil, a i manje {q}."],
+      opisi: ["najčešće jednim automobilom putuje jedna, ponekad dvije {q}. Zbog toga nastanu velike {q} na gradskim cestama. To je i skupo. Ako {q} na posao putovati sa susjedom ili {q}, jedan dan putovat ćemo svojim automobilom, drugi dan njegovim. Tako {q} novac i automobil, a i manje {q}."],
   }, 
   {
     question: "radnje",

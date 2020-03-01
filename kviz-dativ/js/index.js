@@ -595,7 +595,7 @@ document.getElementsByClassName('sakri')[0].style.display = "block"
     question: "Unatoč <span class='nadopuni'>_______</span> dolazim na vrijeme. (ona)",
     answers: ["njoj", "nju","njom","","",""],
     correctAnswer: "njoj",
-    napomena: "<div class='odg_nap'><p> Neka pametna napomena za igrača.</p></div>",
+    napomena: "<div class='odg_nap'><p> Uz prijedlog unatoč dolazi dativ. Dativ zamjenice ona je njoj.</p></div>",
     boja_pozadine: "#FCE4EC"
 }];
   shuffle(p1)

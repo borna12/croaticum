@@ -6,7 +6,8 @@
     <title>Kviz iz dativa ličnih zamjenica
     </title>
     <meta charset="utf-8">
-    <meta name="description" content="U kvizu će se pojaviti rečenica koja s prazninom. Za prazninu trebaš odabrati ispravan oblik rečenice. Za svako pitanje imaš vrijeme od 10 sekundi. Rezultata igre se boduje te je moguće pod odabranim korisničkim imenom pohranit rezultate u natjecateljsku mrežnu tablicu">
+    <meta name="description"
+        content="U kvizu će se pojaviti rečenica koja s prazninom. Za prazninu trebaš odabrati ispravan oblik rečenice. Za svako pitanje imaš vrijeme od 10 sekundi. Rezultata igre se boduje te je moguće pod odabranim korisničkim imenom pohranit rezultate u natjecateljsku mrežnu tablicu">
     <meta name="keywords" content="kviz, glagoljica, uglata, obla, igra">
 
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -14,7 +15,8 @@
     <meta name="author" content="Josip Mihaljević">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Flamenco|Asap:400,700' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Flamenco|Asap:400,700'
+        rel='stylesheet' type='text/css'>
     <link rel='stylesheet prefetch' href='https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css'>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -38,7 +40,8 @@
 
     <link rel="stylesheet" href="css/sweetalert2.min.css">
     <meta property="og:title" content="Znam glagoljicu" />
-    <meta property="og:description" content="U kvizu će se pojaviti rečenica koja s prazninom. Za prazninu trebaš odabrati ispravan oblik rečenice. Za svako pitanje imaš vrijeme od 10 sekundi. Rezultata igre se boduje te je moguće pod odabranim korisničkim imenom pohranit rezultate u natjecateljsku mrežnu tablicu" />
+    <meta property="og:description"
+        content="U kvizu će se pojaviti rečenica koja s prazninom. Za prazninu trebaš odabrati ispravan oblik rečenice. Za svako pitanje imaš vrijeme od 10 sekundi. Rezultata igre se boduje te je moguće pod odabranim korisničkim imenom pohranit rezultate u natjecateljsku mrežnu tablicu" />
     <meta property="og:image" content="og-slika.png" />
     <script src="https://rawgit.com/theraot/emoji/master/emoji.js" charset="utf-8"></script>
 
@@ -56,7 +59,7 @@
             <br>
             <br>
             <h1 class="init-page__title" style="padding-top: 2%;">Kviz iz dativa ličnih zamjenica</h1>
-            <p class="opis">Odaberi riječ u dativu kako bi ispravno nadopunio rečenicu.</p>
+            <p class="opis">Odaberi riječ u dativu kako bi pravilno nadopunio rečenicu.</p>
             <br>
             <img src="slike/glagoljica.jpg" style="width: 100%;
                     margin-left: auto;
@@ -172,19 +175,24 @@
             <h3 class="results-page__bodovi">postavljenih pitanja!</h3>
             <br>
             <p>
-                <form class="jedan" action="https://docs.google.com/forms/d/e/1FAIpQLSdQpcNDwTT0IKcqorbznnf6-8CBuhgaPki9i2pja-XWbUw6zg/formResponse" target="_self" id="bootstrapForm" method="POST">
+                <form class="jedan"
+                    action="https://docs.google.com/forms/d/e/1FAIpQLSdQpcNDwTT0IKcqorbznnf6-8CBuhgaPki9i2pja-XWbUw6zg/formResponse"
+                    target="_self" id="bootstrapForm" method="POST">
                     <legend for="736982347">
                         <select id="ikona" style="height:30px"></select> Ime:
-                        <input id="312289462" type="text" name="entry.312289462" class="form-control" required id="input-q1" style="height:30px">
+                        <input id="312289462" type="text" name="entry.312289462" class="form-control" required
+                            id="input-q1" style="height:30px">
                     </legend>
                     <div class="form-group">
-                        <input style="display:none" id="60656686" type="text" name="entry.60656686" class="form-control" required> </div>
+                        <input style="display:none" id="60656686" type="text" name="entry.60656686" class="form-control"
+                            required> </div>
                     <input type="hidden" name="fvv" value="1">
                     <input type="hidden" name="fbzx" value="4484478125650916779">
                     <input type="hidden" name="pageHistory" value="0">
                     <br>
                     <input class="btn" type="submit" id="predaj" value="predaj">
-                    <button class="results-page__retake-btn btn" onclick="localStorage.setItem('reset','da');location.reload();">ponovi kviz</button>
+                    <button class="results-page__retake-btn btn"
+                        onclick="localStorage.setItem('reset','da');location.reload();">ponovi kviz</button>
 
                 </form>
 
@@ -216,7 +224,7 @@
             }
 
 
-            $('#bootstrapForm').submit(function(event) {
+            $('#bootstrapForm').submit(function (event) {
                 localStorage.setItem("ime", $('#312289462').val())
                 localStorage.setItem("ikona", $('#ikona').val())
                 localStorage.setItem('pokrenuto', "da")
@@ -230,7 +238,7 @@
                 $('#bootstrapForm').ajaxSubmit({
                     data: extraData,
                     dataType: 'jsonp', // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
-                    error: function() {
+                    error: function () {
                         // Submit of form should be successful but JSONP callback will fail because Google Forms
 
                         window.open("rez.html", "_self");
