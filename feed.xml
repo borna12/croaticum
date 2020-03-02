@@ -3,12 +3,37 @@
     <title>Croaticum - igre</title>
     <link href="https://borna12.github.io/croaticum/feed.xml" rel="self" />
     <link href="https://borna12.github.io/croaticum" />
-    <updated>2020-02-28T13:29:08+01:00</updated>
+    <updated>2020-03-02T22:50:12+01:00</updated>
     <author>
         <name>Josip Mihaljević</name>
     </author>
     <id>https://borna12.github.io/croaticum</id>
 
+    <entry>
+        <title>Križaljka o prometnim vozilima</title>
+        <author>
+            <name>Josip Mihaljević</name>
+        </author>
+        <link href="https://borna12.github.io/croaticum/krizaljka-o-prometnim-vozilima.html"/>
+        <id>https://borna12.github.io/croaticum/krizaljka-o-prometnim-vozilima.html</id>
+
+        <updated>2020-03-02T22:44:34+01:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://borna12.github.io/croaticum/media/posts/5/Izrezak.JPG" alt="" />
+                    Riješi križaljku vezanu za prometna vozila.
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://borna12.github.io/croaticum/media/posts/5/Izrezak.JPG" alt="" />
+                <p>Riješi križaljku vezanu za prometna vozila.</p>
+<script>// <![CDATA[
+window.open("krizaljka/index.html","_self")
+// ]]></script>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Kviz (dativ ličnih zamjenica)</title>
         <author>
