@@ -30,7 +30,7 @@
             "url": "https://borna12.github.io/croaticum/kviz-dativ-licnih-zamjenica.html",
             "title": "Kviz (dativ ličnih zamjenica)",
             "summary": "Odaberi riječ u dativu kako bi ispravno nadopunio rečenicu.",
-            "content_html": "<p class=\"opis\">Odaberi riječ u dativu kako bi ispravno nadopunio rečenicu.</p>",
+            "content_html": "<p class=\"opis\">Odaberi riječ u dativu kako bi ispravno nadopunio rečenicu.</p>\n<script>// <![CDATA[\nwindow.open(\"kviz-dativ/index.html\",\"_self\")\n// ]]></script>",
             "image": "https://borna12.github.io/croaticum/media/posts/4/njima.JPG",
             "author": {
                 "name": "Josip Mihaljević"
@@ -38,7 +38,7 @@
             "tags": [
             ],
             "date_published": "2020-02-28T12:07:36+01:00",
-            "date_modified": "2020-02-28T12:53:36+01:00"
+            "date_modified": "2020-03-02T22:55:32+01:00"
         },
         {
             "id": "https://borna12.github.io/croaticum/dijelovi-automobila.html",
@@ -60,7 +60,7 @@
             "url": "https://borna12.github.io/croaticum/igra-nadopunjavanja.html",
             "title": "Igra nadopunjavanja (dativ pridjeva i imenica)",
             "summary": "Nadopuni rečenicu s ispravnim oblikom riječi.",
-            "content_html": "<div>\n<div>Nadopuni rečenicu s ispravnim oblikom riječi.</div>\n</div>",
+            "content_html": "<div>\n<div>Nadopuni rečenicu s ispravnim oblikom riječi.</div>\n</div>\n<script>// <![CDATA[\nwindow.open(\"nadopunjavanje/index.html\",\"_self\")\n// ]]></script>",
             "image": "https://borna12.github.io/croaticum/media/posts/2/napisivanje.jpg",
             "author": {
                 "name": "Josip Mihaljević"
@@ -68,14 +68,14 @@
             "tags": [
             ],
             "date_published": "2020-02-27T14:59:14+01:00",
-            "date_modified": "2020-02-28T12:06:48+01:00"
+            "date_modified": "2020-03-02T22:56:31+01:00"
         },
         {
             "id": "https://borna12.github.io/croaticum/igra-dovlacenja.html",
             "url": "https://borna12.github.io/croaticum/igra-dovlacenja.html",
             "title": "Igra dovlačenja riječi u rečenicu",
             "summary": "Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu.",
-            "content_html": "<div>\n<div>Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu.</div>\n</div>",
+            "content_html": "<div>\n<div>Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu.</div>\n</div>\n<script>// <![CDATA[\nwindow.open(\"dovlacenje/index.html\",\"_self\")\n// ]]></script>",
             "image": "https://borna12.github.io/croaticum/media/posts/1/dovlacenje.jpg",
             "author": {
                 "name": "Josip Mihaljević"
@@ -83,7 +83,7 @@
             "tags": [
             ],
             "date_published": "2020-02-27T14:57:09+01:00",
-            "date_modified": "2020-02-28T11:26:39+01:00"
+            "date_modified": "2020-03-02T22:57:11+01:00"
         }
     ]
 }
