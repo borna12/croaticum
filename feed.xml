@@ -3,12 +3,31 @@
     <title>Croaticum - igre</title>
     <link href="https://borna12.github.io/croaticum/feed.xml" rel="self" />
     <link href="https://borna12.github.io/croaticum" />
-    <updated>2020-03-02T22:57:35+01:00</updated>
+    <updated>2020-03-03T12:56:03+01:00</updated>
     <author>
         <name>Josip Mihaljević</name>
     </author>
     <id>https://borna12.github.io/croaticum</id>
 
+    <entry>
+        <title>Karakteristike javnoga prijevoza i automobila</title>
+        <author>
+            <name>Josip Mihaljević</name>
+        </author>
+        <link href="https://borna12.github.io/croaticum/pozitivne-i-negativne-karakteristike-javnoga-prijevoza-i-auta.html"/>
+        <id>https://borna12.github.io/croaticum/pozitivne-i-negativne-karakteristike-javnoga-prijevoza-i-auta.html</id>
+
+        <updated>2020-03-03T12:53:15+01:00</updated>
+            <summary></summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://borna12.github.io/croaticum/media/posts/6/dovlacenje.jpg" alt="" />
+                <script>// <![CDATA[
+window.open("karakteristike/index.html","_self")
+// ]]></script>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Križaljka o prometnim vozilima</title>
         <author>
