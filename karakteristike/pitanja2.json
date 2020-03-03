@@ -1,0 +1,9 @@
+{"pitanja":[
+{
+    "vremena": ["pozitivne karakteristike auta", "negativne karakteristike auta", "pozitivne karakteristike tramvaja", "negativne karakteristike tramvaja"],
+    "k1": ["brz","udoban","uvijek na raspolaganju", "možemo slušati glazbu", "vozi vrata do vata"],
+    "k2": ["skupo gorivo","skupo održavanje","teško parkirati","treba imati vozačku dozvolu ili vozača"],
+    "k3": ["ne zahtijeva održavanje","ne zahtijeva angažman","jeftin"],
+    "k4": ["spor","treba ga čekati","gužva","ne vozi od vrata do vrata"]
+}
+]}
