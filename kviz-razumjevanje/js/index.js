@@ -1,5 +1,4 @@
 // VARIABLE DECLARATIONS ------
-
 // pages
 var initPage,
     questionsPage,
@@ -87,7 +86,6 @@ $(document).ready(function () {
     continueBtn = $('.questions-page__continue-btn');
     retakeBtn = $('.results-page__retake-btn');
     spanishBtn = $('.results-page__spanish-btn');
-
     // Answer block divs
     answerDiv = $('.questions-page__answer-div');
     answerDivA = $('.questions-page__answer-div-a');
@@ -96,13 +94,10 @@ $(document).ready(function () {
     answerDivD = $('.questions-page__answer-div-d');
     answerDivE = $('.questions-page__answer-div-e');
     answerDivF = $('.questions-page__answer-div-f');
-
     // Selection div (for the pointer, on the left)
     selectionDiv = $('.questions-page__selection-div');
-
     // Feedback div (for the checkmark or X, on the right)
     feedbackDiv = $('.questions-page__feedback-div');
-
     // Questions and answers
     question = $('.questions-page__question');
     answerList = $('.questions-page__answer-list');
@@ -273,7 +268,7 @@ $(document).ready(function () {
     submitBtn.hide();
     continueBtn.hide();
 
-    if (localStorage.getItem("reset") == "da") {
+    /*if (localStorage.getItem("reset") == "da") {
         newQuiz();
         // Advance to questions page
         initPage.hide();
@@ -287,7 +282,7 @@ $(document).ready(function () {
         continueBtn.hide();
         localStorage.setItem('reset', "ne")
     }
-
+*/
 
     // Clicking on start button:
 
@@ -298,7 +293,6 @@ $(document).ready(function () {
         $(".opis").hide()
         $(".story-page__btn").hide()
         $(".init-page__title").text($(this).text())
-
         if ($(this).hasClass( "korištenje-automobila" ))
         {
             $(".prica").html("<img src='slike/dijeljenje-auta.png'  class='senka'><p>Najčešće jednim automobilom putuje jedna, ponekad dvije osobe. Zbog toga nastaju velike gužve na gradskim cestama. To je i skupo. Ako odlučimo na posao putovati sa susjedom iii kolegom, jedan dan putovat ćemo svojim automobilom, drugi dan njegovim. Tako štedimo novac i automobil, a imanje se umaramo.<br><br>U mnogim europskim gradovima postoje organizacije u kojima nekoliko ljudi ima jedan automobil. Na vrijeme morate rezervirati automobil. Imate ga kada vam je potreban, a u ostalo vrijeme koristi ga netko drugi. Zajedno plaćate osiguranje, održavanje i registriranje automobila. Manje automobila, manje gužve na cestama, više parkirnih mjesta, manje novca za benzin i čistiji zrak!</p> <button class='init-page__btn btn korištenje-automobila'>pokreni</button>")
@@ -321,7 +315,7 @@ $(document).ready(function () {
         })
     });
 
-   h
+   
     /* --- PAGE 2/3 --- */
 
     // Clicking on an answer:
@@ -360,7 +354,7 @@ $(document).ready(function () {
             bodovi -= 10;
             swal({
                 title: "Isteklo je vrijeme.",
-                html: "<p style='text-align:center'><strong>Točan odgovor je: <br><br>" + quiz[questionCounter].question + "</strong></p><br>" + quiz[questionCounter].napomena,
+                html: "<p style='text-align:center'><strong>Trebali ste odgovoriti:" + quiz[questionCounter].correctAnswer + "</strong></p><br>" + quiz[questionCounter].napomena,
                 showCloseButton: true,
                 confirmButtonText: ' dalje',
                 backdrop: false,
@@ -420,7 +414,7 @@ $(document).ready(function () {
 
                 swal({
                     title: " <span style='color:#bb422a' >Netočno</span>",
-                    html: "<p style='text-align:center'><strong>Točan odgovor je: <br><br>" + quiz[questionCounter].question + "</strong></p><br>" + quiz[questionCounter].napomena,
+                    html: "<p style='text-align:center'></p><br>" + quiz[questionCounter].napomena,
                     showCloseButton: true,
                     confirmButtonText: ' dalje',
                     backdrop: false,
@@ -458,6 +452,7 @@ $(document).ready(function () {
         } else {
             document.getElementsByClassName('questions-page')[0].style.display = "none"
             document.getElementsByClassName('sakri')[0].style.display = "block"
+            document.getElementsByClassName('results-page')[0].style.display = "block"
             // Display user score as a percentage
             userScore.text(Math.floor((correctAnswersCounter / quiz.length) * 100) + " %");
             prikazBodova.text(bodovi);
@@ -541,16 +536,16 @@ function stvori2(tekst, tekst2, tekst3) {
 
 
 p1 = [{
-    question: "Dugo smo stanovali nasuprot <span class='nadopuni'>_______</span>. (oni)",
-    answers: ["njima", "njih", "njega", "njemu", "njim", ""],
-    correctAnswer: "njima",
-    napomena: "<div class='odg_nap'><p> Neka pametna napomena za igrača.</p></div>",
+    question: "Jednim automobilom rijetko putuju više od dvije osobe.",
+    answers: ["točno", "netočno"],
+    correctAnswer: "točno",
+    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Najčešće jednim automobilom putuje jedna, ponekad dvije osobe.</em></p></div>",
     boja_pozadine: "#FCE4EC"
 }, {
-    question: "Unatoč <span class='nadopuni'>_______</span> dolazim na vrijeme. (ona)",
-    answers: ["njoj", "nju", "njom", "", "", ""],
-    correctAnswer: "njoj",
-    napomena: "<div class='odg_nap'><p> Uz prijedlog unatoč dolazi dativ. Dativ zamjenice ona je njoj.</p></div>",
+    question: "Organizacije u kojima nekoliko ljudi dijeli jedan automobil nalaze se u Europi.",
+    answers: ["točno", "netočno"],
+    correctAnswer: "točno",
+    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>U mnogim europskim gradovima postoje organizacije u kojima nekoliko ljudi ima jedan automobil.</em></p></div>",
     boja_pozadine: "#FCE4EC"
 }];
 shuffle(p1)

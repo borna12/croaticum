@@ -34,6 +34,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="manifest.json">
+    <link href='css/player.css' rel='stylesheet' type='text/css'>
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -175,8 +176,8 @@
             <p>
                 <form class="jedan"
                     action="https://docs.google.com/forms/d/e/1FAIpQLSdQpcNDwTT0IKcqorbznnf6-8CBuhgaPki9i2pja-XWbUw6zg/formResponse"
-                    target="_self" id="bootstrapForm" method="POST">
-                    <legend for="736982347">
+                    target="_self" id="bootstrapForm" method="POST" >
+                    <legend for="736982347" style="display: none;">
                         <select id="ikona" style="height:30px"></select> Ime:
                         <input id="312289462" type="text" name="entry.312289462" class="form-control" required
                             id="input-q1" style="height:30px">
@@ -188,9 +189,12 @@
                     <input type="hidden" name="fbzx" value="4484478125650916779">
                     <input type="hidden" name="pageHistory" value="0">
                     <br>
-                    <input class="btn" type="submit" id="predaj" value="predaj">
+                    <input class="btn" type="submit" id="predaj" value="predaj" style="display: none;">
+                    <!--<button class="results-page__retake-btn btn"
+                        onclick="localStorage.setItem('reset','da');location.reload();">nova igra</button>-->
                     <button class="results-page__retake-btn btn"
-                        onclick="localStorage.setItem('reset','da');location.reload();">ponovi kviz</button>
+                        onclick="localStorage.setItem('reset','da');location.reload();">nova igra</button>
+                    
 
                 </form>
 
@@ -198,6 +202,8 @@
         <script src='js/jquery.min.js'></script>
         <script src="js/sweetalert2.min.js"></script>
         <script src="js/jquery.form.js"></script>
+        <script type='text/javascript' src='js/soundcite.min.js'></script>
+
         <script src="js/index.js"></script>
 
 
