@@ -295,9 +295,9 @@ $(document).ready(function () {
         $(".init-page__title").text($(this).text())
         if ($(this).hasClass( "korištenje-automobila" ))
         {
-            $(".prica").html("<img src='slike/dijeljenje-auta.png'  class='senka'><p>Najčešće jednim automobilom putuje jedna, ponekad dvije osobe. Zbog toga nastaju velike gužve na gradskim cestama. To je i skupo. Ako odlučimo na posao putovati sa susjedom iii kolegom, jedan dan putovat ćemo svojim automobilom, drugi dan njegovim. Tako štedimo novac i automobil, a imanje se umaramo.<br><br>U mnogim europskim gradovima postoje organizacije u kojima nekoliko ljudi ima jedan automobil. Na vrijeme morate rezervirati automobil. Imate ga kada vam je potreban, a u ostalo vrijeme koristi ga netko drugi. Zajedno plaćate osiguranje, održavanje i registriranje automobila. Manje automobila, manje gužve na cestama, više parkirnih mjesta, manje novca za benzin i čistiji zrak!</p> <button class='init-page__btn btn korištenje-automobila'>pokreni</button>")
+            $(".prica").html('<img src="slike/dijeljenje-auta.png"  class="senka"><p><span class="soundcite" data-url="audio/auto1.mp3" data-plays="1" dir=ltr>Najčešće jednim automobilom putuje jedna, ponekad dvije osobe. Zbog toga nastaju velike gužve na gradskim cestama. To je i skupo. Ako odlučimo na posao putovati sa susjedom iii kolegom, jedan dan putovat ćemo svojim automobilom, drugi dan njegovim. Tako štedimo novac i automobil, a imanje se umaramo.</span><br><br><span class="soundcite" data-url="audio/auto2.mp3" data-plays="1" dir=ltr>U mnogim europskim gradovima postoje organizacije u kojima nekoliko ljudi ima jedan automobil. Na vrijeme morate rezervirati automobil. Imate ga kada vam je potreban, a u ostalo vrijeme koristi ga netko drugi. Zajedno plaćate osiguranje, održavanje i registriranje automobila. Manje automobila, manje gužve na cestama, više parkirnih mjesta, manje novca za benzin i čistiji zrak!</span></p> <button class="init-page__btn btn korištenje-automobila">pokreni</button>')
         }
-        
+        $.getScript('js/soundcite.min.js');
 
         $(".init-page__btn").click(function(){
             newQuiz();
