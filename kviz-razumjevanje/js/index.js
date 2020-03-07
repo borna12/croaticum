@@ -48,7 +48,7 @@ var initPage,
     highlightIncorrectAnswerRed,
     slikica,
     clearHighlightsAndFeedback,
-    prekidac, countdownTimer, bodovi = 0,
+    prekidac, countdownTimer, bodovi = 0, pitanja=0,
     vrijeme = 0;
 
 function ProgressCountdown(timeleft, bar, text) {
@@ -295,11 +295,21 @@ $(document).ready(function () {
         $(".init-page__title").text($(this).text())
         if ($(this).hasClass( "korištenje-automobila" ))
         {
-            $(".prica").html('<img src="slike/dijeljenje-auta.png"  class="senka"><p><span class="soundcite" data-url="audio/auto1.mp3" data-plays="1" dir=ltr>Najčešće jednim automobilom putuje jedna, ponekad dvije osobe. Zbog toga nastaju velike gužve na gradskim cestama. To je i skupo. Ako odlučimo na posao putovati sa susjedom iii kolegom, jedan dan putovat ćemo svojim automobilom, drugi dan njegovim. Tako štedimo novac i automobil, a imanje se umaramo.</span><br><br><span class="soundcite" data-url="audio/auto2.mp3" data-plays="1" dir=ltr>U mnogim europskim gradovima postoje organizacije u kojima nekoliko ljudi ima jedan automobil. Na vrijeme morate rezervirati automobil. Imate ga kada vam je potreban, a u ostalo vrijeme koristi ga netko drugi. Zajedno plaćate osiguranje, održavanje i registriranje automobila. Manje automobila, manje gužve na cestama, više parkirnih mjesta, manje novca za benzin i čistiji zrak!</span></p> <button class="init-page__btn btn korištenje-automobila">pokreni</button>')
+            $(".prica").html('<img src="slike/dijeljenje-auta.png"  class="senka"><p><span class="soundcite" data-url="audio/auto1.mp3" data-plays="1" dir=ltr>Najčešće jednim automobilom putuje jedna, ponekad dvije osobe. Zbog toga nastaju velike gužve na gradskim cestama. To je i skupo. Ako odlučimo na posao putovati sa susjedom iii kolegom, jedan dan putovat ćemo svojim automobilom, drugi dan njegovim. Tako štedimo novac i automobil, a imanje se umaramo.</span><br><br><span class="soundcite" data-url="audio/auto2.mp3" data-plays="1" dir=ltr>U mnogim europskim gradovima postoje organizacije u kojima nekoliko ljudi ima jedan automobil. Na vrijeme morate rezervirati automobil. Imate ga kada vam je potreban, a u ostalo vrijeme koristi ga netko drugi. Zajedno plaćate osiguranje, održavanje i registriranje automobila. Manje automobila, manje gužve na cestama, više parkirnih mjesta, manje novca za benzin i čistiji zrak!</span></p> <button class="init-page__btn btn koristenje-automobila">pokreni</button>')
         }
+        else{
+            $(".prica").html('<img src="slike/tramvaj.jpg"  class="senka"><p><span class="soundcite" data-url="audio/tram1.mp3" data-plays="1" dir=ltr>Zagrepčani su 1891. godine dobili prvi tramvaj. Vukli su ga konji. Prvi električni tramvaji počeli su voziti 1905. godine. Četiri godine prije, 1901., prvi automobil pojavio se na zagrebačkim ulicama.</span><br><span class="soundcite" data-url="audio/tram2.mp3" data-plays="1" dir=ltr>A u svijetu?</span></br><span class="soundcite" data-url="audio/tram3.mp3" data-plays="1" dir=ltr>Prvi tramvaj postavljen je na tračnice 1832. godine u New Yorku. Također su ga vukli konji. Prvi električni tramvaj na svijetu izgrađen je u tvornici „Werner von Siemens” i pokrenut je 1881. godine u Berlinu, a vozio je maksimalnom brzinom od 20 kilometara na sat.</span></br><span class="soundcite" data-url="audio/tram4.mp3" data-plays="1" dir=ltr>Prvi automobil, marke Mercedes, konstruirao je Gotlieb Daimler 1885. U Francuskoj se prvi automobil pojavio 1890., a u Americi 1892. godine. Proizveo ga je Henry Ford.</span></p><button class="init-page__btn btn prvi-tram">pokreni</button>')
+        }
+
         $.getScript('js/soundcite.min.js');
 
         $(".init-page__btn").click(function(){
+            if($(this).hasClass("koristenje-automobila")){
+                quiz = p1
+            }
+            else{
+                quiz = p2
+            }
             newQuiz();
             // Advance to questions page
             initPage.hide();
@@ -354,7 +364,7 @@ $(document).ready(function () {
             bodovi -= 10;
             swal({
                 title: "Isteklo je vrijeme.",
-                html: "<p style='text-align:center'><strong>Trebali ste odgovoriti:" + quiz[questionCounter].correctAnswer + "</strong></p><br>" + quiz[questionCounter].napomena,
+                html: "<p style='text-align:center'><strong>Trebali ste odgovoriti: " + quiz[questionCounter].correctAnswer + "</strong></p><br>" + quiz[questionCounter].napomena,
                 showCloseButton: true,
                 confirmButtonText: ' dalje',
                 backdrop: false,
@@ -560,10 +570,42 @@ p1 = [{
     napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Imate ga kada vam je potreban, a u ostalo vrijeme koristi ga netko drugi. Zajedno plaćate osiguranje, održavanje i registriranje automobila. Manje automobila, manje gužve na cestama, više parkirnih mjesta, manje novca za benzin i čistiji zrak!</em></p></div>",
     boja_pozadine: "#FCE4EC"
 }];
-shuffle(p1)
 
 
-quiz = p1
+p2 = [{
+    question: "Konjski tramvaj u Zagrebu postojao je na kraju 19. stoljeća.",
+    answers: ["točno", "netočno"],
+    correctAnswer: "točno",
+    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Zagrepčani su 1891. godine dobili prvi tramvaj.</em></p></div>",
+    boja_pozadine: "#FCE4EC"
+}, {
+    question: "Konjski tramvaj u New Yorku prevozio je putnike od 30-ih godina 19. stoljeća.",
+    answers: ["točno", "netočno"],
+    correctAnswer: "točno",
+    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Prvi tramvaj postavljen je na tračnice 1832. godine u New Yorku. Također su ga vukli konji.</em></p></div>",
+    boja_pozadine: "#FCE4EC"
+}, {
+    question: "Prvi električni tramvaj na svijetu kretao se brže od 20 km/h.",
+    answers: ["točno", "netočno"],
+    correctAnswer: "netočno",
+    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em> Prvi električni tramvaj na svijetu izgrađen je u tvornici „Werner von Siemens” i pokrenut je 1881. godine u Berlinu, a vozio je <span class='istaknuto'>maksimalnom</span> brzinom od 20 kilometara na sat.</em></p></div>",
+    boja_pozadine: "#FCE4EC"
+}, {
+    question: "Prvi automobil na svijetu bio je marke Ford i pojavio se 1890. godine.",
+    answers: ["točno", "netočno"],
+    correctAnswer: "netočno",
+    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Prvi automobil, marke <span class='istaknuto'>Mercedes</span>, konstruirao je Gotlieb Daimler 1885.</em></p></div>",
+    boja_pozadine: "#FCE4EC"
+}, {
+    question: "U Zagrebu se prvi automobil pojavio 1905. godine.",
+    answers: ["točno", "netočno"],
+    correctAnswer: "netočno",
+    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Četiri godine prije, <span class='istaknuto'>1901.</span>, prvi automobil pojavio se na zagrebačkim ulicama.</em></p></div>",
+    boja_pozadine: "#FCE4EC"
+}];
+
+
+
 function shuffle(array) { //izmješaj pitanja
     var i = 0,
         j = 0,
