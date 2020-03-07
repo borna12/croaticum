@@ -547,6 +547,18 @@ p1 = [{
     correctAnswer: "točno",
     napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>U mnogim europskim gradovima postoje organizacije u kojima nekoliko ljudi ima jedan automobil.</em></p></div>",
     boja_pozadine: "#FCE4EC"
+}, {
+    question: "U takvim su organizacijama osiguranje, registriranje i održavanje skuplji.",
+    answers: ["točno", "netočno"],
+    correctAnswer: "netočno",
+    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Imate ga kada vam je potreban, a u ostalo vrijeme koristi ga netko drugi. Zajedno plaćate osiguranje, održavanje i registriranje automobila. Manje automobila, manje gužve na cestama, više parkirnih mjesta, manje novca za benzin i čistiji zrak!</em></p></div>",
+    boja_pozadine: "#FCE4EC"
+}, {
+    question: "Za članove takvih organizacija održavanje auta je skuplje.",
+    answers: ["točno", "netočno"],
+    correctAnswer: "netočno",
+    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Imate ga kada vam je potreban, a u ostalo vrijeme koristi ga netko drugi. Zajedno plaćate osiguranje, održavanje i registriranje automobila. Manje automobila, manje gužve na cestama, više parkirnih mjesta, manje novca za benzin i čistiji zrak!</em></p></div>",
+    boja_pozadine: "#FCE4EC"
 }];
 shuffle(p1)
 
