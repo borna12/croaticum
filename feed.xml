@@ -3,12 +3,31 @@
     <title>Croaticum - igre</title>
     <link href="https://borna12.github.io/croaticum/feed.xml" rel="self" />
     <link href="https://borna12.github.io/croaticum" />
-    <updated>2020-03-03T12:56:03+01:00</updated>
+    <updated>2020-03-07T15:10:51+01:00</updated>
     <author>
         <name>Josip Mihaljević</name>
     </author>
     <id>https://borna12.github.io/croaticum</id>
 
+    <entry>
+        <title>Kviz razumijevanja teksta</title>
+        <author>
+            <name>Josip Mihaljević</name>
+        </author>
+        <link href="https://borna12.github.io/croaticum/kviz-razumijevanja.html"/>
+        <id>https://borna12.github.io/croaticum/kviz-razumijevanja.html</id>
+
+        <updated>2020-03-07T15:05:11+01:00</updated>
+            <summary></summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://borna12.github.io/croaticum/media/posts/7/kviz-razumjevanje.JPG" alt="" />
+                <script>// <![CDATA[
+window.open("kviz-razumijevanje","_self")
+// ]]></script>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Karakteristike javnoga prijevoza i automobila</title>
         <author>
