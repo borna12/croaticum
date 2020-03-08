@@ -22,6 +22,8 @@ html {
     font-size: 60%;
 }
 
+.fa-info-circle{display:none}
+
 html,
 body {
     width: 100%;

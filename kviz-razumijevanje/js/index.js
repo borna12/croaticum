@@ -54,7 +54,8 @@ var initPage,
 function ProgressCountdown(timeleft, bar, text) {
     return new Promise((resolve, reject) => {
         countdownTimer = setInterval(() => {
-            timeleft--;
+            if (prekidac==1){
+            timeleft--;}
             document.getElementById(bar).value = timeleft;
             document.getElementById(text).textContent = timeleft;
             if (timeleft <= 0) {
@@ -108,7 +109,6 @@ $(document).ready(function () {
     answerD = $('.questions-page__answer-D');
     answerE = $('.questions-page__answer-E');
     answerF = $('.questions-page__answer-F');
-
     // User final score
     userScore = $('.results-page__score');
     prikazBodova = $('.results-page__bodovi');
@@ -123,7 +123,25 @@ $(document).ready(function () {
             }
         })
     }
+    $(".fa-info-circle").on('click', function () {
+        prekidac=0
+        swal({
+            title: "",
+            html: "<p style='text-align:justify; font-size:18px'>" + $(".prica").text().substring(0,$(".prica").text().length-7) + "</p>",
+            showCloseButton: true,
+            confirmButtonText: ' dalje',
+            backdrop: false,
+            allowOutsideClick: false,
+            allowEscapeKey: false
+        });
 
+        $(".swal2-confirm").click(function () {
+            prekidac=1
+        })
+        $(".swal2-close").click(function () {
+            prekidac=1
+        })
+    })
     // Start the quiz
     newQuiz = function () {
         prekidac = 1;
@@ -165,7 +183,6 @@ $(document).ready(function () {
         } else {
             answerDivD.show()
         };
-
         answerE.text(quiz[questionCounter].answers[4]);
         if (answerE.html() == "" || null) {
             answerDivE.hide()
@@ -183,10 +200,23 @@ $(document).ready(function () {
         $("body").css({
             "background-color": quiz[questionCounter].boja_pozadine
         })
-
         if (prekidac == 1) {
             ProgressCountdown(30, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
         }
+
+        
+    $(".info").on('click', function () {
+        prekidac=0
+        swal({
+            title: "",
+            html: "<p style='text-align:justify; font-size:18px'>" + $(".prica").text().substring(0,$(".prica").text().length-7) + "</p>",
+            showCloseButton: true,
+            confirmButtonText: ' dalje',
+            backdrop: false,
+            allowOutsideClick: false,
+            allowEscapeKey: false
+        });
+    })
         question.html(quiz[questionCounter].question)
         $(".questions-page__question").prepend("<span style='font-size: 1.3rem;'>" + (questionCounter + 1) + "/" + quiz.length + ".</span> <br>")
 
@@ -311,6 +341,7 @@ $(document).ready(function () {
                 quiz = p2
             }
             newQuiz();
+            $(".info").show()
             // Advance to questions page
             initPage.hide();
             questionsPage.show(300);
@@ -421,7 +452,6 @@ $(document).ready(function () {
                 highlightIncorrectAnswerRed();
                 bodovi -= 10;
                 $("#krivo")[0].play();
-
                 swal({
                     title: " <span style='color:#bb422a' >Netočno</span>",
                     html: "<p style='text-align:center'></p><br>" + quiz[questionCounter].napomena,
