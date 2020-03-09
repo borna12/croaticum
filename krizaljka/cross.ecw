@@ -1,0 +1,31 @@
+; EclipseCrossword (1.2.61) crossword puzzle
+; Get EclipseCrossword free at:
+; http://www.eclipsecrossword.com
+
+Title:  Križaljka prometna vozila
+Width:  50
+Height:  50
+CodePage:  0
+Author:  Josip Mihaljevic
+Copyright:  © 2020
+
+; ------------------------------------------------------------
+* Across words
+; ------------------------------------------------------------
+
+MJENJAC:  22, 27:  Uredaj u vozilu kojim se mijenjaju brzine i tako uskladuje brzina okretaja kotaca i rada motora.
+AVION:  26, 23:  Vozilo za prijevoz putnika zrakom, najcešce sa 120 sjedala.
+AUTOBUS:  27, 25:  Motorno vozilo s kotacima za placeni prijevoz vecega broja putnika.
+STAKLO:  20, 29:  Tvrda, prozirna i lomljiva tvar od koje se izraduju prozori, boce, caše i dr.
+KOCNICA:  16, 26:  Naprava kojom se usporava ili zaustavlja kretanje vozila.
+PUTNIK:  16, 22:  Muška osoba koji putuje, koja je na putovanju.
+
+; ------------------------------------------------------------
+* Down words
+; ------------------------------------------------------------
+
+VRATA:  27, 23:  KORISTE SE ULAZ ILI IZLAZ IZ KUCE STANA ILI NEKOG DRUGOG PROSTORA.
+TRAMVAJ:  22, 24:  Prijevozno sredstvo po gradu koje vozi po šinama.
+AUTOMOBIL:  17, 21:  Motorno vozilo na cetiri kotaca kojim se ljudi najcešce voze.
+SJEDALO:  33, 25:  Mjesto za sjedenje u dvorani ili prijevoznome sredstvu.
+
