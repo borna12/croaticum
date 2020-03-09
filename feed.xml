@@ -3,7 +3,7 @@
     <title>Croaticum - igre</title>
     <link href="https://borna12.github.io/croaticum/feed.xml" rel="self" />
     <link href="https://borna12.github.io/croaticum" />
-    <updated>2020-03-09T10:25:22+01:00</updated>
+    <updated>2020-03-09T10:28:58+01:00</updated>
     <author>
         <name>Josip Mihaljević</name>
     </author>
@@ -17,13 +17,13 @@
         <link href="https://borna12.github.io/croaticum/pozitivne-i-negativne-karakteristike-javnoga-prijevoza-i-auta.html"/>
         <id>https://borna12.github.io/croaticum/pozitivne-i-negativne-karakteristike-javnoga-prijevoza-i-auta.html</id>
 
-        <updated>2020-03-09T10:23:43+01:00</updated>
+        <updated>2020-03-09T10:28:19+01:00</updated>
             <summary></summary>
         <content type="html">
             <![CDATA[
                     <img src="https://borna12.github.io/croaticum/media/posts/6/dovlacenje.jpg" alt="" />
                 <script>// <![CDATA[
-window.open("karakteristike/index.html","_blank")
+window.open("karakteristike/index.html")
 // ]]></script>
             ]]>
         </content>
@@ -36,7 +36,7 @@ window.open("karakteristike/index.html","_blank")
         <link href="https://borna12.github.io/croaticum/krizaljka-o-prometnim-vozilima.html"/>
         <id>https://borna12.github.io/croaticum/krizaljka-o-prometnim-vozilima.html</id>
 
-        <updated>2020-03-09T10:23:55+01:00</updated>
+        <updated>2020-03-09T10:28:28+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://borna12.github.io/croaticum/media/posts/5/Izrezak.JPG" alt="" />
@@ -48,7 +48,7 @@ window.open("karakteristike/index.html","_blank")
                     <img src="https://borna12.github.io/croaticum/media/posts/5/Izrezak.JPG" alt="" />
                 <p>Riješi križaljku vezanu za prometna vozila.</p>
 <script>// <![CDATA[
-window.open("krizaljka/index.html","_blank")
+window.open("krizaljka/index.html")
 // ]]></script>
             ]]>
         </content>
@@ -61,7 +61,7 @@ window.open("krizaljka/index.html","_blank")
         <link href="https://borna12.github.io/croaticum/kviz-dativ-licnih-zamjenica.html"/>
         <id>https://borna12.github.io/croaticum/kviz-dativ-licnih-zamjenica.html</id>
 
-        <updated>2020-03-09T10:24:06+01:00</updated>
+        <updated>2020-03-09T10:28:36+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://borna12.github.io/croaticum/media/posts/4/njima.JPG" alt="" />
@@ -73,7 +73,7 @@ window.open("krizaljka/index.html","_blank")
                     <img src="https://borna12.github.io/croaticum/media/posts/4/njima.JPG" alt="" />
                 <p class="opis">Odaberi riječ u dativu kako bi ispravno nadopunio rečenicu.</p>
 <script>// <![CDATA[
-window.open("kviz-dativ/index.html","_blank")
+window.open("kviz-dativ/index.html")
 // ]]></script>
             ]]>
         </content>
@@ -110,7 +110,7 @@ window.open("kviz-dativ/index.html","_blank")
         <link href="https://borna12.github.io/croaticum/igra-nadopunjavanja.html"/>
         <id>https://borna12.github.io/croaticum/igra-nadopunjavanja.html</id>
 
-        <updated>2020-03-09T10:24:19+01:00</updated>
+        <updated>2020-03-09T10:28:43+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://borna12.github.io/croaticum/media/posts/2/napisivanje.jpg" alt="" />
@@ -124,7 +124,7 @@ window.open("kviz-dativ/index.html","_blank")
 <div>Nadopuni rečenicu s ispravnim oblikom riječi.</div>
 </div>
 <script>// <![CDATA[
-window.open("nadopunjavanje/index.html","_blank")
+window.open("nadopunjavanje/index.html")
 // ]]></script>
             ]]>
         </content>
@@ -137,7 +137,7 @@ window.open("nadopunjavanje/index.html","_blank")
         <link href="https://borna12.github.io/croaticum/igra-dovlacenja.html"/>
         <id>https://borna12.github.io/croaticum/igra-dovlacenja.html</id>
 
-        <updated>2020-03-09T10:24:28+01:00</updated>
+        <updated>2020-03-09T10:28:51+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://borna12.github.io/croaticum/media/posts/1/dovlacenje.jpg" alt="" />
@@ -151,7 +151,7 @@ window.open("nadopunjavanje/index.html","_blank")
 <div>Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu.</div>
 </div>
 <script>// <![CDATA[
-window.open("dovlacenje/index.html","_blank")
+window.open("dovlacenje/index.html")
 // ]]></script>
             ]]>
         </content>
