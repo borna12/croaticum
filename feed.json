@@ -11,24 +11,10 @@
     },
     "items": [
         {
-            "id": "https://borna12.github.io/croaticum/kviz-razumijevanja.html",
-            "url": "https://borna12.github.io/croaticum/kviz-razumijevanja.html",
-            "title": "Kviz razumijevanja teksta",
-            "content_html": "<script>// <![CDATA[\nwindow.open(\"kviz-razumijevanje\",\"_self\")\n// ]]></script>",
-            "image": "https://borna12.github.io/croaticum/media/posts/7/kviz-razumjevanje.JPG",
-            "author": {
-                "name": "Josip Mihaljević"
-            },
-            "tags": [
-            ],
-            "date_published": "2020-03-07T15:04:38+01:00",
-            "date_modified": "2020-03-07T15:05:11+01:00"
-        },
-        {
             "id": "https://borna12.github.io/croaticum/pozitivne-i-negativne-karakteristike-javnoga-prijevoza-i-auta.html",
             "url": "https://borna12.github.io/croaticum/pozitivne-i-negativne-karakteristike-javnoga-prijevoza-i-auta.html",
             "title": "Karakteristike javnoga prijevoza i automobila",
-            "content_html": "<script>// <![CDATA[\nwindow.open(\"karakteristike/index.html\",\"_self\")\n// ]]></script>",
+            "content_html": "<script>// <![CDATA[\nwindow.open(\"karakteristike/index.html\",\"_blank\")\n// ]]></script>",
             "image": "https://borna12.github.io/croaticum/media/posts/6/dovlacenje.jpg",
             "author": {
                 "name": "Josip Mihaljević"
@@ -36,14 +22,14 @@
             "tags": [
             ],
             "date_published": "2020-03-03T12:52:51+01:00",
-            "date_modified": "2020-03-03T12:53:15+01:00"
+            "date_modified": "2020-03-09T10:23:43+01:00"
         },
         {
             "id": "https://borna12.github.io/croaticum/krizaljka-o-prometnim-vozilima.html",
             "url": "https://borna12.github.io/croaticum/krizaljka-o-prometnim-vozilima.html",
             "title": "Križaljka o prometnim vozilima",
             "summary": "Riješi križaljku vezanu za prometna vozila.",
-            "content_html": "<p>Riješi križaljku vezanu za prometna vozila.</p>\n<script>// <![CDATA[\nwindow.open(\"krizaljka/index.html\",\"_self\")\n// ]]></script>",
+            "content_html": "<p>Riješi križaljku vezanu za prometna vozila.</p>\n<script>// <![CDATA[\nwindow.open(\"krizaljka/index.html\",\"_blank\")\n// ]]></script>",
             "image": "https://borna12.github.io/croaticum/media/posts/5/Izrezak.JPG",
             "author": {
                 "name": "Josip Mihaljević"
@@ -51,14 +37,14 @@
             "tags": [
             ],
             "date_published": "2020-03-02T22:44:34+01:00",
-            "date_modified": "2020-03-02T22:44:34+01:00"
+            "date_modified": "2020-03-09T10:23:55+01:00"
         },
         {
             "id": "https://borna12.github.io/croaticum/kviz-dativ-licnih-zamjenica.html",
             "url": "https://borna12.github.io/croaticum/kviz-dativ-licnih-zamjenica.html",
             "title": "Kviz (dativ ličnih zamjenica)",
             "summary": "Odaberi riječ u dativu kako bi ispravno nadopunio rečenicu.",
-            "content_html": "<p class=\"opis\">Odaberi riječ u dativu kako bi ispravno nadopunio rečenicu.</p>\n<script>// <![CDATA[\nwindow.open(\"kviz-dativ/index.html\",\"_self\")\n// ]]></script>",
+            "content_html": "<p class=\"opis\">Odaberi riječ u dativu kako bi ispravno nadopunio rečenicu.</p>\n<script>// <![CDATA[\nwindow.open(\"kviz-dativ/index.html\",\"_blank\")\n// ]]></script>",
             "image": "https://borna12.github.io/croaticum/media/posts/4/njima.JPG",
             "author": {
                 "name": "Josip Mihaljević"
@@ -66,7 +52,7 @@
             "tags": [
             ],
             "date_published": "2020-02-28T12:07:36+01:00",
-            "date_modified": "2020-03-02T22:55:32+01:00"
+            "date_modified": "2020-03-09T10:24:06+01:00"
         },
         {
             "id": "https://borna12.github.io/croaticum/dijelovi-automobila.html",
@@ -88,7 +74,7 @@
             "url": "https://borna12.github.io/croaticum/igra-nadopunjavanja.html",
             "title": "Igra nadopunjavanja (dativ pridjeva i imenica)",
             "summary": "Nadopuni rečenicu s ispravnim oblikom riječi.",
-            "content_html": "<div>\n<div>Nadopuni rečenicu s ispravnim oblikom riječi.</div>\n</div>\n<script>// <![CDATA[\nwindow.open(\"nadopunjavanje/index.html\",\"_self\")\n// ]]></script>",
+            "content_html": "<div>\n<div>Nadopuni rečenicu s ispravnim oblikom riječi.</div>\n</div>\n<script>// <![CDATA[\nwindow.open(\"nadopunjavanje/index.html\",\"_blank\")\n// ]]></script>",
             "image": "https://borna12.github.io/croaticum/media/posts/2/napisivanje.jpg",
             "author": {
                 "name": "Josip Mihaljević"
@@ -96,14 +82,14 @@
             "tags": [
             ],
             "date_published": "2020-02-27T14:59:14+01:00",
-            "date_modified": "2020-03-02T22:56:31+01:00"
+            "date_modified": "2020-03-09T10:24:19+01:00"
         },
         {
             "id": "https://borna12.github.io/croaticum/igra-dovlacenja.html",
             "url": "https://borna12.github.io/croaticum/igra-dovlacenja.html",
             "title": "Igra dovlačenja riječi u rečenicu",
             "summary": "Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu.",
-            "content_html": "<div>\n<div>Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu.</div>\n</div>\n<script>// <![CDATA[\nwindow.open(\"dovlacenje/index.html\",\"_self\")\n// ]]></script>",
+            "content_html": "<div>\n<div>Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu.</div>\n</div>\n<script>// <![CDATA[\nwindow.open(\"dovlacenje/index.html\",\"_blank\")\n// ]]></script>",
             "image": "https://borna12.github.io/croaticum/media/posts/1/dovlacenje.jpg",
             "author": {
                 "name": "Josip Mihaljević"
@@ -111,7 +97,7 @@
             "tags": [
             ],
             "date_published": "2020-02-27T14:57:09+01:00",
-            "date_modified": "2020-03-02T22:57:11+01:00"
+            "date_modified": "2020-03-09T10:24:28+01:00"
         }
     ]
 }
