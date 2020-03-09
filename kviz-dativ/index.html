@@ -177,7 +177,7 @@
             <p>
                 <form class="jedan"
                     action="https://docs.google.com/forms/d/e/1FAIpQLSdQpcNDwTT0IKcqorbznnf6-8CBuhgaPki9i2pja-XWbUw6zg/formResponse"
-                    target="_self" id="bootstrapForm" method="POST">
+                    target="_self" id="bootstrapForm" method="POST" style="display: none;">
                     <legend for="736982347">
                         <select id="ikona" style="height:30px"></select> Ime:
                         <input id="312289462" type="text" name="entry.312289462" class="form-control" required
@@ -191,10 +191,9 @@
                     <input type="hidden" name="pageHistory" value="0">
                     <br>
                     <input class="btn" type="submit" id="predaj" value="predaj">
-                    <button class="results-page__retake-btn btn"
-                        onclick="localStorage.setItem('reset','da');location.reload();">ponovi kviz</button>
-
                 </form>
+                <button class="results-page__retake-btn btn"
+                onclick="localStorage.setItem('reset','da');location.reload();">ponovi kviz</button>
 
         </div>
         <script src='js/jquery.min.js'></script>
