@@ -383,7 +383,6 @@ $(document).ready(function () {
         }
         // Make correct answer green and add a checkmark
         highlightCorrectAnswerGreen();
-        clearInterval(countdownTimer);
         if (document.getElementById("pageBeginCountdown").value == "0") {
             $("#krivo")[0].play();
             bodovi -= 10;
@@ -405,9 +404,10 @@ $(document).ready(function () {
                 clearInterval(countdownTimer)
                 if (ide == 1) {
                     ProgressCountdown(30, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
-                }
-                nastavi()
+                    nastavi()
                 return
+                }
+                
             })
         } else {
             // Evaluate if the user got the answer right or wrong
@@ -468,6 +468,7 @@ $(document).ready(function () {
     }
     // Clicking on the submit button:
     function nastavi() {
+        clearInterval(countdownTimer);
         $(".questions-page__answer-span").html("")
         prekidac=1;
         // Increment question number until there are no more questions, then advance to the next page
