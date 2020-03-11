@@ -216,7 +216,6 @@ form {
 
 .questions-page__answer-line {
     margin: 0 auto;
-    width: 100%;
     cursor: pointer;
     border: 1px solid #bb422a;
     border-radius: 5px;
@@ -229,13 +228,13 @@ form {
 .questions-page__selection-div {
     float: left;
     padding-left: 1rem;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
 }
 
 .questions-page__feedback-div {
     float: right;
     padding-right: 1rem;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
 
 .odabir {
