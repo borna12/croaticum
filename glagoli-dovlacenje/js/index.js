@@ -73,7 +73,7 @@
     question: "diviti se/prigovarati",
     answers: ["Divim", "Prigovaram"],
     definicija: ["Diviti se znači izražavati da se što smatra iznimno lijepim. ","Prigovarati znači upućivati komu prigovor."],
-    slika: ["slike/diviti.jpg", "slike/prigovarati.jpg"],
+    slika: ["slike/divitii.jpg", "slike/prigovarati.jpg"],
     opisi: ["", ""],
     opisi2: ["se hrabrosti naših vojnika.", "oko loše internetske usluge."]
 },
