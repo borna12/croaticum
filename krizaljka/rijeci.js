@@ -6,7 +6,7 @@ Word = new Array();
 Clue = new Array("Mjesto za sjedenje u dvorani ili prijevoznome sredstvu.", 
 "Muška osoba koji putuje, koja je na putovanju.", 
 "Vozilo za prijevoz putnika zrakom, najčešće sa 120 sjedala.", 
-"Prijevozno sredstvo po gradu koje vozi po šinama.", 
+"Prijevozno sredstvo po gradu koje vozi po tračnicama.", 
 "Koriste se za ulaz ili izlaz iz kuće, stana ili nekog drugog prostora.", 
 "Naprava kojom se usporava ili zaustavlja kretanje vozila.", 
 "Tvrda, prozirna i lomljiva tvar od koje se izrađuju prozori, boce, čaše i dr.", 
