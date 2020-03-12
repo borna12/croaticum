@@ -146,8 +146,8 @@
       ran = Math.floor(Math.random() * 2) + 1
       s1 = "<img src='" + pitanja[questionCounter].slika[0] + "' class='slikica' id='sli1'>"
       s2 = "<img src='" + pitanja[questionCounter].slika[1] + "' class='slikica' id='sli2'>"
-      d1="<p>"+pitanja[questionCounter].definicija[0]+"</p>"
-      d2="<p>"+pitanja[questionCounter].definicija[1]+"</p>"
+      d1="<p class='definicija1' style=' opacity: 0;'>"+pitanja[questionCounter].definicija[0]+"</p>"
+      d2="<p class='definicija2' style='opacity: 0;'>"+pitanja[questionCounter].definicija[1]+"</p>"
       r1 = '<div class="rad1">' + pitanja[questionCounter].opisi[0] + '</div>'
       r11 = '<div class="rad11">' + pitanja[questionCounter].opisi2[0] + '</div>'
       r2 = '<div class="rad2">' + pitanja[questionCounter].opisi[1] + '</div>'
@@ -270,6 +270,7 @@
               var numericIdSource = dragSource.id.replace(/[^0-9]/g, '');
               if (numericId == numericIdSource) {
                   dragSource.className = 'correctAnswer';
+                  $( ".definicija" +numericId).css({"opacity":"1"})
                   checkAllAnswers();
               } else {
                   dragSource.className = 'wrongAnswer';
