@@ -75,7 +75,7 @@
     definicija: ["Diviti se znači izražavati da se što smatra iznimno lijepim. ","Prigovarati znači upućivati komu prigovor."],
     slika: ["slike/divitii.jpg", "slike/prigovarati.jpg"],
     opisi: ["", ""],
-    opisi2: ["se hrabrosti naših vojnika.", "oko loše internetske usluge."]
+    opisi2: ["se hrabrosti naših vojnika.", "zbog loše internetske usluge."]
 },
 {
     question: "zahvaljivati se/smetati",
@@ -83,12 +83,12 @@
     definicija: ["Zahvaljivati znači izražavati zahvalnost, reći hvala.","Smetati znači uzemirivati koga."],
     slika: ["slike/zahvaljivati.jpg", "slike/smetati.jpg"],
     opisi: ["", "Ne"],
-    opisi2: ["se obitelji na podršci.", "prijatelju kada uči."]
+    opisi2: ["obitelji na podršci.", "prijatelju dok uči."]
 },
 {
     question: "približavati/vjerovati",
     answers: ["Približavam", "Vjerujem"],
-    definicija: ["Približavati se znači dolaziti blizu kome. ","Vjerovati znači imati povjerenja u koga ili što."],
+    definicija: ["Približavati se znači dolaziti blizu kome ili čemu. ","Vjerovati znači imati povjerenja u koga ili što."],
     slika: ["slike/priblizavati.jpg", "slike/vjerovati.jpg"],
     opisi: ["", ""],
     opisi2: ["se kući.", "prijateljima."]
