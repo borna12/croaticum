@@ -35,6 +35,7 @@
   var shuffleAnswers = true; /* Shuffle answers ? */
   var lockedAfterDrag = false; /* Lock items after they have been dragged, i.e. the user get's only one shot for the correct answer */
   var questionCounter = 0;
+  var bodovi = 0;
   var pitanja = [{
     question: "dati/pomagati",
     answers: ["Dajem", "Pomažem"],
@@ -64,8 +65,8 @@
       questionCounter++
       if (questionCounter == pitanja.length) {
           swal({
-              title: "kraj igre",
-              html: "",
+              title: "Čestitam! Došli ste do kraja igre.",
+              html: "<p>Vrijeme potrebno za rješavanje zadataka: </p><p style='text-align:center'>"+$("#basicUsage").text()+"</p><br><p>broj točnih odgovora: </p><p style='text-align:center'>"+bodovi +"</p>",
               confirmButtonText: 'ponovite ovu igru',
               confirmButtonColor: '#009DE0',
               backdrop: false,
@@ -269,17 +270,19 @@
               var numericId = previousEl.id.replace(/[^0-9]/g, '');
               var numericIdSource = dragSource.id.replace(/[^0-9]/g, '');
               if (numericId == numericIdSource) {
-                  dragSource.className = 'correctAnswer';
+                  dragSource.className = 'correctAnswer'+numericId;
                   $( ".definicija" +numericId).css({"opacity":"1"})
+                  $(".correctAnswer"+numericId).parent().html( "<section class='correctAnswer"+numericId+"'>"+$(".correctAnswer"+numericId).text()+"</section>")
                   checkAllAnswers();
+                  
               } else {
                   dragSource.className = 'wrongAnswer';
+                  bodovi-=1
               }
 
           }
           if (destination.id && destination.id == 'answerDiv') {
               dragSource.className = 'dragDropSmallBox';
-
           }
       } else {
           answerDiv = document.getElementById('answerDiv');
@@ -292,11 +295,11 @@
   }
 
   function checkAllAnswers() {
-      if ($('.correctAnswer').length == 2) {
+      if ($('.correctAnswer1').length == 1 && $('.correctAnswer2').length == 1) {
+          bodovi+=1
           quizIsFinished();
           dragContentDiv = false;
           dragContent = false;
-
           dragSource = false;
       }
 

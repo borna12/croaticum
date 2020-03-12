@@ -4,12 +4,18 @@
 <head>
     <title>Odaberi ispravan glagol</title>
     <meta charset="utf-8">
-    <meta name="description" content="Poveži ponuđene pojmove i testiraj svoje poznavanje umjetnosti i povijesti umjetnosti.">
+    <meta name="description" content="">
     <meta name="author" content="Josip Mihaljević">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stil.css" />
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+      <script src="js/examples.min.js"> </script>
+        <script> var timer = new Timer();
+            timer.start();
+            timer.addEventListener('secondsUpdated', function (e) {
+                $('#basicUsage').html(timer.getTimeValues().toString());
+            });</script>
     <script type="text/javascript" src="js/index.js"></script>
     <link rel="stylesheet" href="css/sweetalert2.min.css">
     <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
@@ -32,13 +38,11 @@
     <script src="js/sweetalert2.min.js"></script>
 
     <meta property="og:title" content="Igra povezivanja" />
-    <meta property="og:description" content="Poveži ponuđene pojmove i testiraj svoje poznavanje umjetnosti i povijesti umjetnosti." />
+    <meta property="og:description" content="" />
     <meta property="og:image" content="og-slika.png" />
-
 </head>
-
 <body>
-
+    <div id="basicUsage">00:00:00</div>
     <h1 class="naslov">Igra povezivanja</h1>
     <p class="opis">Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu koja prikazuje radnju s gornje
         slike.</p>
@@ -51,7 +55,6 @@
                 <div class="destinationBox"> </div>
                 <div class="rad11">fdsfsd</div>
             </div>
-
             <div id="o2">
                 <img src="slike/citati.jpg" class="slikica" id="sli2">
                 <div class="rad2"></div>
@@ -61,8 +64,6 @@
             </div>
 
         </div>
-
-
         <div id="answerDiv">
             <div class="dragDropSmallBox" id="a1">tapiserija </div>
             <div class="dragDropSmallBox" id="a2">vitraj</div>
@@ -73,8 +74,6 @@
         
     </div>
     <div id="dragContent"></div>
-
-
     <script>
         document.getElementById('a1').addEventListener("touchstart", touchHandler, true);
         document.getElementById('a1').addEventListener("touchmove", touchHandler, true);
@@ -86,10 +85,7 @@
         document.getElementById('a2').addEventListener("touchend", touchHandler, true);
         document.getElementById('a2').addEventListener("touchcancel", touchHandler, true);
     </script>
-
-       
-
-
+      
 
 </body>
 
