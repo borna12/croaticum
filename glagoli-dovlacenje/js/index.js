@@ -60,6 +60,7 @@
     opisi: ["Danas smo", ""],
     opisi2: ["o zaštiti okoliša.", "komičarima."]
 },
+
 {
     question: "radovati se/pokloniti",
     answers: ["Radujem", "poklonim"],
