@@ -711,7 +711,7 @@ $(document).ready(function () {
             ""
         ],
         "osnova": "",
-        "osnova2": " se svojem kolegama na pomoći.",
+        "osnova2": " se svojim kolegama na pomoći.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,
