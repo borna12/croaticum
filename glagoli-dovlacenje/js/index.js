@@ -59,6 +59,38 @@
     slika: ["slike/govorili.jpg", "slike/smijati.jpg"],
     opisi: ["Danas smo", ""],
     opisi2: ["o zaštiti okoliša.", "komičarima."]
+},
+{
+    question: "radovati se/pokloniti",
+    answers: ["Radujem", "poklonim"],
+    definicija: ["Radovati se znači biti veseo, izražavati radost.","Pokloniti znači dati komu bez plaćana."],
+    slika: ["slike/radovati.jpg", "slike/pokloniti.jpg"],
+    opisi: ["", "Kad"],
+    opisi2: ["se ručku.", "nešto, osjećam se sretno."]
+},
+{
+    question: "diviti se/prigovarati",
+    answers: ["Divim", "Prigovaram"],
+    definicija: ["Diviti se znači izražavati da se što smatra iznimno lijepim. ","Prigovarati znači upućivati komu prigovor."],
+    slika: ["slike/diviti.jpg", "slike/prigovarati.jpg"],
+    opisi: ["", ""],
+    opisi2: ["se hrabrosti naših vojnika.", "oko loše internetske usluge."]
+},
+{
+    question: "zahvaljivati se/smetati",
+    answers: ["Zahvaljujem", "smetam"],
+    definicija: ["Zahvaljivati znači izražavati zahvalnost, reći hvala.","Smetati znači uzemirivati koga."],
+    slika: ["slike/zahvaljivati.jpg", "slike/smetati.jpg"],
+    opisi: ["", "Ne"],
+    opisi2: ["se obitelji na podršci.", "prijatelju kada uči."]
+},
+{
+    question: "približavati/vjerovati",
+    answers: ["Približavam", "Vjerujem"],
+    definicija: ["Približavati se znači dolaziti blizu kome. ","Vjerovati znači imati povjerenja u koga ili što."],
+    slika: ["slike/priblizavati.jpg", "slike/vjerovati.jpg"],
+    opisi: ["", ""],
+    opisi2: ["se kući.", "prijateljima."]
 }];
 
   function quizIsFinished() {
