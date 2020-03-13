@@ -78,7 +78,7 @@
     opisi2: ["se hrabrosti naših vojnika.", "zbog loše internetske usluge."]
 },
 {
-    question: "zahvaljivati se/smetati",
+    question: "zahvaljivati/smetati",
     answers: ["Zahvaljujem", "smetam"],
     definicija: ["Zahvaljivati znači izražavati zahvalnost, reći hvala.","Smetati znači uzemirivati koga."],
     slika: ["slike/zahvaljivati.jpg", "slike/smetati.jpg"],
@@ -108,7 +108,7 @@
 
           })
           $('.swal2-confirm').click(function () {
-            window.open("index.html")
+            window.open("index.html","_self")
          })
       } else {
           $(".btn-holder").show(300);

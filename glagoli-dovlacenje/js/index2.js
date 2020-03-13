@@ -42,7 +42,7 @@
     definicija: ["Dati označava da smo nekome nešto prepustili ili uručili bez traženja novca zauzvrat.","Pomagati znači davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim."],
     slika: ["slike/daju.jpg", "slike/pomazu.jpg"],
     opisi: ["Volonteri", "Vojnici"],
-    opisi2: ["beskučnicima odjeću.", "žrtvama rata."]
+    opisi2: ["beskućnicima odjeću.", "žrtvama rata."]
 },
 {
     question: "kazati/slati",
@@ -78,11 +78,11 @@
     opisi2: ["junacima.", "na profesore svoje djece."]
 },
 {
-    question: "zahvaljivati se/smetati",
+    question: "zahvaljivati/smetati",
     answers: ["zahvaljuju", "smetaju"],
     definicija: ["Zahvaljivati znači izražavati zahvalnost, reći hvala.","Smetati znači uzemirivati koga."],
     slika: ["slike/zahvaljuje.jpg", "slike/smetaju.jpg"],
-    opisi: ["Održavatelji skupa", "Komarci"],
+    opisi: ["Organizatori skupa", "Komarci"],
     opisi2: ["se predavačima.", "ljudima za vrijeme ljeta."]
 },
 {
@@ -108,7 +108,7 @@
 
           })
           $('.swal2-confirm').click(function () {
-             window.open("index.html")
+             window.open("index.html","_self")
           })
          
       } else {
