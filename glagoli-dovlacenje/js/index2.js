@@ -38,60 +38,60 @@
   var bodovi = 0;
   var pitanja = [{
     question: "dati/pomagati",
-    answers: ["Dajem", "Pomažem"],
+    answers: ["daju", "pomažu"],
     definicija: ["Dati označava da smo nekome nešto prepustili ili uručili bez traženja novca zauzvrat.","Pomagati znači davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim."],
-    slika: ["slike/dajem.jpg", "slike/pomagati.jpg"],
-    opisi: ["", ""],
-    opisi2: ["krv za pomoć bolesnima.", "prijatelju graditi kuću."]
+    slika: ["slike/daju.jpg", "slike/pomazu.jpg"],
+    opisi: ["Volonteri", "Vojnici"],
+    opisi2: ["beskučnicima odjeću.", "žrtvama rata."]
 },
 {
     question: "kazati/slati",
-    answers: ["Kažem", "šalje"],
+    answers: ["kažu", "šalju"],
     definicija: ["Kazati znači reći što, izraziti što riječima.","Slati znači upućivati što na čiju adresu, stvarnu ili virtualnu."],
-    slika: ["slike/kazati.jpg", "slike/slati.jpg"],
-    opisi: ["", "Odvjetnik"],
-    opisi2: ["Vam da će sve biti u redu.", "pismo klijentu."]
+    slika: ["slike/kazu.jpg", "slike/salju.jpg"],
+    opisi: ["Nastavnici", "Restorani"],
+    opisi2: ["da moramo učiti kako bi bili uspiješniji.", "hranu dostavnom službom."]
 },
 {
     question: "govoriti/smijati se",
-    answers: ["govorili", "Smijem se"],
+    answers: ["govore", "smiju"],
     definicija: ["Govoriti znači izgovarati riječi i rečenice koje postoje u nekom jeziku.","Smijati se znači razvući usta u osmijeh kao izraz veselja i opuštenosti."],
-    slika: ["slike/govorili.jpg", "slike/smijati.jpg"],
-    opisi: ["Danas smo", ""],
-    opisi2: ["o zaštiti okoliša.", "komičarima."]
+    slika: ["slike/govore.jpg", "slike/smiju.jpg"],
+    opisi: ["Mediji", "Ljudi se"],
+    opisi2: ["da je došlo do epidemije bolesti.", "čudnoj situaciji."]
 },
 
 {
     question: "radovati se/pokloniti",
-    answers: ["Radujem", "poklonim"],
+    answers: ["raduju", "poklone"],
     definicija: ["Radovati se znači biti veseo, izražavati radost.","Pokloniti znači dati komu bez plaćana."],
-    slika: ["slike/radovati.jpg", "slike/pokloniti.jpg"],
-    opisi: ["", "Kad"],
-    opisi2: ["se ručku.", "nešto, osjećam se sretno."]
+    slika: ["slike/raduju.jpg", "slike/poklone.jpg"],
+    opisi: ["Djeca se", "Mislim da bi bilo dobro da se računala"],
+    opisi2: ["poklonima.", "školama."]
 },
 {
     question: "diviti se/prigovarati",
-    answers: ["Divim", "Prigovaram"],
-    definicija: ["Diviti se znači izražavati da se što smatra iznimno lijepim. ","Prigovarati znači upućivati komu prigovor."],
-    slika: ["slike/divitii.jpg", "slike/prigovarati.jpg"],
-    opisi: ["", ""],
-    opisi2: ["se hrabrosti naših vojnika.", "zbog loše internetske usluge."]
+    answers: ["dive", "prigovaraju"],
+    definicija: ["Diviti se znači izražavati da se što smatra iznimno lijepim.","Prigovarati znači upućivati komu prigovor."],
+    slika: ["slike/dive.jpg", "slike/prigovaraju.jpg"],
+    opisi: ["Ljudi se", "Roditelji"],
+    opisi2: ["junacima.", "na profesore svoje djece."]
 },
 {
     question: "zahvaljivati se/smetati",
-    answers: ["Zahvaljujem", "smetam"],
+    answers: ["zahvaljuju", "smetaju"],
     definicija: ["Zahvaljivati znači izražavati zahvalnost, reći hvala.","Smetati znači uzemirivati koga."],
-    slika: ["slike/zahvaljivati.jpg", "slike/smetati.jpg"],
-    opisi: ["", "Ne"],
-    opisi2: ["obitelji na podršci.", "prijatelju dok uči."]
+    slika: ["slike/zahvaljuje.jpg", "slike/smetaju.jpg"],
+    opisi: ["Održavatelji skupa", "Komarci"],
+    opisi2: ["se predavačima.", "ljudima za vrijeme ljeta."]
 },
 {
     question: "približavati/vjerovati",
-    answers: ["Približavam", "Vjerujem"],
+    answers: ["približavaju", "vjeruju"],
     definicija: ["Približavati se znači dolaziti blizu kome ili čemu. ","Vjerovati znači imati povjerenja u koga ili što."],
-    slika: ["slike/priblizavati.jpg", "slike/vjerovati.jpg"],
-    opisi: ["", ""],
-    opisi2: ["se kući.", "prijateljima."]
+    slika: ["slike/priblizavaju.jpg", "slike/vjeruju.jpg"],
+    opisi: ["Maja i Ivana", "U braku muž i žena"],
+    opisi2: ["se kući.", "jedan drugome."]
 }];
 
   function quizIsFinished() {
@@ -108,8 +108,9 @@
 
           })
           $('.swal2-confirm').click(function () {
-            window.open("index.html")
-         })
+             window.open("index.html")
+          })
+         
       } else {
           $(".btn-holder").show(300);
           $(".btn-holder").click(function () {

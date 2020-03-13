@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Odaberi ispravan glagol</title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="Josip Mihaljević">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stil.css" />
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+      <script src="js/examples.min.js"> </script>
+        <script> var timer = new Timer();
+            timer.start();
+            timer.addEventListener('secondsUpdated', function (e) {
+                $('#basicUsage').html(timer.getTimeValues().toString());
+            });</script>
+    <script type="text/javascript" src="js/index2.js"></script>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="js/sweetalert2.min.js"></script>
+
+    <meta property="og:title" content="Igra povezivanja" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="og-slika.png" />
+</head>
+<body>
+    <div id="basicUsage">00:00:00</div>
+    <p class="opis">Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu koja prikazuje radnju s gornje
+        slike.</p>
+    <div id="dragScriptContainer">
+        <div id="questionDiv">
+            <div id="o1">
+                <img src="slike/birati.jpg" class="slikica" id="sli1">
+                <div class="rad1"></div>
+                <div class="dragDropSmallBox" id="q1"></div>
+                <div class="destinationBox"> </div>
+                <div class="rad11">fdsfsd</div>
+            </div>
+            <div id="o2">
+                <img src="slike/citati.jpg" class="slikica" id="sli2">
+                <div class="rad2"></div>
+                <div class="dragDropSmallBox" id="q2"></div>
+                <div class="destinationBox"> </div>
+                <div class="rad22">dsfsd</div>
+            </div>
+
+        </div>
+        <div id="answerDiv">
+            <div class="dragDropSmallBox" id="a1">tapiserija </div>
+            <div class="dragDropSmallBox" id="a2">vitraj</div>
+            <section class="btn-holder">
+                <button class="questions-page__continue-btn btn">nastavi ❯</button>
+            </section>
+        </div>
+        
+    </div>
+    <div id="dragContent"></div>
+    <script>
+        document.getElementById('a1').addEventListener("touchstart", touchHandler, true);
+        document.getElementById('a1').addEventListener("touchmove", touchHandler, true);
+        document.getElementById('a1').addEventListener("touchend", touchHandler, true);
+        document.getElementById('a1').addEventListener("touchcancel", touchHandler, true);
+        document.getElementById('a2').addEventListener("touchstart", touchHandler, true);
+        document.getElementById('a2').addEventListener("touchmove", touchHandler, true);
+        document.getElementById('a2').addEventListener("touchend", touchHandler, true);
+        document.getElementById('a2').addEventListener("touchcancel", touchHandler, true);
+    </script>
+      
+
+</body>
+
+</html>
