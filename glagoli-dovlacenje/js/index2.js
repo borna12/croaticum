@@ -54,10 +54,10 @@
 },
 {
     question: "govoriti/smijati se",
-    answers: ["govore", "smiju"],
+    answers: ["govore", "se smiju"],
     definicija: ["Govoriti znači izgovarati riječi i rečenice koje postoje u nekom jeziku.","Smijati se znači razvući usta u osmijeh kao izraz veselja i opuštenosti."],
     slika: ["slike/govore.jpg", "slike/smiju.jpg"],
-    opisi: ["Mediji", "Ljudi se"],
+    opisi: ["Mediji", "Ljudi"],
     opisi2: ["da je došlo do epidemije bolesti.", "čudnoj situaciji."]
 },
 
@@ -74,8 +74,8 @@
     answers: ["dive", "prigovaraju"],
     definicija: ["Diviti se znači izražavati da se što smatra iznimno lijepim.","Prigovarati znači upućivati komu prigovor."],
     slika: ["slike/dive.jpg", "slike/prigovaraju.jpg"],
-    opisi: ["Ljudi se", "Roditelji"],
-    opisi2: ["junacima.", "na profesore svoje djece."]
+    opisi: ["Ljudi se", "Djevojke"],
+    opisi2: ["junacima.", "momcima jer nisu pospremili sobu."]
 },
 {
     question: "zahvaljivati/smetati",
@@ -83,7 +83,7 @@
     definicija: ["Zahvaljivati znači izražavati zahvalnost, reći hvala.","Smetati znači uzemirivati koga."],
     slika: ["slike/zahvaljuje.jpg", "slike/smetaju.jpg"],
     opisi: ["Organizatori skupa", "Komarci"],
-    opisi2: ["se predavačima.", "ljudima za vrijeme ljeta."]
+    opisi2: ["predavačima.", "ljudima za vrijeme ljeta."]
 },
 {
     question: "približavati/vjerovati",
