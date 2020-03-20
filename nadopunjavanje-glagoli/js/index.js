@@ -660,7 +660,7 @@ $(document).ready(function () {
 
     p1 = [{
         "question": "popuni",
-        "hint": "pomagati (engl. help), 1. lice jd. (ja)",
+        "hint": "pomagati (engl. help)<br><span style='color:black;font-size:14px'>1. lice jd. (ja)</span>",
         "correctAnswer": [
             "pomažem",
             ""
@@ -675,7 +675,7 @@ $(document).ready(function () {
     },
     {
         "question": "popuni",
-        "hint": "vjerovati (engl. trust), 1. lice jd. (ja)",
+        "hint": "vjerovati (engl. trust)<br><span style='color:black;font-size:14px'>1. lice jd. (ja)</span>",
         "correctAnswer": [
             "vjerujem",
             ""
@@ -690,7 +690,7 @@ $(document).ready(function () {
     },
     {
         "question": "popuni",
-        "hint": "veseliti se (engl. be happy), 1. lice jd. (ja)",
+        "hint": "veseliti se (engl. be happy)<br><span style='color:black;font-size:14px'>1. lice jd. (ja)</span>",
         "correctAnswer": [
             "Veselim",
             ""
@@ -705,7 +705,7 @@ $(document).ready(function () {
     },
     {
         "question": "popuni",
-        "hint": "zahvaljivati (engl. be thankful), 1. lice jd. (ja)",
+        "hint": "zahvaljivati (engl. be thankful)<br><span style='color:black;font-size:14px'>1. lice jd. (ja)</span>",
         "correctAnswer": [
             "Zahvaljujem",
             ""
@@ -720,7 +720,7 @@ $(document).ready(function () {
     },
     {
         "question": "popuni",
-        "hint": "pokloniti (engl. to give, donate), 1. lice jd. (ja)",
+        "hint": "pokloniti (engl. to give, donate)<br><span style='color:black;font-size:14px'>1. lice jd. (ja)</span>",
         "correctAnswer": [
             "Poklonim",
             ""
@@ -735,7 +735,7 @@ $(document).ready(function () {
     },
     {
         "question": "popuni",
-        "hint": "radovati se (engl. look forward to), 1. lice jd. (ja)",
+        "hint": "radovati se (engl. look forward to)<br><span style='color:black;font-size:14px'>1. lice jd. (ja)</span>",
         "correctAnswer": [
             "Radujem",
             ""
