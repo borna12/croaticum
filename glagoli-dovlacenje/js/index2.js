@@ -50,7 +50,7 @@
     definicija: ["Kazati znači reći što, izraziti što riječima.","Slati znači upućivati što na čiju adresu, stvarnu ili virtualnu."],
     slika: ["slike/kazu.jpg", "slike/salju.jpg"],
     opisi: ["Nastavnici", "Restorani"],
-    opisi2: ["da moramo učiti kako bi bili uspiješniji.", "hranu dostavnom službom."]
+    opisi2: ["da moramo učiti kako bismo bili uspiješniji.", "hranu dostavnom službom."]
 },
 {
     question: "govoriti/smijati se",
@@ -64,7 +64,7 @@
 {
     question: "radovati se/pokloniti",
     answers: ["raduju", "poklone"],
-    definicija: ["Radovati se znači biti veseo, izražavati radost.","Pokloniti znači dati komu bez plaćana."],
+    definicija: ["Radovati se znači biti veseo, izražavati radost.","Pokloniti znači dati komu bez plaćanja."],
     slika: ["slike/raduju.jpg", "slike/poklone.jpg"],
     opisi: ["Djeca se", "Mislim da bi bilo dobro da se računala"],
     opisi2: ["poklonima.", "školama."]
