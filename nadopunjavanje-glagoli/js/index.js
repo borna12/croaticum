@@ -444,7 +444,7 @@ $(document).ready(function () {
                 })
 
             } else {
-                if ($("#odgovor").val().toLowerCase() == prezent[questionCounter].correctAnswer[0].toLowerCase() || $("#odgovor").val().toLowerCase() == prezent[questionCounter].correctAnswer[1].toLowerCase() ) {
+                if ($("#odgovor").val() == prezent[questionCounter].correctAnswer[0] || $("#odgovor").val() == prezent[questionCounter].correctAnswer[1] ) {
                     // Increment the total correct answers counter
                     correctAnswersCounter++;
                     bodovi += 10;
@@ -463,7 +463,7 @@ $(document).ready(function () {
                     });
 
                     if (prezent[questionCounter].pin == 1) {
-                        if ($("#odgovor").val().toLowerCase() == prezent[questionCounter].correctAnswer[0]) {
+                        if ($("#odgovor").val() == prezent[questionCounter].correctAnswer[0]) {
                             brb = 0
                         } else {
                             brb = 1
@@ -660,7 +660,7 @@ $(document).ready(function () {
 
     p1 = [{
         "question": "popuni",
-        "hint": "pomagati (engl. help)",
+        "hint": "pomagati (engl. help), 1. lice jd. (ja)",
         "correctAnswer": [
             "pomažem",
             ""
@@ -675,7 +675,7 @@ $(document).ready(function () {
     },
     {
         "question": "popuni",
-        "hint": "vjerovati (engl. trust)",
+        "hint": "vjerovati (engl. trust), 1. lice jd. (ja)",
         "correctAnswer": [
             "vjerujem",
             ""
@@ -690,9 +690,9 @@ $(document).ready(function () {
     },
     {
         "question": "popuni",
-        "hint": "veseliti se (engl. be happy)",
+        "hint": "veseliti se (engl. be happy), 1. lice jd. (ja)",
         "correctAnswer": [
-            "veselim",
+            "Veselim",
             ""
         ],
         "osnova": "",
@@ -705,13 +705,13 @@ $(document).ready(function () {
     },
     {
         "question": "popuni",
-        "hint": "zahvaljivati (engl. be thankful)",
+        "hint": "zahvaljivati (engl. be thankful), 1. lice jd. (ja)",
         "correctAnswer": [
-            "zahvaljujem",
+            "Zahvaljujem",
             ""
         ],
         "osnova": "",
-        "osnova2": " se svojim kolegama na pomoći.",
+        "osnova2": " svojim kolegama na pomoći.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,
@@ -720,9 +720,9 @@ $(document).ready(function () {
     },
     {
         "question": "popuni",
-        "hint": "pokloniti (engl. to give, donate)",
+        "hint": "pokloniti (engl. to give, donate), 1. lice jd. (ja)",
         "correctAnswer": [
-            "poklanjam",
+            "Poklonim",
             ""
         ],
         "osnova": "",
@@ -735,9 +735,9 @@ $(document).ready(function () {
     },
     {
         "question": "popuni",
-        "hint": "radovati se (engl. look forward to)",
+        "hint": "radovati se (engl. look forward to), 1. lice jd. (ja)",
         "correctAnswer": [
-            "radujem",
+            "Radujem",
             ""
         ],
         "osnova": "",
