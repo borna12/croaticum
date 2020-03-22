@@ -3,18 +3,20 @@
 <title>Križaljka o prometnim vozilima</title>
 <meta name="generator" content="EclipseCrossword" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" type="text/css" href="style.css">
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1.0 , minimum-scale=1.0 , maximum-scale=1.0" />
-
+<script src="examples.min.js"> </script>
+<script> 
+var timer = new Timer();
+	timer.start();
+	timer.addEventListener('secondsUpdated', function (e) {
+		$('#basicUsage').html(timer.getTimeValues().toString());
+	});</script>
 </head><body>
-
 <h1 style="text-align: center;">Križaljka o prometnim vozilima</h1>
 <hr>
-
 <div id="waitmessage" class="ecw-answerbox">
 	This interactive crossword puzzle requires JavaScript and any 
 	recent web browser, including Windows Internet Explorer, Mozilla Firefox, Google Chrome, or 
@@ -24,27 +26,19 @@
 </div>
 <div style="">
 <table cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-
 <td class="ecw-crosswordarea">
-
 <script type="text/javascript" src="rijeci.js">
 </script>
-
 <script type="text/javascript" src="logika.js"></script>
-
 </td>
-
 <td valign="top" style="padding-left: 1em;">
-
 <div class="ecw-copyright">
 	<a href="http://www.eclipsecrossword.com/" onclick="this.target='_blank'" style="font-weight: bold;">EclipseCrossword</a> &copy; 2000-2013
 </div>
-
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Dobro došli!</h3>
 <p>Pritisnite jedno od polja kako bi započeli igru.</p>
 </div>
-
 <div id="answerbox" class="ecw-answerbox" style="display:none;">
 <h3 id="wordlabel" class="ecw-wordlabel"> &nbsp;</h3>
 <div id="wordinfo" class="ecw-wordinfo"> </div>
@@ -53,33 +47,28 @@
 	<input class="ecw-input" id="wordentry" type="text" size="24" style="font-weight: bold; text-transform:uppercase;" onkeypress="WordEntryKeyPress(event)" onchange="WordEntryKeyPress(event)" />
 </div>
 <div id="worderror" class="ecw-worderror"></div>
-
 <table border="0" cellspacing="0" cellpadding="0" width="100%" style="margin-top:1em;"><tbody><tr><td>
-<button id="cheatbutton" type="button" class="ecw-input ecw-button" onclick="CheatClick();">Solve</button>
+	<button id="okbutton" type="button" class="ecw-input ecw-button" onclick="OKClick();">unesi</button>
 </td><td align="right">
-<button id="okbutton" type="button" class="ecw-input ecw-button" onclick="OKClick();">OK</button> &nbsp;
+ &nbsp;<a id="cheatbutton" type="button" class="ecw-input ecw-button" onclick="CheatClick();" style="cursor: pointer; color:#808080">rješenje</a>
 </td></tr></tbody></table>
-
 </div>
-
 <div id="congratulations" class="ecw-answerbox" style="display:none;">
-<h3>Čestitam!</h3>
-<p>Sve ste točno rješili.</p>
+<h3 id="cestitka">Čestitam!</h3>
+<p id="opis">Sve ste točno rješili.</p>
+<p>Vrijeme potrebno za riješavanje križaljke: <div id="trajanje">00:00:00</div></p>
 <p style='text-align:center'><a href='index.html'>nova igra</a></p>
 </div>
 
+<div id="basicUsage" style="display: none;">00:00:00</div>
+<div style="margin-top: 1em; display: block; margin: auto; text-align:center;">
+	<button id="checkbutton" type="button" onclick="CheckClick();" style="display: none;padding: 10px; background-color: #EFF6FC;">predaj rješenja</button>
+</div>
 </td></tr></table>
 </div>
-<div style="margin-top: 1em; display: block; margin: auto; text-align:center;">
-	<button id="checkbutton" type="button" onclick="CheckClick();" style="display: none;">predaj rješenja</button>
-</div>
 
-<script type="text/javascript"><!--
+<script type="text/javascript">
 BeginCrossword();
-//-->
 </script>
-
 <!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
-
 </body></html>
-

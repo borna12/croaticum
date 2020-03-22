@@ -15,8 +15,6 @@
           default:
               return;
       }
-
-
       // initMouseEvent(type, canBubble, cancelable, view, clickCount, 
       //                screenX, screenY, clientX, clientY, ctrlKey, 
       //                altKey, shiftKey, metaKey, button, relatedTarget);
