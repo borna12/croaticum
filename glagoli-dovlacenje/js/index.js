@@ -62,7 +62,7 @@
 {
     question: "radovati se/pokloniti",
     answers: ["Radujem", "poklonim"],
-    definicija: ["Radovati se znači biti veseo, izražavati radost.","Pokloniti znači dati komu bez plaćana."],
+    definicija: ["Radovati se znači biti veseo, izražavati radost.","Pokloniti znači dati komu bez plaćanja."],
     slika: ["slike/radovati.jpg", "slike/pokloniti.jpg"],
     opisi: ["", "Kad"],
     opisi2: ["se ručku.", "nešto, osjećam se sretno."]
