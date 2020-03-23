@@ -692,11 +692,11 @@ $(document).ready(function () {
         "question": "popuni",
         "hint": "veseliti se (engl. be happy)<br><span style='color:black;font-size:14px'>1. lice jd. (ja)</span>",
         "correctAnswer": [
-            "Veselim",
+            "Veselim se",
             ""
         ],
         "osnova": "",
-        "osnova2": " se filmu.",
+        "osnova2": " filmu.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,
@@ -737,11 +737,11 @@ $(document).ready(function () {
         "question": "popuni",
         "hint": "radovati se (engl. look forward to)<br><span style='color:black;font-size:14px'>1. lice jd. (ja)</span>",
         "correctAnswer": [
-            "Radujem",
+            "Radujem se",
             ""
         ],
         "osnova": "",
-        "osnova2": " se ljetu.",
+        "osnova2": " ljetu.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,

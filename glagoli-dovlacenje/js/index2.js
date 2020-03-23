@@ -50,7 +50,7 @@
     definicija: ["Kazati znači reći što, izraziti što riječima.","Slati znači upućivati što na čiju adresu, stvarnu ili virtualnu."],
     slika: ["slike/kazu.jpg", "slike/salju.jpg"],
     opisi: ["Nastavnici", "Restorani"],
-    opisi2: ["da moramo učiti kako bismo bili uspiješniji.", "hranu dostavnom službom."]
+    opisi2: ["da moramo učiti kako bismo bili uspješniji.", "hranu dostavnom službom."]
 },
 {
     question: "govoriti/smijati se",
@@ -75,7 +75,7 @@
     definicija: ["Diviti se znači izražavati da se što smatra iznimno lijepim.","Prigovarati znači upućivati komu prigovor."],
     slika: ["slike/dive.jpg", "slike/prigovaraju.jpg"],
     opisi: ["Ljudi se", "Djevojke"],
-    opisi2: ["junacima.", "momcima jer nisu pospremili sobu."]
+    opisi2: ["herojima.", "momcima jer nisu pospremili sobu."]
 },
 {
     question: "zahvaljivati/smetati",
