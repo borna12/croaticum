@@ -7,8 +7,7 @@
     </title>
     <meta charset="utf-8">
     <meta name="description" content="Odaberi ispravan glagol za zadanu definiciju.">
-           <meta name="keywords" content="kviz, glagoli, značenje">
-
+    <meta name="keywords" content="kviz, glagoli, značenje">
     <meta name="author" content="Josip Mihaljević">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/normalize.min.css">
@@ -56,14 +55,13 @@
 <br>
 <br>
             <h1 class="init-page__title" style="padding-top: 2%;">Kviz iz značenja glagola</h1>
-            <p class="opis">Prepoznaj glagol na temelju definicije.</p><br>
+            <p class="opis">Prepoznaj glagol na temelju značenja.</p><br>
             <img src="slike/glagoljica.png" style="width: 100%;
                     margin-left: auto;
                     display: block;
                     margin-right: auto; margin-top:20px" />
-            <button class="init-page__btn btn uglata" onClick="uglata=1;obla=0">započni kviz</button>
-            
-
+            <button class="init-page__btn btn uglata" onClick="uglata=1;obla=0">prepoznavanje glagola na temelju značenja</button>
+            <button class="init-page__btn btn uglata" onClick="uglata=0;obla=1">prepoznavanje značenja na temelju glagola</button>
         </div>
     </div>
     <div class="questions-page">
@@ -137,7 +135,6 @@
 
         </div>
     </div>
-
     <div class="results-page">
         <div class="container sakri" style="top: 60%;
                 position: relative;
@@ -152,9 +149,7 @@
                 bodova:</p>
             <h3 class="results-page__bodovi">postavljenih pitanja!</h3>
             <br>
-
             <p>
-
                 <form id='input-form' action='' method='POST' target='no-target'><br><select id="ikona" style="height:30px">
 
 
@@ -170,7 +165,6 @@
                 <script>
                     var target = document.getElementById("ikona");
                     var emojiCount = emoji.length;
-
                     for (var index = 0; index < emojiCount; index++) {
                         addEmoji(emoji[index]);
                     }
@@ -201,10 +195,12 @@
 
                         if (uglata == 1) {
                             var baseURL =
-                                'https://docs.google.com/forms/d/e/1FAIpQLSf1oXbcP6gsFKGVle-NGTx-2BSQGuvInQPJx8uV0TYZGoKliw/formResponse?';
+
+                            
+                                'https://docs.google.com/forms/d/e/1FAIpQLSeMHwK79qL6lQNJUkEzhglJsP4ZoK8CgN2svKqpWyEe1pkqPQ/formResponse?';
                         } else {
                             var baseURL =
-                                ' https://docs.google.com/forms/d/e/1FAIpQLSfcsYOuo88QN_k4LiYbUVnemdXRyk9sr2D3Wb75LMu5LD18jQ/formResponse?'
+                                'https://docs.google.com/forms/d/e/1FAIpQLSfW-Sf4lcv8yCoRezxd8saIOofScnH7SW4wrTXeEvglqKFx-g/formResponse?'
                         }
 
                         var submitRef = '&submit=970054585833720596';

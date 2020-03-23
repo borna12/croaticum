@@ -72,7 +72,7 @@
 {
     question: "diviti se/prigovarati",
     answers: ["dive", "prigovaraju"],
-    definicija: ["Diviti se znači izražavati da se što smatra iznimno lijepim.","Prigovarati znači upućivati komu prigovor."],
+    definicija: ["Diviti se znači pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime.","Prigovarati znači upućivati komu prigovor."],
     slika: ["slike/dive.jpg", "slike/prigovaraju.jpg"],
     opisi: ["Ljudi se", "Djevojke"],
     opisi2: ["herojima.", "momcima jer nisu pospremili sobu."]
@@ -80,7 +80,7 @@
 {
     question: "zahvaljivati/smetati",
     answers: ["zahvaljuju", "smetaju"],
-    definicija: ["Zahvaljivati znači izražavati zahvalnost, reći hvala.","Smetati znači uzemirivati koga."],
+    definicija: ["Zahvaljivati znači izražavati zahvalnost.","Smetati znači uzemirivati koga."],
     slika: ["slike/zahvaljuje.jpg", "slike/smetaju.jpg"],
     opisi: ["Organizatori skupa", "Komarci"],
     opisi2: ["predavačima.", "ljudima za vrijeme ljeta."]
