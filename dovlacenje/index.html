@@ -30,15 +30,24 @@
     <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <script src="js/sweetalert2.min.js"></script>
-
     <meta property="og:title" content="Dopuni tekst idućim riječima" />
     <meta property="og:description" content="" />
     <meta property="og:image" content="og-slika.png" />
+    <script src="js/examples.min.js"> </script>
+    <script> var timer = new Timer();
+        timer.start();
+        sekunde = 0
+        timer.addEventListener('secondsUpdated', function (e) {
+            $('#basicUsage').html(timer.getTimeValues().toString());
+            sekunde = timer.getTimeValues().seconds
+        });
 
+      
+    </script>
 </head>
 
 <body>
-
+    <div id="basicUsage">00:00:00</div>
     <h1 class="naslov">Igra dovlačenja</h1>
     <p class="opis">Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu koja prikazuje radnju s gornje
         slike.</p>
@@ -74,10 +83,10 @@
             <div class="dragDropSmallBox" id="a11"></div>
             <div class="dragDropSmallBox" id="a12"></div>
             <section class="btn-holder">
-                <button class="questions-page__continue-btn btn" style="">nastavi</button>
+                <button class="questions-page__continue-btn btn" style="">nastavi ❯</button>
             </section>
         </div>
-        
+
     </div>
     <div id="dragContent"></div>
 
@@ -144,7 +153,7 @@
         document.getElementById('a12').addEventListener("touchcancel", touchHandler, true);
     </script>
 
-       
+
 
 
 

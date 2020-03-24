@@ -6,16 +6,13 @@ body {
     font-family: sans-serif;
     /* Font to use */
 }
-
 #heading {
     height: 100px;
 }
-
 .naslov {
     text-align: center;
 }
-
-
+#basicUsage{display: none;}
 .slikica {
     height: 250px;
     max-width: 100%;
@@ -23,20 +20,16 @@ body {
     margin: auto;
     padding: 20px 0px;
 }
-
 #o1,
 #o2 {
     text-align: center;
     padding-left: 2%;
 }
-
 /* END DEMO CSS */
-
 .opis {
     text-align: center;
     font-size: 18px;
 }
-
 #dragScriptContainer {
     /* BIG DIV containing HTML needed for the entire script */
     width: 100%;
@@ -49,27 +42,21 @@ body {
     height: 100%;
     padding-bottom: 200px;
 }
-
-
 #answerDiv {
     /* Big div for all the answers */
     height: 100%;
     padding: 2px;
     margin-top: 10px;
-
 }
-
 [class^="rad"] {
     text-align: center;
     font-size: 18px;
     padding-bottom: 10px
 }
-
 #answerDiv div,
 #dragContent div {
     /* General rules for small divs-i.e. specific questions and answers */
     width: 145px;
-
     height: 25px;
     line-height: 25px;
     text-align: center;
@@ -80,12 +67,10 @@ body {
     background: #009DE0;
     color: white;
 }
-
 #dragContent div {
     /* Drag content div-i.e. specific answers when they are beeing dragged */
     border: 1px solid #000;
     margin-top: 70px;
-
 }
 .dragDropSmallBox{text-transform: lowercase}
 .correctAnswer{text-transform: initial}
@@ -93,7 +78,6 @@ body {
     /* Small answer divs */
     cursor: pointer;
 }
-
 #questionDiv div div {
     /* DIV after it has been dragged from right to left box */
     margin: 0px;
@@ -112,160 +96,112 @@ body {
     height: 22px;
     border-bottom: 1px solid black;
 }
-
 #questionDiv .correctAnswer {
     /* CSS indicating correct answer */
     background-color: #76B574;
     color: #fff;
     width: 147px;
     text-align: center;
-
 }
-
 #questionDiv .wrongAnswer {
     /* CSS indicating wrong answer */
     background-color: #FEA680;
     color: #fff;
     width: 147px;
-
-
     text-align: center;
-
 }
-
 #dragContent div {
     background-color: #009DE0;
     color: white;
 }
-
 #questionDiv .dragContentOver {
     /* Mouse over question boxes-i.e. indicating where dragged element will be appended if mouse button is relased */
     border: 1px solid #F00;
     width: 145px;
-
     height: 20px;
-
 }
-
-
 /* NEVER CHANGE THIS */
-
 #dragContent {
     position: absolute;
     display: none;
 }
-
 .section {
     clear: both;
     padding: 0px;
     margin: 0px;
 }
-
-
 /*  COLUMN SETUP  */
-
 .col {
     display: block;
     float: left;
     margin: 1% 0 1% 1.6%;
 }
-
 .col:first-child {
     margin-left: 0;
 }
-
-
 /*  GROUPING  */
-
 .group:before,
 .group:after {
     content: "";
     display: table;
 }
-
 .group:after {
     clear: both;
 }
-
 .group {
     zoom: 1;
     /* For IE 6/7 */
 }
-
-
 /*  GRID OF TWO  */
-
 .dragDropSmallBox img {
     max-height: 250px;
     max-width: 100%;
     display: block;
     margin: auto;
 }
-
 .swal2-close {
     display: none !important
 }
-
-
 .btn-holder {
     height: 4.2rem;
     display: block;
-
     position: absolute;
-
     top: 50%;
-
     transform: translateY(-50%);
     display: none;
 }
-
 .btn {
     margin: 1rem auto 0;
-
     display: block;
-
     font-size: 18px;
-
     padding: 1rem 1rem;
-
     background: #009DE0;
-
     border: none;
-
     color: white;
-
     border-radius: 5px;
-
     font-family: Arial, sans-serif;
 }
-
 .btn:hover {
     cursor: pointer;
     background: #707070;
 }
-
 @media only screen and (max-width: 800px) {
     .destinationBox {
         width: 150px !important;
         font-size: 12px
     }
-
     #answerDiv div,
     #dragContent div {
         width: 150px;
         font-size: 12px
     }
-
     #dragScriptContainer {
         grid-template-columns: minmax(200px, 1fr) minmax(100px, 200px);
     }
-
     .btn {
         font-size: 1.5rem;
         margin: 1rem auto 0;
     }
+    .slikica{height: auto;}
 }
-
-
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
-

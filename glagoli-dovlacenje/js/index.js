@@ -110,11 +110,13 @@
 ];
 
   function quizIsFinished() {
+
+    
       questionCounter++
       if (questionCounter == pitanja.length) {
           swal({
               title: "Čestitam! Došli ste do kraja igre.",
-              html: "<p>Vrijeme potrebno za rješavanje zadataka: </p><p style='text-align:center'>"+$("#basicUsage").text()+"</p><br><p>broj točnih odgovora: </p><p style='text-align:center'>"+bodovi +"</p>",
+              html: "<p>Vrijeme potrebno za rješavanje zadataka: </p><p style='text-align:center'>"+$("#basicUsage").text()+"</p><p>broj točnih odgovora: </p><p style='text-align:center'>"+bodovi +"</p><p>postotak točnih odgovora: </p><p style='text-align:center'>"+Math.round((bodovi/pitanja.length)*100)+"%"+"</p>",
               confirmButtonText: 'nova igra',
               confirmButtonColor: '#009DE0',
               backdrop: false,
