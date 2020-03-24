@@ -29,7 +29,12 @@ STYLES/LAYOUT
     -moz-filter: grayscale(0%);
     filter: grayscale(0%);
 }
-
+.logo{
+    max-height: 300px;
+                    margin-left: auto;
+                    display: block;
+                    margin-right: auto; margin-top:20px
+}
 html {
     font-size: 60%;
 }
@@ -315,7 +320,9 @@ form {
 /* ----------------------------
 MEDIA QUERIES
 ---------------------------- */
-@media screen and (max-width: 600px) {    .opis{font-size: 12px}}
+@media screen and (max-width: 600px) {    .opis{font-size: 12px}     .logo{max-height: 200px;} .questions-page__answer-list{margin-right: 5px; margin-left: 5px; }
+.btn{width: 80%;}
+}
 
 @media screen and (min-width: 480px) {
     html {
@@ -333,6 +340,7 @@ MEDIA QUERIES
     .slikica {
         max-height: 150px;
     }
+
 
 }
 

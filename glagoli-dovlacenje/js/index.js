@@ -61,11 +61,11 @@
 
 {
     question: "radovati se/pokloniti",
-    answers: ["Radujem", "poklonim"],
+    answers: ["Radujem se", "poklonim"],
     definicija: ["Radovati se znači biti veseo, izražavati radost.","Pokloniti znači dati komu bez plaćanja."],
     slika: ["slike/radovati.jpg", "slike/pokloniti.jpg"],
     opisi: ["", "Kad"],
-    opisi2: ["se ručku.", "nešto, osjećam se sretno."]
+    opisi2: ["ručku.", "nešto, osjećam se sretno."]
 },
 {
     question: "diviti se/prigovarati",
@@ -90,7 +90,24 @@
     slika: ["slike/priblizavati.jpg", "slike/vjerovati.jpg"],
     opisi: ["", ""],
     opisi2: ["se kući.", "prijateljima."]
-}];
+},
+{
+    question: "čuditi se/veseliti se",
+    answers: ["Čudim se", "Veselim se"],
+    definicija: ["Čuditi se znači biti u čudu, biti iznenađen čime neočekivanim.","Veseliti se znači osjećati veselje i radost zbog nečega ili nekoga."],
+    slika: ["slike/cuditi.jpg", "slike/veselim.jpg"],
+    opisi: ["", ""],
+    opisi2: ["neobičnoj osobi.", "Božiću."]
+},
+{
+    question: "pisati/nadam se",
+    answers: ["Pišem", "Nadam se"],
+    definicija: ["Pisati znači bilježiti slova i brojke na papiru, ploči ili čemu drugom.","Nadati se znači imati nadu, očekivati da će se ostvariti nešto što želimo."],
+    slika: ["slike/pisati.jpg", "slike/nadam.jpg"],
+    opisi: ["", ""],
+    opisi2: ["pismo svojoj baki.", "dobitku na lutriji."]
+}
+];
 
   function quizIsFinished() {
       questionCounter++

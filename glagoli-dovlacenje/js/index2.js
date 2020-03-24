@@ -15,8 +15,6 @@
           default:
               return;
       }
-
-
       // initMouseEvent(type, canBubble, cancelable, view, clickCount, 
       //                screenX, screenY, clientX, clientY, ctrlKey, 
       //                altKey, shiftKey, metaKey, button, relatedTarget);
@@ -88,11 +86,29 @@
 {
     question: "približavati/vjerovati",
     answers: ["približavaju", "vjeruju"],
-    definicija: ["Približavati se znači dolaziti blizu kome ili čemu. ","Vjerovati znači imati povjerenja u koga ili što."],
+    definicija: ["Približavati se znači dolaziti blizu kome ili čemu.","Vjerovati znači imati povjerenja u koga ili što."],
     slika: ["slike/priblizavaju.jpg", "slike/vjeruju.jpg"],
     opisi: ["Maja i Ivana", "U braku muž i žena"],
     opisi2: ["se kući.", "jedan drugome."]
-}];
+}
+,{
+    question: "čuditi se/pisati",
+    answers: ["Čudimo se", "Pišemo"],
+    definicija: ["Čuditi se znači biti u čudu, biti iznenađen čime neočekivanim.","Pisati znači bilježiti slova i brojke na papiru, ploči ili čemu drugom."],
+    slika: ["slike/cudimo.jpg", "slike/pisemo.jpg"],
+    opisi: ["", ""],
+    opisi2: ["neobičnoj situaciji.", "izvještaj za šefa."]
+}
+,{
+    question: "veseliti se/nadati se",
+    answers: ["Veselimo se", "Nadamo se"],
+    definicija: ["Veseliti se znači osjećati veselje ili radost, biti veseo.","Nadati se znači imati nadu, očekivati da će se ostvariti nešto što želimo."],
+    slika: ["slike/veselimo.jpg", "slike/nadamo.jpg"],
+    opisi: ["", ""],
+    opisi2: ["praznicima.", "da će naša nogometna reprezentacija pobijediti."]
+}
+
+];
 
   function quizIsFinished() {
       questionCounter++

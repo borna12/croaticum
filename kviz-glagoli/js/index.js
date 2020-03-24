@@ -122,7 +122,7 @@ $(document).ready(function () {
     prikazBodova = $('.results-page__bodovi');
     cvijece = ["diviti se", "čuditi se", "zahvaljivati", "nadati se", "prigovarati", "pisati", "veseliti se", "govoriti", "vjerovati", "smijati se", "slati", "približavati se", "dati", "pomagati", "smetati",]
     // QUIZ CONTENT ------
-    cvijece2 = ["pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime", "biti u čudu, biti iznenađen čime neočekivanim", "izražavati zahvalnost", "imati nadu, očekivati da će se ostvariti nešto što želimo", "upućivati komu prigovor", "bilježiti slova i brojke na papiru, ploči ili čemu drugom", "osjećati veselje ili radost, biti veseo", "izgovarati riječi i rečenice koje postoje u nekom jeziku", "imati povjerenja u koga ili što", "razvući usta u osmijeh kao izraz veselja i opuštenosti", "upućivati što na čiju adresu, stvarnu ili virtualnu", "dolaziti blizu kome ili čemu", "označava da smo nekome nešto prepustili ili uručili bez traženja novca zauzvrat", "davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim", "uzemirivati koga",]
+    cvijece2 = ["pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime", "biti u čudu, biti iznenađen čime neočekivanim", "izražavati zahvalnost", "imati nadu, očekivati da će se ostvariti nešto što želimo", "upućivati komu prigovor", "bilježiti slova i brojke na papiru, ploči ili čemu drugom", "osjećati veselje ili radost, biti veseo", "izgovarati riječi i rečenice koje postoje u nekom jeziku", "imati povjerenja u koga ili što", "razvući usta u osmijeh kao izraz veselja i opuštenosti", "upućivati što na čiju adresu, stvarnu ili virtualnu", "dolaziti blizu komu ili čemu", "označava da smo nekome nešto prepustili ili uručili bez traženja novca zauzvrat", "davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim", "uzemirivati koga",]
 
     function stvori(tekst, tekst2, tekst3) {
         do {
@@ -266,11 +266,11 @@ $(document).ready(function () {
                 boja_pozadine: "#FCE4EC"
             },
             {
-                question: "_____ znači dolaziti blizu kome ili čemu.",
+                question: "_____ znači dolaziti blizu komu ili čemu.",
                 answers: ["približavati se", strava = stvori("približavati se"), strava2 = stvori("približavati se", strava), stvori("približavati se", strava, strava2)],
                 correctAnswer: "približavati se",
                 slika: "slike/priblizavati.jpg",
-                opis: "Približavati se znači dolaziti blizu kome ili čemu.",
+                opis: "Približavati se znači dolaziti blizu komu ili čemu.",
                 boja_pozadine: "#FCE4EC"
             },
             {
@@ -398,10 +398,10 @@ $(document).ready(function () {
             },
             {
                 question: "približavati se",
-                answers: ["dolaziti blizu kome ili čemu", strava = stvori2("dolaziti blizu kome ili čemu"), strava2 = stvori2("dolaziti blizu kome ili čemu", strava), stvori2("dolaziti blizu kome ili čemu", strava, strava2)],
-                correctAnswer: "dolaziti blizu kome ili čemu",
+                answers: ["dolaziti blizu komu ili čemu", strava = stvori2("dolaziti blizu komu ili čemu"), strava2 = stvori2("dolaziti blizu komu ili čemu", strava), stvori2("dolaziti blizu komu ili čemu", strava, strava2)],
+                correctAnswer: "dolaziti blizu komu ili čemu",
                 slika: "slike/priblizavati.jpg",
-                opis: "Približavati se znači dolaziti blizu kome ili čemu.",
+                opis: "Približavati se znači dolaziti blizu komu ili čemu.",
                 boja_pozadine: "#FCE4EC"
             },
             {
