@@ -43,21 +43,22 @@
       answers: ["osobe", "gužve", "odlučimo", "kolegom", "štedimo", "se umaramo"],
       slika: ["slike/auto.jpg"],
       opisi: ["Najčešće jednim automobilom putuje jedna, ponekad dvije {q}. Zbog toga nastanu velike {q} na gradskim cestama. To je i skupo. Ako {q} na posao putovati sa susjedom ili {q}, jedan dan putovat ćemo svojim automobilom, drugi dan njegovim. Tako {q} novac i automobil, a i manje {q}."],
-  }/*, 
+  }, 
   {
     question: "radnje",
     answers: ["su se", "kretali", "su se pojavili", "pokrenut", "postoje", "vući", "prevoze", "izgrađen"],
     slika: ["slike/graditi.jpg"],
     opisi: ["Automobili {q} nekad {q} puno sporije nego danas.<br>Kad {q} prvi kompjutori? <br>Projekt je {q} prošli mjesec i već imamo rezultate. <br>U ovome gradu {q} tri sveučilišta. <br>Kada ulazimo u trgovine, ponekad vrata treba gurati, ponekad {q}.<br>Autobusi, avioni, tramvaji i vlakovi {q}  putnike. <br>Ovaj tunel je {q} prije tri godine."],
-}, */
+}
 ];
   function quizIsFinished() {
       questionCounter++
       if (questionCounter == pitanja.length) {
             rezultat=bodovi-(sekunde/2)
+            rezultat= rezultat.toString().replace(".",",")
           swal({
               title: "Završili ste igru.",
-              html: "<p>Vrijeme potrebno za rješavanje zadataka: </p><p style='text-align:center'>"+$("#basicUsage").text()+"</p><p>Bodovi:</p><p style='text-align:center'>"+rezultat+"</p>",
+              html: "<p>Vrijeme potrebno za rješavanje zadataka: "+$("#basicUsage").text()+"</p><form id='input-form' action='' method='POST' target='no-target' style='text-align: center;'><br><select id='ikona' style='height:30px'></select><label for='ime'>Ime : </label><input id='input-q1' name='q1' style='height:25px'><br> <br><label for='bodovi'>Bodovi : </label><input id='input-q2' placeholder='q2' name='q2' value='" +rezultat+ "' disabled style='display:none'> <label for='bodovi'>" + rezultat + "</label><br><br><button id='form-submit' type='submit' disabled='true' class='swal2-styled' style='background-color: rgb(0, 157, 224); border-left-color: rgb(0, 157, 224); border-right-color: rgb(0, 157, 224);'>predaj rezultat</button> </form><iframe src='#' id='no-target' name='no-target' style='visibility:hidden;display:none'></iframe>",
               confirmButtonText: 'ponovite ovu igru',
               confirmButtonColor: '#009DE0',
               backdrop: false,
@@ -70,6 +71,54 @@
           $('.swal2-cancel').click(function () {
               window.open("../");
           })
+
+          $(' #input-q1').keyup(function () {
+            $('#form-submit').prop('disabled', this.value == "" ? true : false);
+        })
+
+        var target = document.getElementById("ikona");
+        var emojiCount = emoji.length;
+
+        for(var index = 0; index < emojiCount; index++)
+        {
+        addEmoji(emoji[index]);
+        }
+
+        function addEmoji(code)
+        {
+        var option = document.createElement('option');
+        option.innerHTML =  code;
+            option.value=code;
+        target.appendChild(option);
+        }
+        
+         if (localStorage.getItem("ime") != null) {
+             $('#input-q1').val(localStorage.getItem("ime"))
+             $('#ikona').val(localStorage.getItem("ikona"))
+             $('#form-submit').prop('disabled', this.value == "true");
+         }
+
+         $('#input-form').one('submit', function () {
+            $('#input-form').hide(300)
+            localStorage.setItem('ikona', $('#ikona').val())
+            localStorage.setItem('ime', $('#input-q1').val())
+            localStorage.setItem('pokrenuto', "da")
+            var inputq1 = encodeURIComponent($('#ikona').val()+" "+$('#input-q1').val());
+            var inputq2 = encodeURIComponent($('#input-q2').val());
+            var q1ID = "entry.412821582";
+            var q2ID = "entry.902512960";
+
+            var baseURL =
+                'https://docs.google.com/forms/d/e/1FAIpQLSftHLf5IL0O659TYT7vda1W_k5A8FjlZsSUCfXU459mRkAIKA/formResponse?';
+            var submitRef = '&submit=970054585833720596';
+            var submitURL = (baseURL + q1ID + "=" + inputq1 + "&" + q2ID + "=" + inputq2 + submitRef);
+            console.log(submitURL);
+            $(this)[0].action = submitURL;
+            setTimeout(
+                function () {
+                    window.location.href = 'rez.html';
+                }, 2500);
+        });
       } else {
           $(".btn-holder").show(300);
           $(".btn-holder").click(function () {
