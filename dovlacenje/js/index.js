@@ -276,43 +276,46 @@
       return false;
   }
   function dragDropEnd() {
-      if (dragDropTimer < 10) {
-          dragDropTimer = -1;
-          return;
-      }
-      dragContentDiv.style.display = 'none';
-      sourceObjectArray['obj'].style.backgroundColor = '#FFF';
-      if (destination) {
-          destination.appendChild(dragSource);
-          destination.className = 'destinationBox';
-          // Check if position is correct, i.e. correct answer to the question
-          if (!destination.id || destination.id != 'answerDiv') {
-              var previousEl = dragSource.parentNode.previousSibling;
-              if (!previousEl.tagName) previousEl = previousEl.previousSibling;
-              var numericId = previousEl.id.replace(/[^0-9]/g, '');
-              var numericIdSource = dragSource.id.replace(/[^0-9]/g, '');
-              if (numericId == numericIdSource) {
-                  dragSource.className = 'correctAnswer';
-                  bodovi+=10
+    if (dragDropTimer < 10) {
+        dragDropTimer = -1;
+        return;
+    }
+    dragContentDiv.style.display = 'none';
+    sourceObjectArray['obj'].style.backgroundColor = '#FFF';
+    if (destination) {
+        destination.appendChild(dragSource);
+        destination.className = 'destinationBox';
+        // Check if position is correct, i.e. correct answer to the question
+        if (!destination.id || destination.id != 'answerDiv') {
+            var previousEl = dragSource.parentNode.previousSibling;
+            if (!previousEl.tagName) previousEl = previousEl.previousSibling;
+            var numericId = previousEl.id.replace(/[^0-9]/g, '');
+            var numericIdSource = dragSource.id.replace(/[^0-9]/g, '');
+            if (numericId == numericIdSource) {
+                dragSource.className = 'correctAnswer'+numericId;
+                $( ".definicija" +numericId).css({"opacity":"1"})
+                $(".correctAnswer"+numericId).parent().html( "<section class='correctAnswer"+numericId+"'>"+$(".correctAnswer"+numericId).text()+"</section>")
+                bodovi+=10
+                checkAllAnswers();
+                
+            } else {
+                dragSource.className = 'wrongAnswer';
+                bodovi-=10
+            }
 
-                  checkAllAnswers();
-              } else {
-                  dragSource.className = 'wrongAnswer';
-                  bodovi-=10
-              }
-          }
-          if (destination.id && destination.id == 'answerDiv') {
-              dragSource.className = 'dragDropSmallBox';
-          }
-      } else {
-          answerDiv = document.getElementById('answerDiv');
-          answerDiv.appendChild(dragSource);
-      }
-      dragDropTimer = -1;
-      dragSourceNextSibling = false;
-      dragSourceParent = false;
-      destination = false;
-  }
+        }
+        if (destination.id && destination.id == 'answerDiv') {
+            dragSource.className = 'dragDropSmallBox';
+        }
+    } else {
+        answerDiv = document.getElementById('answerDiv');
+        answerDiv.appendChild(dragSource);
+    }
+    dragDropTimer = -1;
+    dragSourceNextSibling = false;
+    dragSourceParent = false;
+    destination = false;
+}
   function checkAllAnswers() {
       if ($('.correctAnswer').length == pitanja[questionCounter].answers.length) {
           quizIsFinished();
