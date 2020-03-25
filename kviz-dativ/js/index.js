@@ -568,13 +568,13 @@ function stvori2(tekst, tekst2, tekst3) {
 
 p1 = [{
     question: "Dugo smo stanovali nasuprot <span class='nadopuni'>_______</span>. (oni)",
-    answers: ["njima", "njih", "njega", "njemu", "njim"],
+    answers: ["njima", "njih", "njega", "njemu", "njim","meni"],
     correctAnswer: "njima",
     napomena: "<div class='odg_nap'><p>Dativ zamjenice oni glasi <span class='napomena'>njima</span>.</p><br><img src='slike/sketch4.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
     boja_pozadine: "#FCE4EC"
 }, {
     question: "Unatoč <span class='nadopuni'>_______</span> dolazim na vrijeme. (ona)",
-    answers: ["njoj", "nju", "njom"],
+    answers: ["njoj", "nju", "njom","nje"],
     correctAnswer: "njoj",
     napomena: "<div class='odg_nap'><p>Uz prijedlog unatoč dolazi dativ. Dativ zamjenice ona je <span class='napomena'>njoj</span>.</p><br><img src='slike/sketch2.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
     boja_pozadine: "#FCE4EC"
