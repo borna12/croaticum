@@ -570,13 +570,13 @@ p1 = [{
     question: "Dugo smo stanovali nasuprot <span class='nadopuni'>_______</span>. (oni)",
     answers: ["njima", "njih", "njega", "njemu", "njim"],
     correctAnswer: "njima",
-    napomena: "<div class='odg_nap'><p>Dativ zamjenice oni glasi <span class='napomena'>njima</span>.</p></div>",
+    napomena: "<div class='odg_nap'><p>Dativ zamjenice oni glasi <span class='napomena'>njima</span>.</p><br><img src='slike/sketch4.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
     boja_pozadine: "#FCE4EC"
 }, {
     question: "Unatoč <span class='nadopuni'>_______</span> dolazim na vrijeme. (ona)",
     answers: ["njoj", "nju", "njom"],
     correctAnswer: "njoj",
-    napomena: "<div class='odg_nap'><p>Uz prijedlog unatoč dolazi dativ. Dativ zamjenice ona je <span class='napomena'>njoj</span>.</p></div>",
+    napomena: "<div class='odg_nap'><p>Uz prijedlog unatoč dolazi dativ. Dativ zamjenice ona je <span class='napomena'>njoj</span>.</p><br><img src='slike/sketch2.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
     boja_pozadine: "#FCE4EC"
 }, {
     question: "Ona priča <span class='nadopuni'>_______</span> da još nije kupila poklone. (on)",
@@ -585,7 +585,7 @@ p1 = [{
     napomena: "<div class='odg_nap'><p>Dativ imenice on glasi <span class='napomena'>njemu</span>.</p><br><img src='slike/sketch1.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
     boja_pozadine: "#FCE4EC"
 }, {
-    question: "Kupila je poklon samo ______ (njoj)",
+    question: "Kupila je poklon samo ______ (ona)",
     answers: ["nju", "njoj", "njom"],
     correctAnswer: "njoj",
     napomena: "<div class='odg_nap'><p>Dativ imenice ona glasi <span class='napomena'>njoj</span>.</p><br><img src='slike/sketch2.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
@@ -594,31 +594,31 @@ p1 = [{
     question: "Lorena se veseli što će ______ispričati kako joj je bilo u Dubrovniku. (oni)",
     answers: ["njih", "oni", "njima"],
     correctAnswer: "njima",
-    napomena: "<div class='odg_nap'><p>Dativ imenice oni glasi <span class='napomena'>njima</span>.</p></div>",
+    napomena: "<div class='odg_nap'><p>Dativ imenice oni glasi <span class='napomena'>njima</span>.</p><br><img src='slike/sketch4.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
     boja_pozadine: "#FCE4EC"
 }, {
     question: "Iva će ______ kupiti poklon. (one)",
     answers: ["njima", "one", "njih"],
     correctAnswer: "njima",
-    napomena: "<div class='odg_nap'><p>Dativ zamjenice one glasi <span class='napomena'>njima</span>.</p></div>",
+    napomena: "<div class='odg_nap'><p>Dativ zamjenice one glasi <span class='napomena'>njima</span>.</p><br><img src='slike/sketch5.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
     boja_pozadine: "#FCE4EC"
 }, {
     question: "Poklonio je ružu ________________ (ja).",
     answers: ["meni", "me", "mene"],
     correctAnswer: "meni",
-    napomena: "<div class='odg_nap'><p>Dativ zamjenice ja glasi <span class='napomena'>meni</span>.</p></div>",
+    napomena: "<div class='odg_nap'><p>Dativ zamjenice ja glasi <span class='napomena'>meni</span>.</p><br><img src='slike/sketch3.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
     boja_pozadine: "#FCE4EC"
 }, {
     question: "Ana je dala olovku _________(ti).",
     answers: ["te", "tebi", "tebe"],
     correctAnswer: "tebi",
-    napomena: "<div class='odg_nap'><p>Dativ zamjenice ti glasi <span class='napomena'>tebi</span>.</p></div>",
+    napomena: "<div class='odg_nap'><p>Dativ zamjenice ti glasi <span class='napomena'>tebi</span>.</p><br><img src='slike/sketch6.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
     boja_pozadine: "#FCE4EC"
 }, {
     question: "Mario će pričati ___________________ (vi) viceve.",
     answers: ["vama", "vi", "vas"],
     correctAnswer: "vama",
-    napomena: "<div class='odg_nap'><p>Dativ zamjenice vi glasi <span class='napomena'>vama</span>.</p></div>",
+    napomena: "<div class='odg_nap'><p>Dativ zamjenice vi glasi <span class='napomena'>vama</span>.</p><br><img src='slike/sketch7.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
     boja_pozadine: "#FCE4EC"
 }
 ];
