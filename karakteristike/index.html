@@ -109,7 +109,7 @@
               error: function () {
                   // Submit of form should be successful but JSONP callback will fail because Google Forms
                   // does not support it, so this is handled as a failure.
-                  window.open("rez.html");}
+                  window.location.href = 'rez.html';
           })
       })
   </script>
