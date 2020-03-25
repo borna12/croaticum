@@ -111,7 +111,13 @@
                   // does not support it, so this is handled as a failure.
                   window.open("rez.html");}
           })
-          window.location.href = 'rez.html';
+          
+          setTimeout(
+                            function () {
+                              window.location.href = 'rez.html';
+
+                            }, 2500);
+          
       })
   </script>
 </body>
