@@ -320,21 +320,30 @@ $(document).ready(function () {
 
     // Start the quiz:
     newQuiz();
+    var tajm = 0;
 
     // Clicking on start button:
     startBtn.on('click', function () {
         if ($(this).attr('id') == "bez") {
             iskljuci_v = 1;
             $(".vrijeme").hide()
-            $('form').attr('action', 'https://docs.google.com/forms/d/e/1FAIpQLSfeOlnDU5d2EQqMD4b2Gt6hvmgwSzyw3WibEWcOcQTvGHcKDw/formResponse');
-            r1 = 1
-            tajming = 10
+           $('form').attr('action', 'https://docs.google.com/forms/d/e/1FAIpQLSd-EhU4QUHVUiHqfF9NbdOmN5UN6hTSNbtL1CgUae_Pbhfkfg/formResponse');
+            r1 = 0
+            setInterval(function () {
+                ++tajm;
+            }, 1000);
+            tajming = 1;
+        
         } else if ($(this).attr('id') == "20") {
+            r1 = 1
             tajming = 20;
+            $('form').attr('action', 'https://docs.google.com/forms/d/e/1FAIpQLSeltNn_Sr-mBK1T5F-3yN3FLBp6mW3KgOvmkqaJxMJNyfnDNQ/formResponse');
+
         } else if ($(this).attr('id') == "40") {
-            tajming = 40;
-            $('form').attr('action', 'https://docs.google.com/forms/d/e/1FAIpQLSd5lYbC0-IYOWgV_KWq-odbAGmdogjMEs-W1QQrnuCVL2x2LA/formResponse');
             r1 = 2
+            tajming = 40;
+            $('form').attr('action', 'https://docs.google.com/forms/d/e/1FAIpQLScYkUcUdLv11bwMREpmIMVf6gnzVliiqXebRu-BeVTSxyUlvg/formResponse');
+           
         }
         // Advance to questions page
         initPage.hide();
@@ -446,7 +455,7 @@ $(document).ready(function () {
                 })
 
             } else {
-                if ($("#odgovor").val().toLowerCase() == prezent[questionCounter].correctAnswer[0].toLowerCase() || $("#odgovor").val().toLowerCase() == prezent[questionCounter].correctAnswer[1].toLowerCase() ) {
+                if ($("#odgovor").val() == prezent[questionCounter].correctAnswer[0] || $("#odgovor").val() == prezent[questionCounter].correctAnswer[1] ) {
                     // Increment the total correct answers counter
                     correctAnswersCounter++;
                     bodovi += 10;
@@ -465,7 +474,7 @@ $(document).ready(function () {
                     });
 
                     if (prezent[questionCounter].pin == 1) {
-                        if ($("#odgovor").val().toLowerCase() == prezent[questionCounter].correctAnswer[0]) {
+                        if ($("#odgovor").val() == prezent[questionCounter].correctAnswer[0]) {
                             brb = 0
                         } else {
                             brb = 1
@@ -596,7 +605,10 @@ $(document).ready(function () {
             // Display user score as a percentage
             userScore.text(Math.floor((correctAnswersCounter / prezent.length) * 100) + "%");
             prikazBodova.text(bodovi);
-
+            if (r1==0){
+                bodovi=bodovi-(tajm/4)
+                bodovi= bodovi.toString().replace(".",",")
+            }
             $("#60656686").attr("value", bodovi)
 
         }
@@ -663,7 +675,7 @@ $(document).ready(function () {
 
     p1 = [{
         "question": "popuni",
-        "hint": "ljetni praznik mn",
+        "hint": "ljetni praznik (množina)",
         "correctAnswer": [
             "ljetnim praznicima",
             ""
@@ -768,7 +780,7 @@ $(document).ready(function () {
     },
     {
         "question": "popuni",
-        "hint": "tvoja čokoladna torta mn",
+        "hint": "tvoja čokoladna torta (množina)",
         "correctAnswer": [
             "tvojim čokoladnim tortama",
             ""
@@ -783,10 +795,10 @@ $(document).ready(function () {
     },
     {
         "question": "popuni",
-        "hint": "prijateljica",
+        "hint": "prijateljica (množina)",
         "correctAnswer": [
-            "prijateljici",
-            "prijateljicama"
+            "prijateljicama",
+            ""
         ],
         "osnova": "Idem k ",
         "osnova2": ".",
@@ -843,7 +855,7 @@ $(document).ready(function () {
     },
     {
         "question": "popuni",
-        "hint": "mi",
+        "hint": "mi (množina)",
         "correctAnswer": [
             "nama",
             ""
