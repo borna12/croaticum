@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> <META NAME="robots" CONTENT="noindex,nofollow">
+    <meta charset="utf-8">
+    <title>Pamtilica za prometna vozila (rezultati)</title>
+    <meta name="description" content="Memori u kojem se sparuju slike s njihovim nazivima na hrvatskome jeziku. Igra je zamišljena kao zabavno sredstvo za učenje riječi na hrvatskome jeziku.">
+    <meta name="keywords" content="memori, nazivi na hrvatskome, igra, zabava, obrazovanje, prometna vozila">
+    <meta name="author" content="Josip Mihaljević">
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="Memori za učenje hrvatskih riječi" />
+    <meta property="og:description" content="Memori u kojem se sparuju slike s njihovim nazivima na hrvatskome jeziku. Igra je zamišljena kao zabavno sredstvo za učenje riječi na hrvatskome jeziku." />
+    <meta property="og:image" content="og-slika.png" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Anton'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <style>
+        table{width:100%;   border-spacing: 0px;     table-layout : fixed;
+        }
+        table, tr,td,th:not(:first-child){border:1px solid black}
+        td,th{padding: 10px}
+
+        tr:nth-child(even){background-color: #f2f2f2;}
+        tr:nth-child(odd) {background: #FFF}body{overflow-y:auto}
+        #food th{
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #8587F2;
+        color: white;
+        font-weight: 600;}
+    </style>
+    <script type="text/javascript" src="js/tabletop.js"></script>
+
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+</head>
+
+<body>
+    <audio class="audios" id="prvo" preload="none">
+        <source src="zvuk/prvo.mp3" type="audio/mpeg">
+    </audio>
+    <audio class="audios" id="drugo" preload="none">
+        <source src="zvuk/drugo.mp3" type="audio/mpeg">
+    </audio>
+    <audio class="audios" id="trece" preload="none">
+        <source src="zvuk/trece.mp3" type="audio/mpeg">
+    </audio>
+    <h1 style="text-align:center; font-size: 40px;padding:20px">Rezultati igre (4 para)</h1>
+    <p style="text-align:center; color:white; font-size: 30px"><a href='index.html' style='color:#a28cd7;'>igrajte novu
+            igru</a></p>
+    <div style="overflow:auto; padding: 20px;">
+        <table id="food" style="border:5px; font-size:20px">
+            <tbody>
+                <th style="
+        outline: none; width: 10%;"></th>
+                <th style="width: 30%;">Vrijeme predaje</th>
+                <th style="width: 30%;">Igrač</th>
+                <th style="width: 30%;">Bodovi</th>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        var public_spreadsheet_url =
+            'https://docs.google.com/spreadsheets/d/1Ln4PqlhaeKSsH_mjBWF13y-kxH4g3NA50VXbdT4XjwI/edit#gid=851820706';
+
+        function init2() {
+            // because we're using orderby: 'name' it will sort by the 'name' column
+            // and reverse: true will reverse that sort, so it should be in reverse
+            // alphabetical order
+            Tabletop.init({
+                key: public_spreadsheet_url,
+                callback: showInfo2,
+                simpleSheet: true
+            });
+
+        }
+
+
+        function init() {
+            // because we're using orderby: 'name' it will sort by the 'name' column
+            // and reverse: true will reverse that sort, so it should be in reverse
+            // alphabetical order
+            Tabletop.init({
+                key: public_spreadsheet_url,
+                callback: showInfo,
+                simpleSheet: true,
+                orderby: 'Bodovi',
+                reverse: true
+            });
+        }
+        init2()
+        var posljednji;
+        window.addEventListener('DOMContentLoaded', init)
+
+
+        function showInfo2(data) {
+            posljednji = data[0].Posljednji
+        }
+
+
+
+        function showInfo(data) {
+            for (var i = 0; i < data.length; i++) {
+
+                $("#food").append("<tr><td>" + (i + 1) + ".</td><td>" + data[i].Datum + "</td><td>" + data[i].Ime +
+                    "</td><td>" + data[i].Bodovi +
+                    "</td></tr>");
+            }
+
+
+
+            console.log(data);
+
+            if (localStorage.getItem('pokrenuto') == "da") {
+                setTimeout(
+                    function () {
+                        var search = posljednji;
+                        var elem = $("#food tr:contains(" + search + ")");
+                        elem.css({
+                            "color": "red",
+                            "background": "#d7d7fe"
+                        });
+                        var index = elem.index('#food tr');
+                        if (index == 1) {
+                            $("#prvo")[0].play();
+
+                            swal({
+                                title: 'Čestitam!',
+                                text: 'Trenutačno se nalazite na ' + index + '. mjestu.',
+                                imageUrl: 'zlatna.png',
+                                imageWidth: 200,
+                                imageHeight: 200,
+                                animation: false,
+                                customClass: 'animated tada',
+                                confirmButtonColor: '#4CAF50'
+                            })
+                        } else if (index == 2) {
+                            $("#drugo")[0].play();
+
+                            swal({
+                                title: 'Bravo!',
+                                text: 'Trenutačno se nalazite na ' + index +
+                                    '. mjestu. Idući put probajte doći do prvoga mjesta.',
+                                imageUrl: 'srebro.png',
+                                imageWidth: 200,
+                                imageHeight: 200,
+                                animation: false,
+                                customClass: 'animated tada',
+                                confirmButtonColor: '#4CAF50'
+                            })
+                        } else if (index == 3) {
+                            $("#trece")[0].play();
+
+                            swal({
+                                title: 'Bravo!',
+                                text: 'Trenutačno se nalazite na ' + index +
+                                    '. mjestu. Idući put probajte doći do prvoga ili drugoga mjesta.',
+                                imageUrl: 'bronca.png',
+                                imageWidth: 200,
+                                imageHeight: 200,
+                                animation: false,
+                                customClass: 'animated tada',
+                                confirmButtonColor: '#4CAF50',
+                            })
+                        } else {
+                            swal({
+                                text: 'Trenutačno se nalazite na ' + index + '. mjestu. Pokušajte ostvariti bolji rezultat.',
+                                confirmButtonColor: '#4CAF50',
+                            })
+                        }
+                        //do something special
+                    }, 500);
+                localStorage.setItem('pokrenuto', "ne")
+            } else {
+                localStorage.setItem('pokrenuto', "ne")
+            }
+        }
+    </script>
+
+</body>
+
+</html>
