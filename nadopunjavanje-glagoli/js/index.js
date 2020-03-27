@@ -49,8 +49,7 @@ var initPage,
     slikica, brb,
     clearHighlightsAndFeedback, r1,
     prekidac, countdownTimer, bodovi = 0,
-    vrijeme = 0;
-
+    vrijeme = 0,randbroj=0;
 function ProgressCountdown(timeleft, bar, text) {
     return new Promise((resolve, reject) => {
         countdownTimer = setInterval(() => {
@@ -64,7 +63,6 @@ function ProgressCountdown(timeleft, bar, text) {
         }, 1000);
     });
 }
-
 $(document).ready(function () {
     $('body').on('keydown', function (event) {
         var x = event.which;
@@ -73,7 +71,6 @@ $(document).ready(function () {
         }
     });
     // DOM SELECTION ------
-
     // App pages
     // Page 1 - Initial
     initPage = $('.init-page');
@@ -82,27 +79,22 @@ $(document).ready(function () {
     // Page 3 - Results
     resultsPage = $('.results-page');
     slikica = $('.slikica');
-
     // Buttons
     startBtn = $('.init-page__btn, .results-page__retake-btn');
     submitBtn = $('.mrzim');
     continueBtn = $('.questions-page__continue-btn');
     retakeBtn = $('.results-page__retake-btn');
     spanishBtn = $('.results-page__spanish-btn');
-
     // Answer block divs
     answerDiv = $('.questions-page__answer-div');
     answerDivA = $('.questions-page__answer-div-a');
     answerDivB = $('.questions-page__answer-div-b');
     answerDivC = $('.questions-page__answer-div-c');
     answerDivD = $('.questions-page__answer-div-d');
-
     // Selection div (for the pointer, on the left)
     selectionDiv = $('.questions-page__selection-div');
-
     // Feedback div (for the checkmark or X, on the right)
     feedbackDiv = $('.questions-page__feedback-div');
-
     // Questions and answers
     question = $('.questions-page__question');
     answerList = $('.questions-page__answer-list');
@@ -111,13 +103,10 @@ $(document).ready(function () {
     answerB = $('.questions-page__answer-B');
     answerC = $('.questions-page__answer-C');
     answerD = $('.questions-page__answer-D');
-
-
     // User final score
     userScore = $('.results-page__score');
     prikazBodova = $('.results-page__bodovi');
     // QUIZ CONTENT ------
-
     function stvori(tekst, tekst2, tekst3) {
         do {
             predmet = cvijece[Math.floor(Math.random() * cvijece.length)];
@@ -125,12 +114,10 @@ $(document).ready(function () {
         while (predmet == tekst || predmet == tekst2 || predmet == tekst3);
         return predmet
     }
-
     function shuffle(array) { //izmješaj pitanja
         var i = 0,
             j = 0,
             temp = null
-
         for (i = array.length - 1; i > 0; i -= 1) {
             j = Math.floor(Math.random() * (i + 1))
             temp = array[i]
@@ -138,9 +125,7 @@ $(document).ready(function () {
             array[j] = temp
         }
     }
-
     /* shuffle(prezent)*/
-
     // FUNCTION DECLARATIONS ------
     $.fn.declasse = function (re) {
         return this.each(function () {
@@ -159,87 +144,39 @@ $(document).ready(function () {
         questionCounter = 0;
         // Set the total correct answers counter to 0
         correctAnswersCounter = 0;
-
         // Hide other pages of the app
         questionsPage.hide();
         resultsPage.hide();
-
     };
-
     // Load the next question and set of answers
     generateQuestionAndAnswers = function () {
         question.html("<span style='font-size: 1.3rem;'>" + (questionCounter + 1) + "/" + prezent.length + ".</span> <br>");
-        if (prezent[questionCounter].question == "popuni") {
-            $("#odgovor").val('')
-            $(".popuni").show();
-            var el = document.getElementById('odgovor');
-
-            el.focus();
-
-            el.onblur = function () {
-                setTimeout(function () {
-                    el.focus();
-                });
-            };
-            $(".questions-page__answer-list").hide()
-            $("#opis").html("<em>" + prezent[questionCounter].hint + "</em>")
-            $(".vrijeme").html('<progress value="' + tajming + '" max="' + tajming + '" id="pageBeginCountdown"></progress><p><span id="pageBeginCountdownText">' + tajming + '</span></p>')
-            $("body").css({
-                "background-color": prezent[questionCounter].boja_pozadine
-            })
-            if (prekidac == 1 && iskljuci_v == 0) {
-                ProgressCountdown(tajming, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
-            }
-
-            $("#osnova").text(prezent[questionCounter].osnova)
-            $("#glagol").text(prezent[questionCounter].glagol)
-            $("#osnova2").text(prezent[questionCounter].osnova2)
-            $("#oblik").html("<span class='vrime'>" + prezent[questionCounter].hint + "</span>")
-            $(".slikica").attr("src", "slike/" + prezent[questionCounter].slika)
-
-        } else if (prezent[questionCounter].question == "odgovori") {
-            $(".questions-page__answer-list").show();
-            $(".popuni").hide();
-            answerA.text(prezent[questionCounter].answers[0]);
-            if (answerA.html() == "" || null) {
-                answerDivA.hide()
-            } else {
-                answerDivA.show()
-            };
-            answerB.text(prezent[questionCounter].answers[1]);
-            if (answerB.html() == "" || null) {
-                answerDivB.hide()
-            } else {
-                answerDivB.show()
-            };
-            answerC.text(prezent[questionCounter].answers[2]);
-            if (answerC.html() == "" || null) {
-                answerDivC.hide()
-            } else {
-                answerDivC.show()
-            };
-            answerD.text(prezent[questionCounter].answers[3]);
-            if (answerD.html() == "" || null) {
-                answerDivD.hide()
-            } else {
-                answerDivD.show()
-            };
-
-
-            $("#opis").html("<em>" + prezent[questionCounter].opis + "</em>")
-            $(".vrijeme").html('<progress value="' + tajming + '" max="' + tajming + '" id="pageBeginCountdown"></progress><p><span id="pageBeginCountdownText">' + tajming + '</span> <span id="sekunde">sekundi</span> za odgovor</p>')
-            $("body").css({
-                "background-color": prezent[questionCounter].boja_pozadine
-            })
-            if (prekidac == 1) {
-                ProgressCountdown(tajming, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
-            }
+        $("#odgovor").val('')
+        $(".popuni").show();
+        var el = document.getElementById('odgovor');
+        el.focus();
+        el.onblur = function () {
+            setTimeout(function () {
+                el.focus();
+            });
+        };
+        $(".questions-page__answer-list").hide()
+        $(".vrijeme").html('<progress value="' + tajming + '" max="' + tajming + '" id="pageBeginCountdown"></progress><p><span id="pageBeginCountdownText">' + tajming + '</span></p>')
+        $("body").css({
+            "background-color": prezent[questionCounter].boja_pozadine
+        })
+        if (prekidac == 1 && iskljuci_v == 0) {
+            ProgressCountdown(tajming, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
         }
-
+        randbroj=Math.floor((Math.random() * (prezent[questionCounter].lica.length-1)) + 0);
+        $("#osnova").text(prezent[questionCounter].osnova)
+        $("#glagol").text(prezent[questionCounter].glagol)
+        $("#osnova2").text(prezent[questionCounter].osnova2 +prezent[questionCounter].lica[randbroj].substr(prezent[questionCounter].lica[randbroj].length-5,prezent[questionCounter].lica[randbroj].length))
+        $("#oblik").html(prezent[questionCounter].lica[randbroj].substr(0,prezent[questionCounter].lica[randbroj].length-5)+"<br><span class='vrime'>" + prezent[questionCounter].hint+ "</span>")
+        $(".slikica").attr("src", "slike/" + prezent[questionCounter].slika)
         var input = document.querySelector('input'); // get the input element
         input.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
         resizeInput.call(input); // immediately call the function
-
         function resizeInput() {
             if (this.value.length == 0) { this.style.width = "3ch" }
             else {
@@ -247,23 +184,19 @@ $(document).ready(function () {
             }
         }
     };
-
     // Store the correct answer of a given question
     getCorrectAnswer = function () {
         correctAnswer = prezent[questionCounter].correctAnswer;
     };
-
     // Store the user's selected (clicked) answer
     getUserAnswer = function (target) {
         userSelectedAnswer = $(target).find(answerSpan).text();
     };
-
     // Add the pointer to the clicked answer
     selectAnswer = function (target) {
         $(target).find(selectionDiv).addClass('ion-chevron-right');
         $(target).addClass("odabir")
     };
-
     // Remove the pointer from any answer that has it
     deselectAnswer = function () {
         if (selectionDiv.hasClass('ion-chevron-right')) {
@@ -271,13 +204,11 @@ $(document).ready(function () {
             selectionDiv.parent().removeClass("odabir")
         }
     };
-
     // Get the selected answer's div for highlighting purposes
     getSelectedAnswerDivs = function (target) {
         toBeHighlighted = $(target);
         toBeMarked = $(target).find(feedbackDiv);
     };
-
     // Make the correct answer green and add checkmark
     highlightCorrectAnswerGreen = function (target) {
         if (correctAnswer === answerA.text()) {
@@ -297,13 +228,11 @@ $(document).ready(function () {
             answerDivD.find(feedbackDiv).addClass('ion-checkmark-round');
         }
     };
-
     // Make the incorrect answer red and add X
     highlightIncorrectAnswerRed = function () {
         toBeHighlighted.addClass('questions-page--incorrect');
         toBeMarked.addClass('ion-close-round');
     };
-
     // Clear all highlighting and feedback
     clearHighlightsAndFeedback = function () {
         answerDiv.removeClass('questions-page--correct');
@@ -311,14 +240,10 @@ $(document).ready(function () {
         feedbackDiv.removeClass('ion-checkmark-round');
         feedbackDiv.removeClass('ion-close-round');
     };
-
     // APP FUNCTIONALITY ------
-
     /* --- PAGE 1/3 --- */
-
     // Start the quiz:
     newQuiz();
-
     // Clicking on start button:
     startBtn.on('click', function () {
         if ($(this).attr('id') == "bez") {
@@ -337,52 +262,35 @@ $(document).ready(function () {
         // Advance to questions page
         initPage.hide();
         questionsPage.show(300);
-
         // Load question and answers
         generateQuestionAndAnswers();
-
         // Store the correct answer in a variable
         getCorrectAnswer();
-
         // Hide the submit and continue buttons
         submitBtn.hide();
         continueBtn.hide();
-
     });
-
     /* --- PAGE 2/3 --- */
-
     // Clicking on an answer:
     answerDiv.on('click', function () {
-
         // Make the submit button visible
         submitBtn.show(300);
-
         // Remove pointer from any answer that already has it
         deselectAnswer();
-
         // Put pointer on clicked answer
         selectAnswer(this);
-
         // Store current selection as user answer
         getUserAnswer(this);
-
         // Store current answer div for highlighting purposes
         getSelectedAnswerDivs(this);
-
     });
-
-
     $('#odgovor').on("keyup", function () {
-
         if ($("#odgovor").val().length == 0) {
             submitBtn.hide(300)
         } else {
             submitBtn.show(300)
         }
     })
-
-
     function odgovor() {
         if (document.getElementById("pageBeginCountdown").value != "0" && $('#odgovor').val().length == 0) {
             return
@@ -402,29 +310,15 @@ $(document).ready(function () {
             if (document.getElementById("pageBeginCountdown").value == "0") {
                 bodovi -= 10;
                 $("#zvono")[0].play();
-
-                if (prezent[questionCounter].correctAnswer[1].length == 0) {
                     swal({
                         title: "Isteklo je vrijeme.",
-                        html: "<p class='dodatak'><strong>Točan odgovor je: " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[0] + "</span></strong>"+ prezent[questionCounter].osnova2+"<br></p><br><img src='slike/vrijeme.png'class='slikica2'/>",
+                        html: "<p class='dodatak'><strong>Točan odgovor je: " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[randbroj] + "</span></strong>" + prezent[questionCounter].osnova2 + prezent[questionCounter].lica[randbroj].substr(prezent[questionCounter].lica[randbroj].length-5,prezent[questionCounter].lica[randbroj].length)+"<br></p><br><table style='width: 100%;' border='1' cellpadding='3' > <tbody> <tr> <td style='border:0px'>&nbsp;</td><td >&nbsp;<span style='color:rgb(235, 73, 71); font-wieight:600'>jednina</span></td><td>&nbsp;<span style='color:rgb(235, 73, 71);  font-wieight:600'>množina</span></td></tr><tr> <td>&nbsp;<span style='color:rgb(235, 73, 71); font-wieight:600'>1. lice</span></td><td>"+prezent[questionCounter].correctAnswer[0].toLowerCase()+"</td><td>"+prezent[questionCounter].correctAnswer[3].toLowerCase()+"</td></tr><tr> <td>&nbsp;<span style='color:rgb(235, 73, 71); font-wieight:600'>2. lice</span></td><td>"+prezent[questionCounter].correctAnswer[1].toLowerCase()+"</td><td>"+prezent[questionCounter].correctAnswer[4].toLowerCase()+"</td></tr><tr> <td>&nbsp;<span style='color:rgb(235, 73, 71); font-wieight:600'>3. lice</span></td><td>"+prezent[questionCounter].correctAnswer[2].toLowerCase()+"</td><td>"+prezent[questionCounter].correctAnswer[5].toLowerCase()+"</td></tr></tbody></table>",
                         showCloseButton: true,
                         confirmButtonText: ' dalje',
                         backdrop: false,
                         allowOutsideClick: false,
                         allowEscapeKey: false,
                     });
-                } else {
-                    swal({
-                        title: "Isteklo je vrijeme.",
-                        html: "<p class='dodatak'><strong>Točani odgovori su: " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[0] + "</span> "+prezent[questionCounter].osnova2+", " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[1] + " </strong>"+prezent[questionCounter].osnova2+"<br></p><br><img src='slike/vrijeme.png'class='slikica2'/>",
-                        showCloseButton: true,
-                        confirmButtonText: ' dalje',
-                        backdrop: false,
-                        allowOutsideClick: false,
-                        allowEscapeKey: false,
-                    });
-                }
-
                 if (prezent[questionCounter].pin.length > 0) {
                     $(".dodatak").append("<br><p>" + prezent[questionCounter].napomena + "</p>")
                 }
@@ -442,64 +336,23 @@ $(document).ready(function () {
                         ProgressCountdown(tajming, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
                     }
                 })
-
             } else {
-                if ($("#odgovor").val() == prezent[questionCounter].correctAnswer[0] || $("#odgovor").val() == prezent[questionCounter].correctAnswer[1] ) {
+                if ($("#odgovor").val() == prezent[questionCounter].correctAnswer[randbroj] ) {
                     // Increment the total correct answers counter
                     correctAnswersCounter++;
                     bodovi += 10;
                     bodovi += vrijeme
                     broj = 10 + vrijeme
-
                     $("#tocno")[0].play();
                     swal({
                         title: "Točno",
-                        html: "<p  class='dodatak'><span class='povrt'>+ <span class='tocno_bod'>" + broj + "</span></span></p><br><img src='slike/tocno.png' class='slikica2'/>",
+                        html: "<p  class='dodatak'><span class='povrt'>+ <span class='tocno_bod'>" + broj + "</span></span></p><br><table style='width: 100%;' border='1' cellpadding='3' > <tbody> <tr> <td style='border:0px'>&nbsp;</td><td >&nbsp;<span style='color:rgb(235, 73, 71); font-wieight:600'>jednina</span></td><td>&nbsp;<span style='color:rgb(235, 73, 71);  font-wieight:600'>množina</span></td></tr><tr> <td>&nbsp;<span style='color:rgb(235, 73, 71); font-wieight:600'>1. lice</span></td><td>"+prezent[questionCounter].correctAnswer[0].toLowerCase()+"</td><td>"+prezent[questionCounter].correctAnswer[3].toLowerCase()+"</td></tr><tr> <td>&nbsp;<span style='color:rgb(235, 73, 71); font-wieight:600'>2. lice</span></td><td>"+prezent[questionCounter].correctAnswer[1].toLowerCase()+"</td><td>"+prezent[questionCounter].correctAnswer[4].toLowerCase()+"</td></tr><tr> <td>&nbsp;<span style='color:rgb(235, 73, 71); font-wieight:600'>3. lice</span></td><td>"+prezent[questionCounter].correctAnswer[2].toLowerCase()+"</td><td>"+prezent[questionCounter].correctAnswer[5].toLowerCase()+"</td></tr></tbody></table>",
                         showCloseButton: true,
                         confirmButtonText: ' dalje',
                         backdrop: false,
                         allowOutsideClick: false,
                         allowEscapeKey: false,
                     });
-
-                    if (prezent[questionCounter].pin == 1) {
-                        if ($("#odgovor").val() == prezent[questionCounter].correctAnswer[0]) {
-                            brb = 0
-                        } else {
-                            brb = 1
-                        }
-
-                        odg = prezent[questionCounter].odgovori
-                        shuffle(odg)
-                        $(".swal2-confirm").hide()
-                        $(".swal2-close").hide()
-                        $(".slikica2").hide()
-                        $(".dodatak").append("<p class='pitanjce'>Do koje je glasovne promjene došlo pri tvorbi oblika " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[brb] + "</span>?</p><button class='btn odgov' value='" + odg[0] + "'>" + odg[0] + "</button><button class='btn odgov' value='" + odg[1] + "'>" + odg[1] + "</button><button class='btn odgov' value='" + odg[2] + "'>" + odg[2] + "</button>")
-                        $(".odgov").unbind("click").click(function () {
-                            if ($(this).attr('value') == prezent[questionCounter].tocan[brb]) {
-                                $(".slikica2").show()
-                                $(".odgov").hide(300)
-                                $(".dodatak").append("<br><p>" + prezent[questionCounter].napomena + "</p>")
-                                bodovi += 10
-                                $(".tocno_bod").html(parseInt($(".tocno_bod").text()) + 10)
-                                $(".swal2-confirm").show()
-                                $(".swal2-close").show()
-                                $(".swal2-modal").addClass("swal-fix")
-                            } else {
-                                $(".odgov").hide(300)
-                                $(".povrt").hide(300)
-                                $(".dodatak").append("<br><p>Odgovor je: " + prezent[questionCounter].tocan + ".<br>" + prezent[questionCounter].napomena + "</p>")
-                                $(".swal2-confirm").show()
-                                $(".swal2-close").show()
-                                $(".swal2-modal").addClass("swal-fix")
-                                $(".swal2-modal h2").html("Netočno")
-                                $(".slikica2").attr("src", "slike/krivo.png")
-                                $(".slikica2").show()
-                            }
-                        })
-                    } else if (prezent[questionCounter].pin == 2) {
-                        $(".dodatak").append("<br><p>" + prezent[questionCounter].napomena + "</p>")
-                    }
                     $(".swal2-confirm").unbind("click").click(function () {
                         clearInterval(countdownTimer)
                         $(".swal2-modal").removeClass("swal-fix")
@@ -511,52 +364,26 @@ $(document).ready(function () {
                     $(".swal2-close").unbind("click").click(function () {
                         clearInterval(countdownTimer)
                         $(".swal2-modal").removeClass("swal-fix")
-
                         nastavi()
-
                         if (ide == 1 && iskljuci_v == 0) {
                             ProgressCountdown(tajming, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
                         }
                     })
-
                 } else {
                     bodovi -= 10;
-                    if (prezent[questionCounter].correctAnswer[1].length == 0) {
-
                         $("#pogresno")[0].play()
                         swal({
                             title: "Netočno",
-                            html: "<p class='dodatak'><strong>Točan odgovor je: " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[0] + "</span>" + prezent[questionCounter].osnova2 + "</strong><br></p><br><img src='slike/krivo.png' class='slikica2'/>",
+                            html: "<p class='dodatak'><strong>Točan odgovor je: " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[randbroj] + "</span>" + prezent[questionCounter].osnova2 + prezent[questionCounter].lica[randbroj].substr(prezent[questionCounter].lica[randbroj].length-5,prezent[questionCounter].lica[randbroj].length)+"</strong><br></p><br><table style='width: 100%;' border='1' cellpadding='3' > <tbody> <tr> <td style='border:0px'>&nbsp;</td><td >&nbsp;<span style='color:rgb(235, 73, 71); font-wieight:600'>jednina</span></td><td>&nbsp;<span style='color:rgb(235, 73, 71);  font-wieight:600'>množina</span></td></tr><tr> <td>&nbsp;<span style='color:rgb(235, 73, 71); font-wieight:600'>1. lice</span></td><td>"+prezent[questionCounter].correctAnswer[0].toLowerCase()+"</td><td>"+prezent[questionCounter].correctAnswer[3].toLowerCase()+"</td></tr><tr> <td>&nbsp;<span style='color:rgb(235, 73, 71); font-wieight:600'>2. lice</span></td><td>"+prezent[questionCounter].correctAnswer[1].toLowerCase()+"</td><td>"+prezent[questionCounter].correctAnswer[4].toLowerCase()+"</td></tr><tr> <td>&nbsp;<span style='color:rgb(235, 73, 71); font-wieight:600'>3. lice</span></td><td>"+prezent[questionCounter].correctAnswer[2].toLowerCase()+"</td><td>"+prezent[questionCounter].correctAnswer[5].toLowerCase()+"</td></tr></tbody></table>",
                             showCloseButton: true,
                             confirmButtonText: ' dalje',
                             backdrop: false,
                             allowOutsideClick: false,
                             allowEscapeKey: false,
-
                         });
-                    } else {
-                        swal({
-                            title: "Netočno",
-                            html: "<p class='dodatak'><strong>Točni odgovori mogu biti: " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[0] + "</span>" + prezent[questionCounter].osnova2 + ", " + prezent[questionCounter].osnova + "<span class='nastavak'>" + prezent[questionCounter].correctAnswer[1] + "</span>" + prezent[questionCounter].osnova2 + "</strong><br></p><br><img src='slike/krivo.png' class='slikica2'/>",
-                            showCloseButton: true,
-                            confirmButtonText: ' dalje',
-                            backdrop: false,
-                            allowOutsideClick: false,
-                            allowEscapeKey: false,
-
-                        });
-                    }
-
-
-
-                    if (prezent[questionCounter].pin.length > 0) {
-                        $(".dodatak").append("<br><p>" + prezent[questionCounter].napomena + "</p>")
-                    }
-
                     $(".swal2-confirm").unbind("click").click(function () {
                         clearInterval(countdownTimer)
                         nastavi()
-
                         if (ide == 1 && iskljuci_v == 0) {
                             ProgressCountdown(tajming, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
                         }
@@ -569,19 +396,14 @@ $(document).ready(function () {
                         }
                     })
                 }
-
             }
-
             submitBtn.hide(300);
             continueBtn.show(300);
         } // Clicking on the submit button:
     }
-
     submitBtn.on('click', function () {
         odgovor();
     });
-
-
     function nastavi() {
         // Increment question number until there are no more questions, then advance to the next page
         $(".mrzim").hide()
@@ -593,25 +415,17 @@ $(document).ready(function () {
             // Display user score as a percentage
             userScore.text(Math.floor((correctAnswersCounter / prezent.length) * 100) + "%");
             prikazBodova.text(bodovi);
-
             $("#60656686").attr("value", bodovi)
-
         }
-
         // Load the next question and set of answers
         generateQuestionAndAnswers();
-
         // Store the correct answer in a variable
         getCorrectAnswer();
-
         // Remove all selections, highlighting, and feedback
         deselectAnswer();
         clearHighlightsAndFeedback();
-
-
         // Hide the continue button
         continueBtn.hide(300);
-
         // Enable ability to select an answer
         answerDiv.on('click', function () {
             // Make the submit button visible
@@ -625,19 +439,14 @@ $(document).ready(function () {
             // Store current selection as user answer
             getUserAnswer(this);
         });
-
     }
-
     // Clicking on the continue button:
     continueBtn.on('click', function () {
-
     });
-
     $(".questions-page__answer-div").dblclick(function () {
         odgovor()
     })
     /* --- PAGE 3/3 --- */
-
     // Clicking on the retake button:
     retakeBtn.on('click', function () {
         // Go to the first page
@@ -653,108 +462,354 @@ $(document).ready(function () {
         submitBtn.hide();
         continueBtn.hide();
     });
-
     // Clicking on the spanish button:
     // Link takes user to Duolingo
-
-
     p1 = [{
         "question": "popuni",
-        "hint": "pomagati (engl. help)<br><span style='color:black;font-size:14px'>1. lice jd. (ja)</span>",
+        "hint": "pomagati (engl. help)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
         "correctAnswer": [
-            "pomažem",
-            ""
+            "Pomažem",
+            "Pomažeš",
+            "Pomaže",
+            "Pomažemo",
+            "Pomažete",
+            "Pomažu"
         ],
-        "osnova": "Ja ",
+        "osnova": "",
         "osnova2": " starijim ljudima.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,
-        "pin": "",
         "slika": "pomagati.jpg"
     },
     {
         "question": "popuni",
-        "hint": "vjerovati (engl. trust)<br><span style='color:black;font-size:14px'>1. lice jd. (ja)</span>",
+        "hint": "vjerovati (engl. trust)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
         "correctAnswer": [
-            "vjerujem",
-            ""
+            "Vjerujem",
+            "Vjeruješ",
+            "Vjeruje",
+            "Vjerujemo",
+            "Vjerujete",
+            "Vjeruju"
         ],
-        "osnova": "Ja ",
+        "osnova": "",
         "osnova2": " prijateljima.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,
-        "pin": "",
         "slika": "vjerujem.jpg"
     },
     {
         "question": "popuni",
-        "hint": "veseliti se (engl. be happy)<br><span style='color:black;font-size:14px'>1. lice jd. (ja)</span>",
+        "hint": "veseliti se (engl. be happy)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
         "correctAnswer": [
             "Veselim se",
-            ""
+            "Veseliš se",
+            "Veseli se",
+            "Veselimo se",
+            "Veselite se",
+            "Vesele se"
         ],
         "osnova": "",
         "osnova2": " filmu.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,
-        "pin": "",
         "slika": "veseliti.jpg"
     },
     {
         "question": "popuni",
-        "hint": "zahvaljivati (engl. be thankful)<br><span style='color:black;font-size:14px'>1. lice jd. (ja)</span>",
+        "hint": "zahvaljivati (engl. be thankful)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
         "correctAnswer": [
             "Zahvaljujem",
-            ""
+            "Zahvaljuješ",
+            "Zahvaljuje",
+            "Zahvaljujemo",
+            "Zahvaljujete",
+            "Zahvaljuju"
         ],
         "osnova": "",
         "osnova2": " svojim kolegama na pomoći.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,
-        "pin": "",
         "slika": "zahvaljujem.jpg"
     },
     {
         "question": "popuni",
-        "hint": "pokloniti (engl. to give, donate)<br><span style='color:black;font-size:14px'>1. lice jd. (ja)</span>",
+        "hint": "pokloniti (engl. to give, donate)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
         "correctAnswer": [
-            "Poklonim",
-            ""
+            "Poklanjam",
+            "Poklanjaš",
+            "Poklanja",
+            "Poklanjamo",
+            "Poklanjate",
+            "Poklanjaju"
         ],
         "osnova": "",
         "osnova2": " cvijeće djevojci.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,
-        "pin": "",
         "slika": "pokloniti.jpg"
     },
     {
         "question": "popuni",
-        "hint": "radovati se (engl. look forward to)<br><span style='color:black;font-size:14px'>1. lice jd. (ja)</span>",
+        "hint": "radovati se (engl. look forward to)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
         "correctAnswer": [
             "Radujem se",
-            ""
+            "Raduješ se",
+            "Raduje se",
+            "Radujemo se",
+            "Radajute se",
+            "Raduju se"
         ],
         "osnova": "",
         "osnova2": " ljetu.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,
-        "pin": "",
         "slika": "radujem.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "smijati se (engl. to laugh)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
+        "correctAnswer": [
+            "Smijem se",
+            "Smiješ se",
+            "Smije se",
+            "Smijemo se",
+            "Smijete se",
+            "Smiju se"
+        ],
+        "osnova": "",
+        "osnova2": " vicu.",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "slika": "smijati.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "čuditi se (engl. to wonder)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
+        "correctAnswer": [
+            "čudim se",
+            "čudiš se",
+            "čudi se",
+            "čudimo se",
+            "čudite se",
+            "čude se"
+        ],
+        "osnova": "Ne ",
+        "osnova2": " što su građani zabrinuti.",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "slika": "cuditi.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "prigovarati (engl. complain about)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
+        "correctAnswer": [
+            "Prigovaram",
+            "Prigovaraš",
+            "Prigovara",
+            "Prigovaramo",
+            "Prigovarate",
+            "Prigovaraju"
+        ],
+        "osnova": " ",
+        "osnova2": " o lošoj hrani u kantini.",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "slika": "prigovarati.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "govoriti (engl. speak)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
+        "correctAnswer": [
+            "Govorim",
+            "Govoriš",
+            "Govori",
+            "Govorimo",
+            "Govorite",
+            "Govore"
+        ],
+        "osnova": " ",
+        "osnova2": " o filmu koji je trenutačno u kinima.",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "slika": "govoriti.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "dati (engl. give)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
+        "correctAnswer": [
+            "dajem",
+            "daješ",
+            "daje",
+            "dajemo",
+            "dajete",
+            "daju"
+        ],
+        "osnova": "Poklon ",
+        "osnova2": " ljudima za rođendan.",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "slika": "dati.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "slati (engl. send)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
+        "correctAnswer": [
+            "šaljem",
+            "šalješ",
+            "šalje",
+            "šaljemo",
+            "šaljete",
+            "šalju"
+        ],
+        "osnova": "Poruke redovito ",
+        "osnova2": " prijateljima.",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "slika": "slati.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "približavati se (engl. to approach)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
+        "correctAnswer": [
+            "Približavam se",
+            "Približavaš se",
+            "Približava se",
+            "Približavamo se",
+            "Približavate se",
+            "Približavaju se"
+        ],
+        "osnova": "",
+        "osnova2": " gradu Zagrebu.",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "slika": "priblizavati.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "pisati (engl. write)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
+        "correctAnswer": [
+            "Pišem",
+            "Pišeš",
+            "Piše",
+            "Pišemo",
+            "Pišete",
+            "Pišu"
+        ],
+        "osnova": "",
+        "osnova2": " knjigu.",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "slika": "pisati.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "smetati (engl. bother)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
+        "correctAnswer": [
+            "Smetam",
+            "Smetaš",
+            "Smeta",
+            "Smetamo",
+            "Smetate",
+            "Smetaju"
+        ],
+        "osnova": "",
+        "osnova2": " ljudima koji uče.",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "slika": "smetati.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "vjerovati (engl. belive)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
+        "correctAnswer": [
+            "Vjerujem",
+            "Vjeruješ",
+            "Vjeruje",
+            "Vjerujemo",
+            "Vjerujete",
+            "Vjeruju"
+        ],
+        "osnova": "",
+        "osnova2": " drugim ljudima.",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "slika": "vjerovati.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "nadati se (engl. hope)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
+        "correctAnswer": [
+            "Nadam se",
+            "Nadaš se",
+            "Nada se",
+            "Nadamo se",
+            "Nadate se",
+            "Nadaju se"
+        ],
+        "osnova": "",
+        "osnova2": " da će hrvatska reprezentacija pobijediti.",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "slika": "nada.jpg"
+    },
+    {
+        "question": "popuni",
+        "hint": "diviti se (engl. admire)",
+        "lica": ["1. lice jd. (ja)", "2. lice jd. (ti)", "3. lice jd. (on)", "1. lice mn. (mi)", "2. lice mn. (vi)", "3. lice mn. (oni)"],
+        "correctAnswer": [
+            "Divim se",
+            "Diviš se",
+            "Divi se",
+            "Divimo se",
+            "Divite se",
+            "Dive se"
+        ],
+        "osnova": "",
+        "osnova2": " lijepim slikama.",
+        "glagol": "",
+        "boja_pozadine": "#FCE4EC",
+        "time": 20,
+        "slika": "diviti.jpg"
     }
     ];
-
-
     prezent = p1
     shuffle(prezent)
 });
-
 function touchHandler(event) {
     var touches = event.changedTouches,
         first = touches[0],
@@ -772,18 +827,14 @@ function touchHandler(event) {
         default:
             return;
     }
-
-
     // initMouseEvent(type, canBubble, cancelable, view, clickCount, 
     //                screenX, screenY, clientX, clientY, ctrlKey, 
     //                altKey, shiftKey, metaKey, button, relatedTarget);
-
     var simulatedEvent = document.createEvent("MouseEvent");
     simulatedEvent.initMouseEvent(type, true, true, window, 1,
         first.screenX, first.screenY,
         first.clientX, first.clientY, false,
         false, false, false, 0 /*left*/, null);
-
     first.target.dispatchEvent(simulatedEvent);
     event.preventDefault();
 }
