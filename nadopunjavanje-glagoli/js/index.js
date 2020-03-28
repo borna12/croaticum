@@ -633,7 +633,7 @@ $(document).ready(function () {
             "Prigovaraju"
         ],
         "osnova": " ",
-        "osnova2": " o lošoj hrani u kantini.",
+        "osnova2": " zbog loše hrane u kantini.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,
@@ -671,7 +671,7 @@ $(document).ready(function () {
             "daju"
         ],
         "osnova": "Poklon ",
-        "osnova2": " ljudima za rođendan.",
+        "osnova2": " prijateljima za rođendan.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,
@@ -709,7 +709,7 @@ $(document).ready(function () {
             "Približavaju se"
         ],
         "osnova": "",
-        "osnova2": " gradu Zagrebu.",
+        "osnova2": " Zagrebu.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,
@@ -747,7 +747,7 @@ $(document).ready(function () {
             "Smetaju"
         ],
         "osnova": "",
-        "osnova2": " ljudima koji uče.",
+        "osnova2": " studentima  koji uče.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,
