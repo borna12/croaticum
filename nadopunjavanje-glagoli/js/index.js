@@ -747,7 +747,7 @@ $(document).ready(function () {
             "Smetaju"
         ],
         "osnova": "",
-        "osnova2": " studentima  koji uče.",
+        "osnova2": " studentima koji uče.",
         "glagol": "",
         "boja_pozadine": "#FCE4EC",
         "time": 20,
