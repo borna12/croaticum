@@ -171,11 +171,11 @@ $(document).ready(function () {
                 opis: "Kotač je naprava u obliku kruga koja se okreće na osovini i omogućuje kretanje vozila.",
                 boja_pozadine: "#FCE4EC"
             },{
-                question: "",
+                question: "Prozori koji se nalaze s bočne strane vozila.",
                 answers: ["bočno staklo", strava = stvori("bočno staklo"), strava2 = stvori("bočno staklo", strava), stvori("bočno staklo", strava, strava2)],
                 correctAnswer: "bočno staklo",
                 slika: "slike/bocno.jpg",
-                opis: "Bočno staklo označava prozori koji se nalaze s bočne strane vozila.",
+                opis: "Bočno staklo označava prozore koji se nalaze s bočne strane vozila.",
                 boja_pozadine: "#FCE4EC"
             },{
                 question: "Ogledalo na vozilu koje omogućuje vozaču pregled stanja na cesti iza njega.",
@@ -217,7 +217,7 @@ $(document).ready(function () {
                 answers: ["brisači", strava = stvori("brisači"), strava2 = stvori("brisači", strava), stvori("brisači", strava, strava2)],
                 correctAnswer: "brisači",
                 slika: "slike/brisaci.jpg",
-                opis: "Brisač je naprava na vozilu kojom se briše prednje i stražnje staklo.",
+                opis: "Brisači su naprava na vozilu kojom se briše prednje i stražnje staklo.",
                 boja_pozadine: "#FCE4EC"
             },{
                 question: "Dio vozila u koji se smješta prtljaga.",
@@ -234,11 +234,11 @@ $(document).ready(function () {
                 opis: "Pojas je dug, uzak komad tkanine kojim se veže u vozilu.",
                 boja_pozadine: "#FCE4EC"
             },{
-                question: "Uređaj koji pokreće vozila.",
+                question: "Uređaj koji pokreće vozilo.",
                 answers: ["motor", strava = stvori("motor"), strava2 = stvori("motor", strava), stvori("motor", strava, strava2)],
                 correctAnswer: "motor",
                 slika: "slike/motor.jpg",
-                opis: "Motor je uređaj koji pokreće vozila.",
+                opis: "Motor je uređaj koji pokreće vozilo.",
                 boja_pozadine: "#FCE4EC"
             },{
                 question: "Stolac za djecu koji je učvršćen ili se može učvrstiti unutar vozila.",
