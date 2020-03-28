@@ -428,7 +428,7 @@ $(document).ready(function () {
             bodovi -= 10;
             swal({
                 title: "Isteklo je vrijeme.",
-                html: "<p style='text-align:center'><strong>Točan odgovor je <span style='color:#bb422a; font-size:34px' >" + quiz[questionCounter].correctAnswer + "</span></strong>.</p><br><em>" + quiz[questionCounter].opis + "</em><br><br><img src='" + quiz[questionCounter].slika + " 'class='slikica2'/>",
+                html: "<p style='text-align:center'><strong>Točan odgovor je <span style='color:#bb422a; ' >" + quiz[questionCounter].correctAnswer + "</span></strong>.</p><br><em>" + quiz[questionCounter].opis + "</em><br><br><img src='" + quiz[questionCounter].slika + " 'class='slikica2'/>",
                 showCloseButton: true,
                 confirmButtonText: ' dalje',
                 backdrop: false,
@@ -480,7 +480,7 @@ $(document).ready(function () {
                 $("#krivo")[0].play();
                 swal({
                     title: " <span style='color:#bb422a' >Netočno</span>",
-                    html: "<p style='text-align:center'><strong>Točan odgovor je <span style='color:#bb422a; font-size:34px' >" + quiz[questionCounter].correctAnswer + "</span></strong>.</p><br><em>" + quiz[questionCounter].opis + "</em><br><br><img src='" + quiz[questionCounter].slika + " 'class='slikica2'/>",
+                    html: "<p style='text-align:center'><strong>Točan odgovor je <span style='color:#bb422a; ' >" + quiz[questionCounter].correctAnswer + "</span></strong>.</p><br><em>" + quiz[questionCounter].opis + "</em><br><br><img src='" + quiz[questionCounter].slika + " 'class='slikica2'/>",
                     showCloseButton: true,
                     confirmButtonText: ' dalje',
                     backdrop: false,
