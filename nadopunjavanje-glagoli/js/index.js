@@ -249,15 +249,19 @@ $(document).ready(function () {
         if ($(this).attr('id') == "bez") {
             iskljuci_v = 1;
             $(".vrijeme").hide()
-            $('form').attr('action', 'https://docs.google.com/forms/d/e/1FAIpQLSfeOlnDU5d2EQqMD4b2Gt6hvmgwSzyw3WibEWcOcQTvGHcKDw/formResponse');
+            $('form').attr('action', 'https://docs.google.com/forms/d/e/1FAIpQLSc9Us-DEhya_phHIBtxlU2rzgm-7cU2Uu0JYb1hjQOsloK3FQ/formResponse');
             r1 = 1
             tajming = 10
         } else if ($(this).attr('id') == "20") {
+            iskljuci_v = 1;
+            r1=2
+            $(".vrijeme").hide()
+            $('form').attr('action', 'https://docs.google.com/forms/d/e/1FAIpQLSef3WG9aGXsLEK2BNPqGZpCf8aa-wUiZ67KaZhUu4L5EiyOxA/formResponse');
             tajming = 20;
         } else if ($(this).attr('id') == "40") {
             tajming = 40;
-            $('form').attr('action', 'https://docs.google.com/forms/d/e/1FAIpQLSd5lYbC0-IYOWgV_KWq-odbAGmdogjMEs-W1QQrnuCVL2x2LA/formResponse');
-            r1 = 2
+            $('form').attr('action', 'https://docs.google.com/forms/d/e/1FAIpQLScmkfsEFSUjM-0LnPHqKvg-JU3C3m9Cq9UwfFBdU1vmQfBn3g/formResponse');
+            r1 = 3
         }
         // Advance to questions page
         initPage.hide();

@@ -6,7 +6,7 @@
     <title>Upiši ispravan oblika glagola</title>
     <meta charset="utf-8">
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-    <meta name="description" content="Upiši ispravan nastavak za osnovu glagola na temlju zadanog oblika te lica i broja.">
+    <meta name="description" content="Upiši ispravan nastavak za osnovu glagola na temlju zadanog oblika.">
     <meta name="author" content="Josip Mihaljević, Mario Marković">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/normalize.min.css">
@@ -36,7 +36,7 @@
     <script src="js/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="css/sweetalert2.min.css">
     <meta property="og:title" content="Upiši ispravan oblika glagola" />
-    <meta property="og:description" content="Upiši ispravan nastavak za osnovu glagola na temlju zadanog oblika te lica i broja." />
+    <meta property="og:description" content="Upiši ispravan nastavak za osnovu glagola na temlju zadanog oblika." />
     <meta property="og:image" content="og-slika.jpg" />
 </head>
 
@@ -156,7 +156,7 @@
             <br>
 
             <p>
-                    <!-- <form class="jedan" action="https://docs.google.com/forms/d/e/1FAIpQLSfZAGfZbd555B--pkkOU2cZZwrOVEcC1lRRQwF4j58t5lP8yA/formResponse"
+                     <form class="jedan" action="https://docs.google.com/forms/d/e/1FAIpQLSfZAGfZbd555B--pkkOU2cZZwrOVEcC1lRRQwF4j58t5lP8yA/formResponse"
                     target="_self" id="bootstrapForm" method="POST">
                     <legend for="736982347"> <select id="ikona" style="height:30px"></select> Ime: <input id="312289462"
                             type="text" name="entry.312289462" class="form-control" required id="input-q1" style="height:30px">
@@ -164,7 +164,7 @@
                    <div class="form-group"> <input style="display:none" id="60656686" type="text"
                             name="entry.60656686" class="form-control" required> </div><input type="hidden" name="fvv"
                         value="1"> <input type="hidden" name="fbzx" value="4484478125650916779"><input type="hidden"
-                        name="pageHistory" value="0"><br><input class="btn" type="submit" id="predaj" value="predaj">!-->
+                        name="pageHistory" value="0"><br><input class="btn" type="submit" id="predaj" value="predaj">
                 </form>
                 
                 <button class="results-page__retake-btn btn">ponovite kviz</button>
@@ -210,9 +210,9 @@
                                 error: function () {
                                     // Submit of form should be successful but JSONP callback will fail because Google Forms
                                     // does not support it, so this is handled as a failure.
-                                    if(r1==1){ window.open("rez2.html", "_self");}
-                                    else if(r1==2){window.open("rez3.html", "_self");}
-                                    else{ window.open("rez.html", "_self");}
+                                    if(r1==1){ window.open("rez.html", "_self");}
+                                    else if(r1==2){window.open("rez2.html", "_self");}
+                                    else{window.open("rez3.html", "_self");}
                                    
                                 }
                             })
