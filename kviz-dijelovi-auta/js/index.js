@@ -106,7 +106,7 @@ $(document).ready(function () {
     // User final score
     userScore = $('.results-page__score');
     prikazBodova = $('.results-page__bodovi');
-    cvijece = ["vrata", "kotač", "bočno staklo", "retrovizor", "sjedalo", "mjenjač", "volan", "ručna kočnica", "brisači", "prtljažnik (razg. gepek)", "pojas", "motor", "dječija sjedalica", "rezervoar", "papučice auta",]
+    cvijece = ["vrata", "kotač", "bočno staklo", "retrovizor", "sjedalo", "mjenjač", "volan", "ručna kočnica", "brisači", "prtljažnik (razg. gepek)", "pojas", "motor", "dječja sjedalica", "rezervoar", "papučice auta",]
     // QUIZ CONTENT ------
     
     function stvori(tekst, tekst2, tekst3) {
@@ -242,10 +242,10 @@ $(document).ready(function () {
                 boja_pozadine: "#FCE4EC"
             },{
                 question: "Stolac za djecu koji je učvršćen ili se može učvrstiti unutar vozila.",
-                answers: ["dječija sjedalica", strava = stvori("dječija sjedalica"), strava2 = stvori("dječija sjedalica", strava), stvori("motor", strava, strava2)],
-                correctAnswer: "dječija sjedalica",
+                answers: ["dječja sjedalica", strava = stvori("dječja sjedalica"), strava2 = stvori("dječja sjedalica", strava), stvori("motor", strava, strava2)],
+                correctAnswer: "dječja sjedalica",
                 slika: "slike/sjedalica.jpg",
-                opis: "Dječija sjedalica je stolac za djecu koji je učvršćen ili se može učvrstiti unutar vozila.",
+                opis: "dječja sjedalica je stolac za djecu koji je učvršćen ili se može učvrstiti unutar vozila.",
                 boja_pozadine: "#FCE4EC"
             },{
                 question: "Spremnik za veće količine goriva.",
