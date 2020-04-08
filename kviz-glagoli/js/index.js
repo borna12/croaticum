@@ -74,7 +74,7 @@ function ProgressCountdown(timeleft, bar, text) {
 }
 
 
-$(document).ready(function () {
+$(document).ready(function() {
 
     // DOM SELECTION ------
 
@@ -120,9 +120,9 @@ $(document).ready(function () {
     // User final score
     userScore = $('.results-page__score');
     prikazBodova = $('.results-page__bodovi');
-    cvijece = ["diviti se", "čuditi se", "zahvaljivati", "nadati se", "prigovarati", "pisati", "veseliti se", "govoriti", "vjerovati", "smijati se", "slati", "približavati se", "dati", "pomagati", "smetati",]
-    // QUIZ CONTENT ------
-    cvijece2 = ["pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime", "biti u čudu, biti iznenađen čime neočekivanim", "izražavati zahvalnost", "imati nadu, očekivati da će se ostvariti nešto što želimo", "upućivati komu prigovor", "bilježiti slova i brojke na papiru, ploči ili čemu drugom", "osjećati veselje ili radost, biti veseo", "izgovarati riječi i rečenice koje postoje u nekom jeziku", "imati povjerenja u koga ili što", "razvući usta u osmijeh kao izraz veselja i opuštenosti", "upućivati što na čiju adresu, stvarnu ili virtualnu", "dolaziti blizu komu ili čemu", "znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat", "davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim", "uzemirivati koga",]
+    cvijece = ["diviti se", "čuditi se", "zahvaljivati", "nadati se", "prigovarati", "pisati", "veseliti se", "govoriti", "vjerovati", "smijati se", "slati", "približavati se", "dati", "pomagati", "smetati", ]
+        // QUIZ CONTENT ------
+    cvijece2 = ["pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime", "biti u čudu, biti iznenađen čime neočekivanim", "izražavati zahvalnost", "imati nadu, očekivati da će se ostvariti nešto što želimo", "upućivati komu prigovor", "bilježiti slova i brojke na papiru, ploči ili čemu drugom", "osjećati veselje ili radost, biti veseo", "izgovarati riječi i rečenice koje postoje u nekom jeziku", "imati povjerenja u koga ili što", "razvući usta u osmijeh kao izraz veselja i opuštenosti", "upućivati što na čiju adresu, stvarnu ili virtualnu", "dolaziti blizu komu ili čemu", "znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat", "davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim", "uzemirivati koga", ]
 
     function stvori(tekst, tekst2, tekst3) {
         do {
@@ -142,8 +142,8 @@ $(document).ready(function () {
 
 
     // FUNCTION DECLARATIONS ------
-    $.fn.declasse = function (re) {
-        return this.each(function () {
+    $.fn.declasse = function(re) {
+        return this.each(function() {
             var c = this.classList
             for (var i = c.length - 1; i >= 0; i--) {
                 var classe = "" + c[i]
@@ -166,7 +166,7 @@ $(document).ready(function () {
         }
     }
     // Start the quiz
-    newQuiz = function () {
+    newQuiz = function() {
         prekidac = 1;
         bodovi = 0;
         // Set the question counter to 0
@@ -178,129 +178,127 @@ $(document).ready(function () {
         resultsPage.hide();
         if (uglata == 1) {
             quiz = [{
-                question: "_____ znači pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime.",
-                answers: ["diviti se", strava = stvori("diviti se"), strava2 = stvori("diviti se", strava), stvori("diviti se", strava, strava2)],
-                correctAnswer: "diviti se",
-                slika: "slike/diviti.jpg",
-                opis: "Diviti se znači pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "_____ znači biti u čudu, biti iznenađen čime neočekivanim.",
-                answers: ["čuditi se", strava = stvori("čuditi se"), strava2 = stvori("čuditi se", strava), stvori("čuditi se", strava, strava2)],
-                correctAnswer: "čuditi se",
-                slika: "slike/cuditi.png",
-                opis: "Čuditi se znači biti u čudu, biti iznenađen čime neočekivanim.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "_____ znači izražavati zahvalnost.",
-                answers: ["zahvaljivati", strava = stvori("zahvaljivati"), strava2 = stvori("zahvaljivati", strava), stvori("zahvaljivati", strava, strava2)],
-                correctAnswer: "zahvaljivati",
-                slika: "slike/zahvaljivati.jpg",
-                opis: "Zahvaljivati znači izražavati zahvalnost.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "_____ znači osjećati veselje ili radost, biti veseo.",
-                answers: ["veseliti se", strava = stvori("veseliti se"), strava2 = stvori("veseliti se", strava), stvori("veseliti se", strava, strava2)],
-                correctAnswer: "veseliti se",
-                slika: "slike/veseliti.jpg",
-                opis: "Veseliti se znači osjećati veselje ili radost, biti veseo.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "_____ znači imati nadu, očekivati da će se ostvariti nešto što želimo.",
-                answers: ["nadati se", strava = stvori("nadati se"), strava2 = stvori("nadati se", strava), stvori("nadati se", strava, strava2)],
-                correctAnswer: "nadati se",
-                slika: "slike/nadati.jpg",
-                opis: "Nadati se znači imati nadu, očekivati da će se ostvariti nešto što želimo.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "_____ znači upućivati komu prigovor.",
-                answers: ["prigovarati", strava = stvori("prigovarati"), strava2 = stvori("prigovarati", strava), stvori("prigovarati", strava, strava2)],
-                correctAnswer: "prigovarati",
-                slika: "slike/prigovarati.jpg",
-                opis: "Prigovarati znači upućivati komu prigovor.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "_____ znači bilježiti slova i brojke na papiru, ploči ili čemu drugom.",
-                answers: ["pisati", strava = stvori("pisati"), strava2 = stvori("pisati", strava), stvori("pisati", strava, strava2)],
-                correctAnswer: "pisati",
-                slika: "slike/pisati.jpg",
-                opis: "Pisati znači bilježiti slova i brojke na papiru, ploči ili čemu drugom.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "_____ znači izgovarati riječi i rečenice koje postoje u nekom jeziku.",
-                answers: ["govoriti", strava = stvori("govoriti"), strava2 = stvori("govoriti", strava), stvori("govoriti", strava, strava2)],
-                correctAnswer: "govoriti",
-                slika: "slike/govoriti.jpg",
-                opis: "Govoriti znači izgovarati riječi i rečenice koje postoje u nekom jeziku.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "_____ znači imati povjerenja u koga ili što.",
-                answers: ["vjerovati", strava = stvori("vjerovati"), strava2 = stvori("vjerovati", strava), stvori("vjerovati", strava, strava2)],
-                correctAnswer: "vjerovati",
-                slika: "slike/vjerovati.jpg",
-                opis: "Vjerovati znači imati povjerenja u koga ili što.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "_____ znači razvući usta u osmijeh kao izraz veselja i opuštenosti.",
-                answers: ["smijati se", strava = stvori("smijati se"), strava2 = stvori("smijati se", strava), stvori("smijati se", strava, strava2)],
-                correctAnswer: "smijati se",
-                slika: "slike/smijati.jpg",
-                opis: "Smijati se znači razvući usta u osmijeh kao izraz veselja i opuštenosti.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "_____ znači upućivati što na čiju adresu, stvarnu ili virtualnu.",
-                answers: ["slati", strava = stvori("slati"), strava2 = stvori("slati", strava), stvori("slati", strava, strava2)],
-                correctAnswer: "slati",
-                slika: "slike/slati.jpg",
-                opis: "Slati znači upućivati što na čiju adresu, stvarnu ili virtualnu.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "_____ znači dolaziti blizu komu ili čemu.",
-                answers: ["približavati se", strava = stvori("približavati se"), strava2 = stvori("približavati se", strava), stvori("približavati se", strava, strava2)],
-                correctAnswer: "približavati se",
-                slika: "slike/priblizavati.jpg",
-                opis: "Približavati se znači dolaziti blizu komu ili čemu.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "_____ znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat.",
-                answers: ["dati", strava = stvori("dati"), strava2 = stvori("dati", strava), stvori("dati", strava, strava2)],
-                correctAnswer: "dati",
-                slika: "slike/dati.jpg",
-                opis: "Dati znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "_____ znači davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim.",
-                answers: ["pomagati", strava = stvori("pomagati"), strava2 = stvori("pomagati", strava), stvori("pomagati", strava, strava2)],
-                correctAnswer: "pomagati",
-                slika: "slike/pomagati.jpg",
-                opis: "Pomagati znači davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim.",
-                boja_pozadine: "#FCE4EC"
-            }
-            ,
-            {
-                question: "_____ znači uzemirivati koga.",
-                answers: ["smetati", strava = stvori("smetati"), strava2 = stvori("smetati", strava), stvori("smetati", strava, strava2)],
-                correctAnswer: "smetati",
-                slika: "slike/smetati.jpg",
-                opis: "Smetati znači uzemirivati koga.",
-                boja_pozadine: "#FCE4EC"
-            }
+                    question: "_____ znači pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime.",
+                    answers: ["diviti se", strava = stvori("diviti se"), strava2 = stvori("diviti se", strava), stvori("diviti se", strava, strava2)],
+                    correctAnswer: "diviti se",
+                    slika: "slike/diviti.jpg",
+                    opis: "Diviti se znači pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "_____ znači biti u čudu, biti iznenađen čime neočekivanim.",
+                    answers: ["čuditi se", strava = stvori("čuditi se"), strava2 = stvori("čuditi se", strava), stvori("čuditi se", strava, strava2)],
+                    correctAnswer: "čuditi se",
+                    slika: "slike/cuditi.png",
+                    opis: "Čuditi se znači biti u čudu, biti iznenađen čime neočekivanim.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "_____ znači izražavati zahvalnost.",
+                    answers: ["zahvaljivati", strava = stvori("zahvaljivati"), strava2 = stvori("zahvaljivati", strava), stvori("zahvaljivati", strava, strava2)],
+                    correctAnswer: "zahvaljivati",
+                    slika: "slike/zahvaljivati.jpg",
+                    opis: "Zahvaljivati znači izražavati zahvalnost.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "_____ znači osjećati veselje ili radost, biti veseo.",
+                    answers: ["veseliti se", strava = stvori("veseliti se"), strava2 = stvori("veseliti se", strava), stvori("veseliti se", strava, strava2)],
+                    correctAnswer: "veseliti se",
+                    slika: "slike/veseliti.jpg",
+                    opis: "Veseliti se znači osjećati veselje ili radost, biti veseo.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "_____ znači imati nadu, očekivati da će se ostvariti nešto što želimo.",
+                    answers: ["nadati se", strava = stvori("nadati se"), strava2 = stvori("nadati se", strava), stvori("nadati se", strava, strava2)],
+                    correctAnswer: "nadati se",
+                    slika: "slike/nadati.jpg",
+                    opis: "Nadati se znači imati nadu, očekivati da će se ostvariti nešto što želimo.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "_____ znači upućivati komu prigovor.",
+                    answers: ["prigovarati", strava = stvori("prigovarati"), strava2 = stvori("prigovarati", strava), stvori("prigovarati", strava, strava2)],
+                    correctAnswer: "prigovarati",
+                    slika: "slike/prigovarati.jpg",
+                    opis: "Prigovarati znači upućivati komu prigovor.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "_____ znači bilježiti slova i brojke na papiru, ploči ili čemu drugom.",
+                    answers: ["pisati", strava = stvori("pisati"), strava2 = stvori("pisati", strava), stvori("pisati", strava, strava2)],
+                    correctAnswer: "pisati",
+                    slika: "slike/pisati.jpg",
+                    opis: "Pisati znači bilježiti slova i brojke na papiru, ploči ili čemu drugom.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "_____ znači izgovarati riječi i rečenice koje postoje u nekom jeziku.",
+                    answers: ["govoriti", strava = stvori("govoriti"), strava2 = stvori("govoriti", strava), stvori("govoriti", strava, strava2)],
+                    correctAnswer: "govoriti",
+                    slika: "slike/govoriti.JPG",
+                    opis: "Govoriti znači izgovarati riječi i rečenice koje postoje u nekom jeziku.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "_____ znači imati povjerenja u koga ili što.",
+                    answers: ["vjerovati", strava = stvori("vjerovati"), strava2 = stvori("vjerovati", strava), stvori("vjerovati", strava, strava2)],
+                    correctAnswer: "vjerovati",
+                    slika: "slike/vjerovati.jpg",
+                    opis: "Vjerovati znači imati povjerenja u koga ili što.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "_____ znači razvući usta u osmijeh kao izraz veselja i opuštenosti.",
+                    answers: ["smijati se", strava = stvori("smijati se"), strava2 = stvori("smijati se", strava), stvori("smijati se", strava, strava2)],
+                    correctAnswer: "smijati se",
+                    slika: "slike/smijati.jpg",
+                    opis: "Smijati se znači razvući usta u osmijeh kao izraz veselja i opuštenosti.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "_____ znači upućivati što na čiju adresu, stvarnu ili virtualnu.",
+                    answers: ["slati", strava = stvori("slati"), strava2 = stvori("slati", strava), stvori("slati", strava, strava2)],
+                    correctAnswer: "slati",
+                    slika: "slike/slati.jpg",
+                    opis: "Slati znači upućivati što na čiju adresu, stvarnu ili virtualnu.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "_____ znači dolaziti blizu komu ili čemu.",
+                    answers: ["približavati se", strava = stvori("približavati se"), strava2 = stvori("približavati se", strava), stvori("približavati se", strava, strava2)],
+                    correctAnswer: "približavati se",
+                    slika: "slike/priblizavati.jpg",
+                    opis: "Približavati se znači dolaziti blizu komu ili čemu.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "_____ znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat.",
+                    answers: ["dati", strava = stvori("dati"), strava2 = stvori("dati", strava), stvori("dati", strava, strava2)],
+                    correctAnswer: "dati",
+                    slika: "slike/dati.jpg",
+                    opis: "Dati znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "_____ znači davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim.",
+                    answers: ["pomagati", strava = stvori("pomagati"), strava2 = stvori("pomagati", strava), stvori("pomagati", strava, strava2)],
+                    correctAnswer: "pomagati",
+                    slika: "slike/pomagati.jpg",
+                    opis: "Pomagati znači davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "_____ znači uzemirivati koga.",
+                    answers: ["smetati", strava = stvori("smetati"), strava2 = stvori("smetati", strava), stvori("smetati", strava, strava2)],
+                    correctAnswer: "smetati",
+                    slika: "slike/smetati.jpg",
+                    opis: "Smetati znači uzemirivati koga.",
+                    boja_pozadine: "#FCE4EC"
+                }
             ];
-        }
-        else{
+        } else {
             $(".questions-page__answer-list").css({
                 "columns": "1",
                 "-webkit-columns": "1",
@@ -308,127 +306,126 @@ $(document).ready(function () {
 
             })
             quiz = [{
-                question: "diviti se",
-                answers: ["pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime", strava = stvori2("pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime"), strava2 = stvori2("pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime", strava), stvori2("pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime", strava, strava2)],
-                correctAnswer: "pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime",
-                slika: "slike/diviti.jpg",
-                opis: "Diviti se znači pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime.",
-                boja_pozadine: "#FCE4EC"
-            },
-            
-            {
-                question: "čuditi se.",
-                answers: ["biti u čudu, biti iznenađen čime neočekivanim", strava = stvori2("biti u čudu, biti iznenađen čime neočekivanim"), strava2 = stvori2("biti u čudu, biti iznenađen čime neočekivanim", strava), stvori2("biti u čudu, biti iznenađen čime neočekivanim", strava, strava2)],
-                correctAnswer: "biti u čudu, biti iznenađen čime neočekivanim",
-                slika: "slike/cuditi.png",
-                opis: "Čuditi se znači biti u čudu, biti iznenađen čime neočekivanim.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "zahvaljivati",
-                answers: ["izražavati zahvalnost", strava = stvori2("izražavati zahvalnost"), strava2 = stvori2("izražavati zahvalnost", strava), stvori2("izražavati zahvalnost", strava, strava2)],
-                correctAnswer: "izražavati zahvalnost",
-                slika: "slike/zahvaljivati.jpg",
-                opis: "Zahvaljivati znači izražavati zahvalnost.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "veseliti se",
-                answers: ["znači osjećati veselje ili radost, biti veseo", strava = stvori2("znači osjećati veselje ili radost, biti veseo"), strava2 = stvori2("znači osjećati veselje ili radost, biti veseo", strava), stvori2("znači osjećati veselje ili radost, biti veseo", strava, strava2)],
-                correctAnswer: "znači osjećati veselje ili radost, biti veseo",
-                slika: "slike/veseliti.jpg",
-                opis: "Veseliti se znači osjećati veselje ili radost, biti veseo.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "nadati se",
-                answers: ["imati nadu, očekivati da će se ostvariti nešto što želimo", strava = stvori2("imati nadu, očekivati da će se ostvariti nešto što želimo"), strava2 = stvori2("imati nadu, očekivati da će se ostvariti nešto što želimo", strava), stvori2("imati nadu, očekivati da će se ostvariti nešto što želimo", strava, strava2)],
-                correctAnswer: "imati nadu, očekivati da će se ostvariti nešto što želimo",
-                slika: "slike/nadati.jpg",
-                opis: "Nadati se znači imati nadu, očekivati da će se ostvariti nešto što želimo.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "prigovarati",
-                answers: ["upućivati komu prigovor", strava = stvori2("upućivati komu prigovor"), strava2 = stvori2("upućivati komu prigovor", strava), stvori2("upućivati komu prigovor", strava, strava2)],
-                correctAnswer: "upućivati komu prigovor",
-                slika: "slike/prigovarati.jpg",
-                opis: "Prigovarati znači upućivati komu prigovor.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "pisati",
-                answers: ["bilježiti slova i brojke na papiru, ploči ili čemu drugom", strava = stvori2("bilježiti slova i brojke na papiru, ploči ili čemu drugom"), strava2 = stvori2("bilježiti slova i brojke na papiru, ploči ili čemu drugom", strava), stvori2("bilježiti slova i brojke na papiru, ploči ili čemu drugom", strava, strava2)],
-                correctAnswer: "bilježiti slova i brojke na papiru, ploči ili čemu drugom",
-                slika: "slike/pisati.jpg",
-                opis: "Pisati znači bilježiti slova i brojke na papiru, ploči ili čemu drugom.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "govoriti",
-                answers: ["izgovarati riječi i rečenice koje postoje u nekom jeziku", strava = stvori2("izgovarati riječi i rečenice koje postoje u nekom jeziku"), strava2 = stvori2("izgovarati riječi i rečenice koje postoje u nekom jeziku", strava), stvori2("izgovarati riječi i rečenice koje postoje u nekom jeziku", strava, strava2)],
-                correctAnswer: "izgovarati riječi i rečenice koje postoje u nekom jeziku",
-                slika: "slike/govoriti.jpg",
-                opis: "Govoriti znači izgovarati riječi i rečenice koje postoje u nekom jeziku.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "vjerovati",
-                answers: ["imati povjerenja u koga ili što", strava = stvori2("imati povjerenja u koga ili što"), strava2 = stvori2("imati povjerenja u koga ili što", strava), stvori2("imati povjerenja u koga ili što", strava, strava2)],
-                correctAnswer: "imati povjerenja u koga ili što",
-                slika: "slike/vjerovati.jpg",
-                opis: "Vjerovati znači imati povjerenja u koga ili što.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "smijati se",
-                answers: ["razvući usta u osmijeh kao izraz veselja i opuštenosti", strava = stvori2("razvući usta u osmijeh kao izraz veselja i opuštenosti"), strava2 = stvori2("razvući usta u osmijeh kao izraz veselja i opuštenosti", strava), stvori2("razvući usta u osmijeh kao izraz veselja i opuštenosti", strava, strava2)],
-                correctAnswer: "razvući usta u osmijeh kao izraz veselja i opuštenosti",
-                slika: "slike/smijati.jpg",
-                opis: "Smijati se znači razvući usta u osmijeh kao izraz veselja i opuštenosti.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "slati",
-                answers: ["upućivati što na čiju adresu, stvarnu ili virtualnu", strava = stvori2("upućivati što na čiju adresu, stvarnu ili virtualnu"), strava2 = stvori2("upućivati što na čiju adresu, stvarnu ili virtualnu", strava), stvori2("upućivati što na čiju adresu, stvarnu ili virtualnu", strava, strava2)],
-                correctAnswer: "upućivati što na čiju adresu, stvarnu ili virtualnu",
-                slika: "slike/slati.jpg",
-                opis: "Slati znači upućivati što na čiju adresu, stvarnu ili virtualnu.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "približavati se",
-                answers: ["dolaziti blizu komu ili čemu", strava = stvori2("dolaziti blizu komu ili čemu"), strava2 = stvori2("dolaziti blizu komu ili čemu", strava), stvori2("dolaziti blizu komu ili čemu", strava, strava2)],
-                correctAnswer: "dolaziti blizu komu ili čemu",
-                slika: "slike/priblizavati.jpg",
-                opis: "Približavati se znači dolaziti blizu komu ili čemu.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "dati",
-                answers: ["znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat", strava = stvori2("znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat"), strava2 = stvori2("znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat", strava), stvori2("znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat", strava, strava2)],
-                correctAnswer: "znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat",
-                slika: "slike/dati.jpg",
-                opis: "Dati znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat.",
-                boja_pozadine: "#FCE4EC"
-            },
-            {
-                question: "pomagati",
-                answers: ["davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim", strava = stvori2("davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim"), strava2 = stvori2("davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim", strava), stvori2("davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim", strava, strava2)],
-                correctAnswer: "davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim",
-                slika: "slike/pomagati.jpg",
-                opis: "Pomagati znači davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim.",
-                boja_pozadine: "#FCE4EC"
-            }
-            ,
-            {
-                question: "smetati",
-                answers: ["uzemirivati koga", strava = stvori2("uzemirivati koga"), strava2 = stvori2("uzemirivati koga", strava), stvori2("uzemirivati koga", strava, strava2)],
-                correctAnswer: "uzemirivati koga",
-                slika: "slike/smetati.jpg",
-                opis: "Smetati znači uzemirivati koga.",
-                boja_pozadine: "#FCE4EC"
-            }
+                    question: "diviti se",
+                    answers: ["pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime", strava = stvori2("pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime"), strava2 = stvori2("pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime", strava), stvori2("pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime", strava, strava2)],
+                    correctAnswer: "pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime",
+                    slika: "slike/diviti.jpg",
+                    opis: "Diviti se znači pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime.",
+                    boja_pozadine: "#FCE4EC"
+                },
+
+                {
+                    question: "čuditi se.",
+                    answers: ["biti u čudu, biti iznenađen čime neočekivanim", strava = stvori2("biti u čudu, biti iznenađen čime neočekivanim"), strava2 = stvori2("biti u čudu, biti iznenađen čime neočekivanim", strava), stvori2("biti u čudu, biti iznenađen čime neočekivanim", strava, strava2)],
+                    correctAnswer: "biti u čudu, biti iznenađen čime neočekivanim",
+                    slika: "slike/cuditi.png",
+                    opis: "Čuditi se znači biti u čudu, biti iznenađen čime neočekivanim.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "zahvaljivati",
+                    answers: ["izražavati zahvalnost", strava = stvori2("izražavati zahvalnost"), strava2 = stvori2("izražavati zahvalnost", strava), stvori2("izražavati zahvalnost", strava, strava2)],
+                    correctAnswer: "izražavati zahvalnost",
+                    slika: "slike/zahvaljivati.jpg",
+                    opis: "Zahvaljivati znači izražavati zahvalnost.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "veseliti se",
+                    answers: ["znači osjećati veselje ili radost, biti veseo", strava = stvori2("znači osjećati veselje ili radost, biti veseo"), strava2 = stvori2("znači osjećati veselje ili radost, biti veseo", strava), stvori2("znači osjećati veselje ili radost, biti veseo", strava, strava2)],
+                    correctAnswer: "znači osjećati veselje ili radost, biti veseo",
+                    slika: "slike/veseliti.jpg",
+                    opis: "Veseliti se znači osjećati veselje ili radost, biti veseo.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "nadati se",
+                    answers: ["imati nadu, očekivati da će se ostvariti nešto što želimo", strava = stvori2("imati nadu, očekivati da će se ostvariti nešto što želimo"), strava2 = stvori2("imati nadu, očekivati da će se ostvariti nešto što želimo", strava), stvori2("imati nadu, očekivati da će se ostvariti nešto što želimo", strava, strava2)],
+                    correctAnswer: "imati nadu, očekivati da će se ostvariti nešto što želimo",
+                    slika: "slike/nadati.jpg",
+                    opis: "Nadati se znači imati nadu, očekivati da će se ostvariti nešto što želimo.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "prigovarati",
+                    answers: ["upućivati komu prigovor", strava = stvori2("upućivati komu prigovor"), strava2 = stvori2("upućivati komu prigovor", strava), stvori2("upućivati komu prigovor", strava, strava2)],
+                    correctAnswer: "upućivati komu prigovor",
+                    slika: "slike/prigovarati.jpg",
+                    opis: "Prigovarati znači upućivati komu prigovor.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "pisati",
+                    answers: ["bilježiti slova i brojke na papiru, ploči ili čemu drugom", strava = stvori2("bilježiti slova i brojke na papiru, ploči ili čemu drugom"), strava2 = stvori2("bilježiti slova i brojke na papiru, ploči ili čemu drugom", strava), stvori2("bilježiti slova i brojke na papiru, ploči ili čemu drugom", strava, strava2)],
+                    correctAnswer: "bilježiti slova i brojke na papiru, ploči ili čemu drugom",
+                    slika: "slike/pisati.jpg",
+                    opis: "Pisati znači bilježiti slova i brojke na papiru, ploči ili čemu drugom.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "govoriti",
+                    answers: ["izgovarati riječi i rečenice koje postoje u nekom jeziku", strava = stvori2("izgovarati riječi i rečenice koje postoje u nekom jeziku"), strava2 = stvori2("izgovarati riječi i rečenice koje postoje u nekom jeziku", strava), stvori2("izgovarati riječi i rečenice koje postoje u nekom jeziku", strava, strava2)],
+                    correctAnswer: "izgovarati riječi i rečenice koje postoje u nekom jeziku",
+                    slika: "slike/govoriti.jpg",
+                    opis: "Govoriti znači izgovarati riječi i rečenice koje postoje u nekom jeziku.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "vjerovati",
+                    answers: ["imati povjerenja u koga ili što", strava = stvori2("imati povjerenja u koga ili što"), strava2 = stvori2("imati povjerenja u koga ili što", strava), stvori2("imati povjerenja u koga ili što", strava, strava2)],
+                    correctAnswer: "imati povjerenja u koga ili što",
+                    slika: "slike/vjerovati.jpg",
+                    opis: "Vjerovati znači imati povjerenja u koga ili što.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "smijati se",
+                    answers: ["razvući usta u osmijeh kao izraz veselja i opuštenosti", strava = stvori2("razvući usta u osmijeh kao izraz veselja i opuštenosti"), strava2 = stvori2("razvući usta u osmijeh kao izraz veselja i opuštenosti", strava), stvori2("razvući usta u osmijeh kao izraz veselja i opuštenosti", strava, strava2)],
+                    correctAnswer: "razvući usta u osmijeh kao izraz veselja i opuštenosti",
+                    slika: "slike/smijati.jpg",
+                    opis: "Smijati se znači razvući usta u osmijeh kao izraz veselja i opuštenosti.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "slati",
+                    answers: ["upućivati što na čiju adresu, stvarnu ili virtualnu", strava = stvori2("upućivati što na čiju adresu, stvarnu ili virtualnu"), strava2 = stvori2("upućivati što na čiju adresu, stvarnu ili virtualnu", strava), stvori2("upućivati što na čiju adresu, stvarnu ili virtualnu", strava, strava2)],
+                    correctAnswer: "upućivati što na čiju adresu, stvarnu ili virtualnu",
+                    slika: "slike/slati.jpg",
+                    opis: "Slati znači upućivati što na čiju adresu, stvarnu ili virtualnu.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "približavati se",
+                    answers: ["dolaziti blizu komu ili čemu", strava = stvori2("dolaziti blizu komu ili čemu"), strava2 = stvori2("dolaziti blizu komu ili čemu", strava), stvori2("dolaziti blizu komu ili čemu", strava, strava2)],
+                    correctAnswer: "dolaziti blizu komu ili čemu",
+                    slika: "slike/priblizavati.jpg",
+                    opis: "Približavati se znači dolaziti blizu komu ili čemu.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "dati",
+                    answers: ["znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat", strava = stvori2("znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat"), strava2 = stvori2("znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat", strava), stvori2("znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat", strava, strava2)],
+                    correctAnswer: "znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat",
+                    slika: "slike/dati.jpg",
+                    opis: "Dati znači da smo nekomu nešto prepustili ili uručili bez traženja novca zauzvrat.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "pomagati",
+                    answers: ["davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim", strava = stvori2("davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim"), strava2 = stvori2("davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim", strava), stvori2("davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim", strava, strava2)],
+                    correctAnswer: "davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim",
+                    slika: "slike/pomagati.jpg",
+                    opis: "Pomagati znači davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim.",
+                    boja_pozadine: "#FCE4EC"
+                },
+                {
+                    question: "smetati",
+                    answers: ["uzemirivati koga", strava = stvori2("uzemirivati koga"), strava2 = stvori2("uzemirivati koga", strava), stvori2("uzemirivati koga", strava, strava2)],
+                    correctAnswer: "uzemirivati koga",
+                    slika: "slike/smetati.jpg",
+                    opis: "Smetati znači uzemirivati koga.",
+                    boja_pozadine: "#FCE4EC"
+                }
             ];
         }
 
@@ -438,7 +435,7 @@ $(document).ready(function () {
     };
 
     // Load the next question and set of answers
-    generateQuestionAndAnswers = function () {
+    generateQuestionAndAnswers = function() {
         $(".questions-page__answer-list").show()
         question.html("<span style='font-size: 1.3rem;'>" + (questionCounter + 1) + "/" + quiz.length + ".</span> <br>");
         shuffle(quiz[questionCounter].answers);
@@ -478,7 +475,7 @@ $(document).ready(function () {
         })
 
         if (quiz[questionCounter].question[0] == "_") {
-            $(".questions-page__answer-span").each(function () {
+            $(".questions-page__answer-span").each(function() {
                 var s = $(this).text().split(' ');
                 for (var i = 0; i < 1; i++) {
                     s[i] = s[i].substring(0, 1).toUpperCase() + s[i].substring(1);
@@ -495,24 +492,24 @@ $(document).ready(function () {
     };
 
     // Store the correct answer of a given question
-    getCorrectAnswer = function () {
+    getCorrectAnswer = function() {
         correctAnswer = quiz[questionCounter].correctAnswer;
     };
 
     // Store the user's selected (clicked) answer
-    getUserAnswer = function (target) {
+    getUserAnswer = function(target) {
         userSelectedAnswer = $(target).find(answerSpan).text().toLowerCase();
     };
 
     // Add the pointer to the clicked answer
-    selectAnswer = function (target) {
+    selectAnswer = function(target) {
         $(target).find(selectionDiv).addClass('ion-chevron-right');
         $(target).addClass("odabir")
 
     };
 
     // Remove the pointer from any answer that has it
-    deselectAnswer = function () {
+    deselectAnswer = function() {
         if (selectionDiv.hasClass('ion-chevron-right')) {
             selectionDiv.removeClass('ion-chevron-right');
             selectionDiv.parent().removeClass("odabir")
@@ -520,13 +517,13 @@ $(document).ready(function () {
     };
 
     // Get the selected answer's div for highlighting purposes
-    getSelectedAnswerDivs = function (target) {
+    getSelectedAnswerDivs = function(target) {
         toBeHighlighted = $(target);
         toBeMarked = $(target).find(feedbackDiv);
     };
 
     // Make the correct answer green and add checkmark
-    highlightCorrectAnswerGreen = function (target) {
+    highlightCorrectAnswerGreen = function(target) {
         if (correctAnswer === answerA.text()) {
             answerDivA.addClass('questions-page--correct');
             answerDivA.find(feedbackDiv).addClass('ion-checkmark-round');
@@ -546,13 +543,13 @@ $(document).ready(function () {
     };
 
     // Make the incorrect answer red and add X
-    highlightIncorrectAnswerRed = function () {
+    highlightIncorrectAnswerRed = function() {
         toBeHighlighted.addClass('questions-page--incorrect');
         toBeMarked.addClass('ion-close-round');
     };
 
     // Clear all highlighting and feedback
-    clearHighlightsAndFeedback = function () {
+    clearHighlightsAndFeedback = function() {
         answerDiv.removeClass('questions-page--correct');
         answerDiv.removeClass('questions-page--incorrect');
         feedbackDiv.removeClass('ion-checkmark-round');
@@ -572,7 +569,7 @@ $(document).ready(function () {
 
 
     // Clicking on start button:
-    startBtn.on('click', function () {
+    startBtn.on('click', function() {
 
         newQuiz();
 
@@ -595,7 +592,7 @@ $(document).ready(function () {
     /* --- PAGE 2/3 --- */
 
     // Clicking on an answer:
-    answerDiv.on('click', function () {
+    answerDiv.on('click', function() {
 
         // Make the submit button visible
 
@@ -622,7 +619,7 @@ $(document).ready(function () {
 
         prekidac = 0;
         var ide = 0
-        // Disable ability to select an answer
+            // Disable ability to select an answer
         answerDiv.off('click');
         if (questionCounter != quiz.length - 1) {
             ide = 1
@@ -646,15 +643,16 @@ $(document).ready(function () {
                 showCloseButton: true,
                 confirmButtonText: ' dalje',
                 backdrop: false,
-                allowOutsideClick: false, allowEscapeKey: false
+                allowOutsideClick: false,
+                allowEscapeKey: false
             });
-            $(".swal2-confirm").click(function () {
+            $(".swal2-confirm").click(function() {
                 clearInterval(countdownTimer)
                 if (ide == 1) {
                     ProgressCountdown(60, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
                 }
             })
-            $(".swal2-close").click(function () {
+            $(".swal2-close").click(function() {
                 clearInterval(countdownTimer)
                 if (ide == 1) {
                     ProgressCountdown(60, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
@@ -676,11 +674,12 @@ $(document).ready(function () {
                     showCloseButton: true,
                     confirmButtonText: ' dalje',
                     backdrop: false,
-                    allowOutsideClick: false, allowEscapeKey: false
+                    allowOutsideClick: false,
+                    allowEscapeKey: false
 
                 });
 
-                $(".swal2-confirm").click(function () {
+                $(".swal2-confirm").click(function() {
                     clearInterval(countdownTimer)
                     if (ide == 1) {
                         ProgressCountdown(60, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
@@ -688,7 +687,7 @@ $(document).ready(function () {
 
 
                 })
-                $(".swal2-close").click(function () {
+                $(".swal2-close").click(function() {
                     clearInterval(countdownTimer)
                     if (ide == 1) {
                         ProgressCountdown(60, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
@@ -707,16 +706,17 @@ $(document).ready(function () {
                     showCloseButton: true,
                     confirmButtonText: ' dalje',
                     backdrop: false,
-                    allowOutsideClick: false, allowEscapeKey: false
+                    allowOutsideClick: false,
+                    allowEscapeKey: false
                 });
 
-                $(".swal2-confirm").click(function () {
+                $(".swal2-confirm").click(function() {
                     clearInterval(countdownTimer)
                     if (ide == 1) {
                         ProgressCountdown(60, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
                     }
                 })
-                $(".swal2-close").click(function () {
+                $(".swal2-close").click(function() {
                     clearInterval(countdownTimer)
                     if (ide == 1) {
                         ProgressCountdown(60, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
@@ -744,7 +744,7 @@ $(document).ready(function () {
 
             document.getElementsByClassName('sakri')[0].style.display = "block"
             document.getElementsByClassName('results-page')[0].style.display = "block"
-            // Display user score as a percentage
+                // Display user score as a percentage
             userScore.text(Math.floor((correctAnswersCounter / quiz.length) * 100) + " %");
             prikazBodova.text(bodovi);
             $("#input-q2").attr("value", bodovi)
@@ -766,7 +766,7 @@ $(document).ready(function () {
         continueBtn.hide(300);
 
         // Enable ability to select an answer
-        answerDiv.on('click', function () {
+        answerDiv.on('click', function() {
             // Make the submit button visible
             // Remove pointer from any answer that already has it
             deselectAnswer();
@@ -782,19 +782,19 @@ $(document).ready(function () {
     }
 
     // Clicking on the continue button:
-    continueBtn.on('click', function () {
+    continueBtn.on('click', function() {
 
 
 
     });
 
-    $(".questions-page__answer-div").dblclick(function () {
-        odgovor()
-    })
-    /* --- PAGE 3/3 --- */
+    $(".questions-page__answer-div").dblclick(function() {
+            odgovor()
+        })
+        /* --- PAGE 3/3 --- */
 
     // Clicking on the retake button:
-    retakeBtn.on('click', function () {
+    retakeBtn.on('click', function() {
         // Go to the first page
         // Start the quiz over
         newQuiz();
@@ -841,7 +841,7 @@ function touchHandler(event) {
     simulatedEvent.initMouseEvent(type, true, true, window, 1,
         first.screenX, first.screenY,
         first.clientX, first.clientY, false,
-        false, false, false, 0 /*left*/, null);
+        false, false, false, 0 /*left*/ , null);
 
     first.target.dispatchEvent(simulatedEvent);
     event.preventDefault();
