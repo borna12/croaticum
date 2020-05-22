@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kviz dijelovi automobila
+    </title>
+    <meta charset="utf-8">
+    <meta name="description" content="Prepoznaj dio auta sa slike">
+    <meta name="keywords" content="kviz, dijelovi auta">
+    <meta name="author" content="Josip Mihaljević">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Flamenco|Asap:400,700' rel='stylesheet'
+        type='text/css'>
+    <link rel='stylesheet prefetch' href='https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src='js/jquery.min.js'></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <meta property="og:title" content="Kviz dijelovi automobila" />
+    <meta property="og:description" content="Prepoznaj dio auta sa slike" />
+    <meta property="og:image" content="og-slika.png" />
+    <script src="https://rawgit.com/theraot/emoji/master/emoji.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <audio class="audios" id="tocno" preload="none">
+        <source src="zvuk/tocno.mp3" type="audio/mpeg">
+    </audio>
+    <audio class="audios" id="krivo" preload="none">
+        <source src="zvuk/krivo.mp3" type="audio/mpeg">
+    </audio>
+    <div class="init-page" >
+        <div class="container container2">
+<br>
+<br>
+            <h1 class="init-page__title" style="padding-top: 2%;">Kviz dijelovi automobila</h1>
+            <p class="opis">Prepoznaj dio automobila na temelju slike.</p><br>
+            <img src="slike/dijelovi_auta.jpg" style=" " class="logo" />
+            <button class="init-page__btn btn uglata" onClick="uglata=1;">započni igru</button>
+            <br>
+            <p style="text-align: center;font-size: 1.5rem;"> <a href="../index.html" style="text-decoration: none;">vrati se ↩</a></p>
+
+        </div>
+    </div>
+    <div class="questions-page">
+        <div class="container">
+            <h2 class="questions-page__question"></h2>
+            <p class="definicija"></p>
+            <img class="init-page__icon slikica" />
+            <div class="row begin-countdown">
+                <div class="col-md-12 text-center vrijeme">
+                </div>
+            </div>
+            <ul class="questions-page__answer-list" style="display:none">
+                <!--  Letter A  -->
+                <!--  Answer div  -->
+                <div class="questions-page__answer-div
+                        questions-page__answer-div-a">
+                    <!--  Selector div  -->
+                    <div class="questions-page__selection-div"></div>
+                    <!--  Feedback div -->
+                    <div class="questions-page__feedback-div"></div>
+                    <!--  Answer -->
+                    <li class="questions-page__answer-line"><span class="questions-page__answer-span
+                                questions-page__answer-A"></span></li>
+                </div>
+
+                <!--  Letter B  -->
+                <!--  Answer div  -->
+                <div class="questions-page__answer-div
+                        questions-page__answer-div-b">
+                    <!--  Selector div  -->
+                    <div class="questions-page__selection-div"></div>
+                    <!--  Feedback div -->
+                    <div class="questions-page__feedback-div"></div>
+                    <!--  Answer -->
+                    <li class="questions-page__answer-line"><span class="questions-page__answer-span
+                                questions-page__answer-B"></span></li>
+                </div>
+                <!--  Letter C  -->
+                <!--  Answer div  -->
+                <div class="questions-page__answer-div
+                        questions-page__answer-div-c">
+                    <!--  Selector div  -->
+                    <div class="questions-page__selection-div"></div>
+                    <!--  Feedback div -->
+                    <div class="questions-page__feedback-div"></div>
+                    <!--  Answer -->
+                    <li class="questions-page__answer-line"><span class="questions-page__answer-span
+                                questions-page__answer-C"></span></li>
+                </div>
+
+                <!--  Letter D  -->
+                <!--  Answer div  -->
+                <div class="questions-page__answer-div
+                        questions-page__answer-div-d">
+                    <!--  Selector div  -->
+                    <div class="questions-page__selection-div"></div>
+                    <!--  Feedback div -->
+                    <div class="questions-page__feedback-div"></div>
+                    <!--  Answer -->
+                    <li class="questions-page__answer-line"><span class="questions-page__answer-span
+                                questions-page__answer-D"></span></li>
+                </div>
+            </ul>
+
+            <!--  ICON NAMES: x is   ion-close-round  , check is   ion-checkmark-round
+            <div class="btn-holder">
+                <button class="questions-page__submit-btn btn mrzim">potvrdi
+                    odabir</button>
+                <button class="questions-page__continue-btn btn">nastavi</button>
+            </div>-->
+
+        </div>
+    </div>
+    <div class="results-page">
+        <div class="container sakri" style="top: 60%;
+                position: relative;
+                transition: translate (-50%);
+                transform: translateY(-50%);">
+            <h3 class="results-page__info2">Hvala na sudjelovanju u
+                kvizu!</h3><br>
+            <p class="results-page__info">postotak točnih odgovora: <span class="results-page__score">100 %</span></p>
+            <br>
+            <p class="results-page__info">s obzirom na količinu točnih
+                odgovora i vrijeme ostvaren je idući broj
+                bodova:</p>
+            <h3 class="results-page__bodovi">postavljenih pitanja!</h3>
+            <br>
+            <p>
+                <form id='input-form' action='' method='POST' target='no-target'><br><select id="ikona" style="height:30px">
+
+
+                    </select> <label for='ime'>Ime : </label><input id='input-q1' name='q1'><br> <input id='input-q2'
+                        placeholder='q2' name='q2' value='' disabled style='display:none'> <button id='form-submit'
+                        type='submit' disabled="true">predaj rezultat</button>
+                </form>
+                <iframe src='#' id='no-target' name='no-target' style='visibility:hidden;display:none'></iframe>
+                <!--<button class="results-page__retake-btn btn">Ponovite kviz</button>
+                <button class="videoPoster js-videoPoster" style="background-image:url(http://i2.wp.com/www.cgmeetup.net/home/wp-content/uploads/2015/05/Avengers-Age-of-Ultron-UI-Reel-1.jpg);">Play video</button>
+            </div>-->
+                <button class="results-page__retake-btn btn" onclick="location.reload();">ponovi kviz</button>
+                <script>
+                    var target = document.getElementById("ikona");
+                    var emojiCount = emoji.length;
+                    for (var index = 0; index < emojiCount; index++) {
+                        addEmoji(emoji[index]);
+                    }
+
+                    function addEmoji(code) {
+                        var option = document.createElement('option');
+                        option.innerHTML = code;
+                        option.value = code;
+                        target.appendChild(option);
+                    }
+
+                    if (localStorage.getItem("ime") != null) {
+                        $('#input-q1').val(localStorage.getItem("ime"))
+                        $('#ikona').val(localStorage.getItem("ikona"))
+                        $('#form-submit').prop('disabled', this.value == "true");
+                    }
+
+                    $('#input-form').one('submit', function () {
+                        $('#input-form').hide(300)
+
+                        localStorage.setItem('ikona', $('#ikona').val())
+                        localStorage.setItem('ime', $('#input-q1').val())
+                        localStorage.setItem('pokrenuto', "da")
+                        var inputq1 = encodeURIComponent($('#ikona').val() + " " + $('#input-q1').val());
+                        var inputq2 = encodeURIComponent($('#input-q2').val());
+                        var q1ID = "entry.412821582";
+                        var q2ID = "entry.902512960";
+
+                        if (uglata == 1) {
+                            var baseURL =
+                                'https://docs.google.com/forms/d/e/1FAIpQLSfFaI52I4WXvG-YjXsqy7ubt1xG2R1FYyTz5OH4fWuimFu0yQ/formResponse?';
+                        } 
+
+                        var submitRef = '&submit=970054585833720596';
+                        var submitURL = (baseURL + q1ID + "=" + inputq1 + "&" + q2ID + "=" + inputq2 +
+                            submitRef);
+                        console.log(submitURL);
+                        $(this)[0].action = submitURL;
+                        setTimeout(
+                            function () {
+                                if (uglata == 1) {
+                                    window.location.href = 'rez.html';
+                                } else {
+                                    window.location.href = 'rez2.html';
+                                }
+                            }, 2500);
+                    });
+
+
+
+                    $(' #input-q1').keyup(function () {
+                        $('#form-submit').prop('disabled', this.value == "" ? true : false);
+                    })
+                </script>
+        </div>
+    </div>
+    <script src='js/lightzoom.js'></script>
+
+    <script src="js/index.js"></script>
+
+
+</body>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
     <title>Dopuni tekst idućim riječima</title>
     <meta charset="utf-8">
-    <meta name="description" content="">
+    <meta name="description" content="Dovuci riječi u prazna polja.">
     <meta name="author" content="Josip Mihaljević">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stil.css" />
@@ -30,15 +30,26 @@
     <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <script src="js/sweetalert2.min.js"></script>
-
     <meta property="og:title" content="Dopuni tekst idućim riječima" />
-    <meta property="og:description" content="" />
+    <meta property="og:description" content="Dovuci riječi u prazna polja." />
     <meta property="og:image" content="og-slika.png" />
+    <script src="js/examples.min.js"> </script>
+    <script src="https://rawgit.com/theraot/emoji/master/emoji.js" charset="utf-8"></script>
 
+    <script> var timer = new Timer();
+        timer.start();
+        sekunde = 0
+        timer.addEventListener('secondsUpdated', function (e) {
+            $('#basicUsage').html(timer.getTimeValues().toString());
+            sekunde = timer.getTimeValues().seconds
+        });
+
+      
+    </script>
 </head>
 
 <body>
-
+    <div id="basicUsage">00:00:00</div>
     <h1 class="naslov">Igra dovlačenja</h1>
     <p class="opis">Dovuci odgavarujući glagol kako bi ispravno nadopunio rečenicu koja prikazuje radnju s gornje
         slike.</p>
@@ -74,13 +85,13 @@
             <div class="dragDropSmallBox" id="a11"></div>
             <div class="dragDropSmallBox" id="a12"></div>
             <section class="btn-holder">
-                <button class="questions-page__continue-btn btn" style="">nastavi</button>
+                <button class="questions-page__continue-btn btn" style="">nastavi ❯</button>
             </section>
         </div>
-        
+
     </div>
     <div id="dragContent"></div>
-
+    <p style="text-align: center;"> <a href="../index.html" style="text-decoration: none;">vrati se ↩</a></p>
 
     <script>
         document.getElementById('a0').addEventListener("touchstart", touchHandler, true);
@@ -144,7 +155,7 @@
         document.getElementById('a12').addEventListener("touchcancel", touchHandler, true);
     </script>
 
-       
+
 
 
 

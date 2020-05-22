@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Kviz iz dativa ličnih zamjenica
+    <title>Kviz – dativ ličnih zamjenica
     </title>
     <meta charset="utf-8">
     <meta name="description"
@@ -58,7 +58,7 @@
         <div class="container container2">
             <br>
             <br>
-            <h1 class="init-page__title" style="padding-top: 2%;">Kviz iz dativa ličnih zamjenica</h1>
+            <h1 class="init-page__title" style="padding-top: 2%;">Kviz – dativ ličnih zamjenica</h1>
             <p class="opis">Odaberi riječ u dativu kako bi pravilno nadopunio rečenicu.</p>
             <br>
             <img src="slike/glagoljica.jpg" style="width: 100%;
@@ -66,6 +66,8 @@
                     display: block;
                     margin-right: auto; margin-top:20px" class="senka" />
             <button class="init-page__btn btn uglata" onClick="uglata=1;obla=0">započni kviz</button>
+            <br>
+            <p style="text-align: center;font-size: 1.5rem;"> <a href="../index.html" style="text-decoration: none;">vrati se ↩</a></p>
 
 
         </div>
@@ -150,12 +152,12 @@
                 </div>
             </ul>
 
-            <!--  ICON NAMES: x is   ion-close-round  , check is   ion-checkmark-round-->
+            <!--  ICON NAMES: x is   ion-close-round  , check is   ion-checkmark-round
             <div class="btn-holder">
                 <button class="questions-page__submit-btn btn mrzim">potvrdi odabir
                 </button>
                 <button class="questions-page__continue-btn btn">nastavi</button>
-            </div>
+            </div>-->
 
         </div>
     </div>
@@ -175,23 +177,13 @@
             <h3 class="results-page__bodovi">postavljenih pitanja!</h3>
             <br>
             <p>
-                <form class="jedan"
-                    action="https://docs.google.com/forms/d/e/1FAIpQLSdQpcNDwTT0IKcqorbznnf6-8CBuhgaPki9i2pja-XWbUw6zg/formResponse"
-                    target="_self" id="bootstrapForm" method="POST" style="display: none;">
-                    <legend for="736982347">
-                        <select id="ikona" style="height:30px"></select> Ime:
-                        <input id="312289462" type="text" name="entry.312289462" class="form-control" required
-                            id="input-q1" style="height:30px">
-                    </legend>
-                    <div class="form-group">
-                        <input style="display:none" id="60656686" type="text" name="entry.60656686" class="form-control"
-                            required> </div>
-                    <input type="hidden" name="fvv" value="1">
-                    <input type="hidden" name="fbzx" value="4484478125650916779">
-                    <input type="hidden" name="pageHistory" value="0">
-                    <br>
-                    <input class="btn" type="submit" id="predaj" value="predaj">
-                </form>
+                <form id='input-form' action='' method='POST' target='no-target'><br><select id="ikona" style="height:30px">
+
+                </select> <label for='ime'>Ime : </label><input id='input-q1' name='q1'><br> <input id='input-q2'
+                    placeholder='q2' name='q2' value='' disabled style='display:none'> <button id='form-submit'
+                    type='submit' disabled="true">predaj rezultat</button>
+            </form>                <iframe src='#' id='no-target' name='no-target' style='visibility:hidden;display:none'></iframe>
+
                 <button class="results-page__retake-btn btn"
                 onclick="localStorage.setItem('reset','da');location.reload();">ponovi kviz</button>
 
@@ -199,13 +191,10 @@
         <script src='js/jquery.min.js'></script>
         <script src="js/sweetalert2.min.js"></script>
         <script src="js/jquery.form.js"></script>
-        <script src="js/index.js"></script>
-
 
         <script>
             var target = document.getElementById("ikona");
             var emojiCount = emoji.length;
-
             for (var index = 0; index < emojiCount; index++) {
                 addEmoji(emoji[index]);
             }
@@ -218,34 +207,51 @@
             }
 
             if (localStorage.getItem("ime") != null) {
-                $('#312289462').val(localStorage.getItem("ime"))
+                $('#input-q1').val(localStorage.getItem("ime"))
                 $('#ikona').val(localStorage.getItem("ikona"))
+                $('#form-submit').prop('disabled', this.value == "true");
             }
 
+            $('#input-form').one('submit', function () {
+                $('#input-form').hide(300)
 
-            $('#bootstrapForm').submit(function (event) {
-                localStorage.setItem("ime", $('#312289462').val())
-                localStorage.setItem("ikona", $('#ikona').val())
+                localStorage.setItem('ikona', $('#ikona').val())
+                localStorage.setItem('ime', $('#input-q1').val())
                 localStorage.setItem('pokrenuto', "da")
-                event.preventDefault()
-                $('#312289462').val(
-                    document.getElementById("ikona").value + document.getElementById("312289462").value
-                )
-                $("#predaj").hide(300)
-                event.preventDefault()
-                var extraData = {}
-                $('#bootstrapForm').ajaxSubmit({
-                    data: extraData,
-                    dataType: 'jsonp', // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
-                    error: function () {
-                        // Submit of form should be successful but JSONP callback will fail because Google Forms
+                var inputq1 = encodeURIComponent($('#ikona').val() + " " + $('#input-q1').val());
+                var inputq2 = encodeURIComponent($('#input-q2').val());
+                var q1ID = "entry.412821582";
+                var q2ID = "entry.902512960";
+        
+                    var baseURL =
 
-                        window.open("rez.html", "_self");
+                    
+                        'https://docs.google.com/forms/d/e/1FAIpQLSdL7PT3hhjWYJxtSd-oUHze2rqiRECqFetLiqORliKZClOThA/formResponse?';
+               
 
-                    }
-                })
+                var submitRef = '&submit=970054585833720596';
+                var submitURL = (baseURL + q1ID + "=" + inputq1 + "&" + q2ID + "=" + inputq2 +
+                    submitRef);
+                console.log(submitURL);
+                $(this)[0].action = submitURL;
+                setTimeout(
+                    function () {
+                       
+                            window.location.href = 'rez.html';
+                        
+                    }, 2500);
+            });
+
+
+
+            $(' #input-q1').keyup(function () {
+                $('#form-submit').prop('disabled', this.value == "" ? true : false);
             })
         </script>
+
+<script src="js/index.js"></script>
+
+        
     </div>
 
 

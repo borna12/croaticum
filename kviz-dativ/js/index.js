@@ -1,5 +1,4 @@
 // VARIABLE DECLARATIONS ------
-
 // pages
 var initPage,
     questionsPage,
@@ -61,12 +60,7 @@ function ProgressCountdown(timeleft, bar, text) {
             if (timeleft <= 0) {
                 clearInterval(countdownTimer);
                 resolve(true);
-            } else if (timeleft <= 1) {
-                $("#sekunde").html("sekunda")
-                $("#ostalo").html("ostala")
-            } else if (timeleft <= 4) {
-                $("#sekunde").html("sekunde")
-            }
+            } 
 
         }, 1000);
     });
@@ -192,7 +186,7 @@ $(document).ready(function () {
         } else {
             answerDivF.show()
         };
-        $(".vrijeme").html('<progress value="10" max="10" id="pageBeginCountdown"></progress><p><span id="pageBeginCountdownText">30 </span> <span id="sekunde"></p>')
+        $(".vrijeme").html('<progress value="30" max="30" id="pageBeginCountdown"></progress><p><span id="pageBeginCountdownText">30</span></p>')
         $("body").css({
             "background-color": quiz[questionCounter].boja_pozadine
         })
@@ -371,7 +365,7 @@ $(document).ready(function () {
 
             swal({
                 title: "Isteklo je vrijeme.",
-                html: "<p style='text-align:center'><strong>Točan odgovor je: <br><br>" + quiz[questionCounter].question + "</strong></p><br>" + quiz[questionCounter].napomena,
+                html: "<p style='text-align:center'></p><br>" + quiz[questionCounter].napomena,
                 showCloseButton: true,
                 confirmButtonText: ' dalje',
                 backdrop: false,
@@ -434,7 +428,7 @@ $(document).ready(function () {
                 $("#krivo")[0].play();
                 swal({
                     title: " <span style='color:#bb422a' >Netočno</span>",
-                    html: "<p style='text-align:center'><strong>Točan odgovor je: <br><br>" + quiz[questionCounter].question + "</strong></p><br>" + quiz[questionCounter].napomena,
+                    html: "<p style='text-align:center'>" + quiz[questionCounter].napomena,
                     showCloseButton: true,
                     confirmButtonText: ' dalje',
                     backdrop: false,
@@ -473,17 +467,18 @@ $(document).ready(function () {
 
     function nastavi() {
         // Increment question number until there are no more questions, then advance to the next page
-        if (questionCounter < quiz.length - 1) {
-            questionCounter++;
-            
-        } else {
-            document.getElementsByClassName('questions-page')[0].style.display = "none"
-            document.getElementsByClassName('results-page')[0].style.display = "block"
-            document.getElementsByClassName('sakri')[0].style.display = "block"
-            // Display user score as a percentage
-            userScore.text(Math.floor((correctAnswersCounter / quiz.length) * 100) + " %");
-            prikazBodova.text(bodovi);
-            $("#60656686").attr("value", bodovi)
+       // Increment question number until there are no more questions, then advance to the next page
+       if (questionCounter < quiz.length - 1) {
+        questionCounter++;
+    } else {
+        document.getElementsByClassName('questions-page')[0].style.display = "none"
+
+        document.getElementsByClassName('sakri')[0].style.display = "block"
+        document.getElementsByClassName('results-page')[0].style.display = "block"
+        // Display user score as a percentage
+        userScore.text(Math.floor((correctAnswersCounter / quiz.length) * 100) + " %");
+        prikazBodova.text(bodovi);
+        $("#input-q2").attr("value", bodovi)
         }
 
         // Load the next question and set of answers
@@ -572,18 +567,91 @@ function stvori2(tekst, tekst2, tekst3) {
 
 
 p1 = [{
-    question: "Dugo smo stanovali nasuprot <span class='nadopuni'>_______</span>. (oni)",
-    answers: ["njima", "njih", "njega", "njemu", "njim"],
+    question: "Dugo smo stanovali nasuprot ______. (oni)",
+    answers: ["njima", "njih", "njega", "njemu"],
     correctAnswer: "njima",
-    napomena: "<div class='odg_nap'><p> Neka pametna napomena za igrača.</p></div>",
+    napomena: "<div class='odg_nap'><p>Dativ zamjenice oni glasi <span class='napomena'>njima</span>.</p><br><img src='slike/sketch4.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
     boja_pozadine: "#FCE4EC"
 }, {
-    question: "Unatoč <span class='nadopuni'>_______</span> dolazim na vrijeme. (ona)",
-    answers: ["njoj", "nju", "njom"],
+    question: "Unatoč ______ dolazim na vrijeme. (ona)",
+    answers: ["njoj", "nju", "njom","nje"],
     correctAnswer: "njoj",
-    napomena: "<div class='odg_nap'><p> Uz prijedlog unatoč dolazi dativ. Dativ zamjenice ona je njoj.</p></div>",
+    napomena: "<div class='odg_nap'><p>Uz prijedlog unatoč dolazi dativ. Dativ zamjenice ona je <span class='napomena'>njoj</span>.</p><br><img src='slike/sketch2.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
     boja_pozadine: "#FCE4EC"
-}];
+}, {
+    question: "Ona priča ______ da još nije kupila poklone. (on)",
+    answers: ["njemu", "njega", "njim"],
+    correctAnswer: "njemu",
+    napomena: "<div class='odg_nap'><p>Dativ imenice on glasi <span class='napomena'>njemu</span>.</p><br><img src='slike/sketch1.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
+    boja_pozadine: "#FCE4EC"
+}, {
+    question: "Kupila je poklon samo ______. (ona)",
+    answers: ["nju", "njoj", "njom"],
+    correctAnswer: "njoj",
+    napomena: "<div class='odg_nap'><p>Dativ imenice ona glasi <span class='napomena'>njoj</span>.</p><br><img src='slike/sketch2.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
+    boja_pozadine: "#FCE4EC"
+}, {
+    question: "Lorena se veseli što će ______ ispričati kako joj je bilo u Dubrovniku. (oni)",
+    answers: ["njih", "oni", "njima"],
+    correctAnswer: "njima",
+    napomena: "<div class='odg_nap'><p>Dativ imenice oni glasi <span class='napomena'>njima</span>.</p><br><img src='slike/sketch4.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
+    boja_pozadine: "#FCE4EC"
+}, {
+    question: "Iva će ______ kupiti poklon. (one)",
+    answers: ["njima", "one", "njih"],
+    correctAnswer: "njima",
+    napomena: "<div class='odg_nap'><p>Dativ zamjenice one glasi <span class='napomena'>njima</span>.</p><br><img src='slike/sketch5.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
+    boja_pozadine: "#FCE4EC"
+}, {
+    question: "Poklonio je ružu ______. (ja)",
+    answers: ["meni", "me", "mene"],
+    correctAnswer: "meni",
+    napomena: "<div class='odg_nap'><p>Dativ zamjenice ja glasi <span class='napomena'>meni</span>.</p><br><img src='slike/sketch3.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
+    boja_pozadine: "#FCE4EC"
+}, {
+    question: "Ana je dala olovku ______. (ti)",
+    answers: ["te", "tebi", "tebe"],
+    correctAnswer: "tebi",
+    napomena: "<div class='odg_nap'><p>Dativ zamjenice ti glasi <span class='napomena'>tebi</span>.</p><br><img src='slike/sketch6.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
+    boja_pozadine: "#FCE4EC"
+}, {
+    question: "Mario će pričati ______ viceve. (vi)",
+    answers: ["vama", "vi", "vas"],
+    correctAnswer: "vama",
+    napomena: "<div class='odg_nap'><p>Dativ zamjenice vi glasi <span class='napomena'>vama</span>.</p><br><img src='slike/sketch7.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
+    boja_pozadine: "#FCE4EC"
+},{
+    question: "Tara i Dijana su poslale pismo ______. (oni)",
+    answers: ["njih", "oni", "njima"],
+    correctAnswer: "njima",
+    napomena: "<div class='odg_nap'><p>Dativ imenice oni glasi <span class='napomena'>njima</span>.</p><br><img src='slike/sketch4.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
+    boja_pozadine: "#FCE4EC"
+}, {
+    question: "Da mogu, rekla bih ______ istinu. (on)",
+    answers: ["njemu", "njega", "njim"],
+    correctAnswer: "njemu",
+    napomena: "<div class='odg_nap'><p>Dativ imenice on glasi <span class='napomena'>njemu</span>.</p><br><img src='slike/sketch1.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
+    boja_pozadine: "#FCE4EC"
+},{
+    question: "Andrej i ja kupujemo sliku ______. (oni)",
+    answers: ["njih", "oni", "njima"],
+    correctAnswer: "njima",
+    napomena: "<div class='odg_nap'><p>Dativ imenice oni glasi <span class='napomena'>njima</span>.</p><br><img src='slike/sketch4.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
+    boja_pozadine: "#FCE4EC"
+},{
+    question: "Za rođendan Leo poklanja ______ nakit. (one)",
+    answers: ["njima", "one", "njih"],
+    correctAnswer: "njima",
+    napomena: "<div class='odg_nap'><p>Dativ zamjenice one glasi <span class='napomena'>njima</span>.</p><br><img src='slike/sketch5.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
+    boja_pozadine: "#FCE4EC"
+}, {
+    question: "Roditelji su ______ kupili psa. (on)",
+    answers: ["njemu", "njega", "njim"],
+    correctAnswer: "njemu",
+    napomena: "<div class='odg_nap'><p>Dativ imenice on glasi <span class='napomena'>njemu</span>.</p><br><img src='slike/sketch1.jpg' style='max-width:100%;height:auto; display:block; margin:auto'></div>",
+    boja_pozadine: "#FCE4EC"
+}
+];
 shuffle(p1)
 
 

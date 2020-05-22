@@ -22,6 +22,8 @@ html {
     font-size: 60%;
 }
 
+legend{width: 100%;}
+.napomena{color:#BB422A;font-weight: 600;}
 html,
 body {
     width: 100%;

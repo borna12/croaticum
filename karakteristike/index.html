@@ -6,7 +6,7 @@
 
   <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
-  <title>Glagoli</title>
+  <title>Karakteristike automobila i tramvaja</title>
   <link rel='stylesheet' href='css/dragula.css'>
   <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, user-scalable=no"></head>
@@ -18,7 +18,7 @@
 </audio>
 <body id="body">
   <div class="parent">
-    <label for="hy" style="font-size:40px">Odredi karakteristike za aute i tramvaje</label>
+    <label for="hy" style="font-size:40px">Odredi karakteristike za automobile i tramvaje</label>
     <div id="zadatci">
       <div class="wrapper odgovori">
         <div id="left" class="container visina">
@@ -47,13 +47,16 @@
       <button id="dalje">idući zadatak</button>
     </div>
     <div id="upute">
-      <p>Prepoznaj i razvrstaj pozitivne i negativne karakteristike korištenja auta i tramvaja.</p>
+      <p>Prepoznaj i razvrstaj pozitivne i negativne karakteristike korištenja automobila i tramvaja.</p>
       <button id="pokreni">započni igru</button>
     </div>
     <div id="kraj">
       <h2>Završili ste igru</h2>
       <p>ostvarili ste idući broj bodova: <span id="bodovi"></span></p>
-      <form class="jedan" action="https://docs.google.com/forms/d/e/1FAIpQLScHVYH47IlnZA0uFFlRfUxUsrux0BFP6OHFT0wMRvzAa_Qy1w/formResponse"
+
+
+
+      <form class="jedan" action="https://docs.google.com/forms/d/e/1FAIpQLSfMwgchjtlHbJQGKaaUIAABFipfqDXr-TVXtHQu8G66Eqnf-g/formResponse"
       target="_self" id="bootstrapForm" method="POST">
       <legend for="736982347"> <select id="ikona" style="height:30px"></select> <p style="display:inline-block">Ime: <input id="312289462"
               type="text" name="entry.312289462" class="form-control" required id="input-q1" style="height:30px; border:1px solid black"></p>
@@ -108,6 +111,13 @@
                   // does not support it, so this is handled as a failure.
                   window.open("rez.html");}
           })
+          
+          setTimeout(
+                            function () {
+                              window.location.href = 'rez.html';
+
+                            }, 2500);
+          
       })
   </script>
 </body>

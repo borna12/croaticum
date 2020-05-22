@@ -17,7 +17,7 @@ body {
 
 
 .slikica {
-    height: 250px;
+    height: 200px;
     max-width: 100%;
     display: block;
     margin: auto;
@@ -35,6 +35,7 @@ body {
 .opis {
     text-align: center;
     font-size: 18px;
+    margin-bottom: 0px;
 }
 
 #dragScriptContainer {
@@ -88,7 +89,7 @@ body {
 
 }
 .dragDropSmallBox{text-transform: lowercase}
-.correctAnswer{text-transform: initial}
+.correctAnswer1,.correctAnswer2{text-transform: initial}
 #answerDiv .dragDropSmallBox {
     /* Small answer divs */
     cursor: pointer;
@@ -113,7 +114,7 @@ body {
     border-bottom: 1px solid black;
 }
 
-#questionDiv .correctAnswer {
+#questionDiv .correctAnswer1,  #questionDiv .correctAnswer2, section{
     /* CSS indicating correct answer */
     background-color: #76B574;
     color: #fff;
@@ -238,24 +239,26 @@ body {
 
     font-family: Arial, sans-serif;
 }
-
+#basicUsage{display: none;text-align: center;}
 .btn:hover {
     cursor: pointer;
-    background: #707070;
+    background: #52C2F2;
 }
 
 @media only screen and (max-width: 800px) {
-    .destinationBox {
-        width: 150px !important;
+    .destinationBox,.correctAnswer1,.correctAnswer2 {
+        width: 80px !important;
         font-size: 12px
     }
-
+    [class^="rad"]{font-size: 12px;}
     #answerDiv div,
     #dragContent div {
         width: 150px;
         font-size: 12px
     }
-
+    [class^="definicija"]{
+        font-size: 12px
+    }
     #dragScriptContainer {
         grid-template-columns: minmax(200px, 1fr) minmax(100px, 200px);
     }
@@ -264,6 +267,7 @@ body {
         font-size: 1.5rem;
         margin: 1rem auto 0;
     }
+    .slikica{height: initial;}
 }
 
 

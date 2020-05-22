@@ -140,6 +140,7 @@ $(document).ready(function () {
     // Load the next question and set of answers
     generateQuestionAndAnswers = function () {
         $(".questions-page__answer-list").show()
+        $(".slikica").attr("src",quiz[questionCounter].slika)
         shuffle(quiz[questionCounter].answers);
         answerA.text(quiz[questionCounter].answers[0]);
         if (answerA.html() == "" || null) {
@@ -171,24 +172,23 @@ $(document).ready(function () {
         } else {
             answerDivE.show()
         };
-
-        answerF.text(quiz[questionCounter].answers[4]);
+        answerF.text(quiz[questionCounter].answers[5]);
         if (answerF.html() == "" || null) {
             answerDivF.hide()
         } else {
             answerDivF.show()
         };
-        $(".vrijeme").html('<progress value="10" max="10" id="pageBeginCountdown"></progress><p><span id="pageBeginCountdownText">30 </span> <span id="sekunde"></p>')
+        $(".vrijeme").html('<progress value="60" max="60" id="pageBeginCountdown"></progress><p> <span id="pageBeginCountdownText">60</span>  <span id="sekunde"></p>')
         $("body").css({
             "background-color": quiz[questionCounter].boja_pozadine
         })
         if (prekidac == 1) {
-            ProgressCountdown(30, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
+            ProgressCountdown(60, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
         }
 
         
     $(".info").unbind("click").click(function() {
-        prekidac=0
+        
         swal({
             title: "",
             html: "<p style='text-align:justify; font-size:18px'>" + $(".prica").text().substring(0,$(".prica").text().length-7) + "</p>",
@@ -200,14 +200,14 @@ $(document).ready(function () {
         });
 
         $(".swal2-confirm").unbind("click").click(function() {
-            prekidac=1
+            
         })
         $(".swal2-close").unbind("click").click(function() {
-            prekidac=1
+            
         })
     })
         question.html(quiz[questionCounter].question)
-        $(".questions-page__question").prepend("<span style='font-size: 1.3rem;'>" + (questionCounter + 1) + "/" + quiz.length + ".</span> <br>")
+        $(".questions-page__question").prepend(" <spanstyle='font-size: 1.3rem;'>" + (questionCounter + 1) + "/" + quiz.length + ".</span> <br>")
 
     };
 
@@ -304,8 +304,6 @@ $(document).ready(function () {
 */
 
     // Clicking on start button:
-
-
     // Clicking on story button:
     storyBtn.unbind("click").click(function() {
         $(".prica").show()
@@ -314,17 +312,15 @@ $(document).ready(function () {
         $(".init-page__title").text($(this).text())
         if ($(this).hasClass( "korištenje-automobila" ))
         {
-            $(".prica").html('<img src="slike/dijeljenje-auta.png"  class="senka"><p><span  data-url="audio/auto1.mp3" data-plays="1" dir=ltr>Najčešće jednim automobilom putuje jedna, ponekad dvije osobe. Zbog toga nastaju velike gužve na gradskim cestama. To je i skupo. Ako odlučimo na posao putovati sa susjedom iii kolegom, jedan dan putovat ćemo svojim automobilom, drugi dan njegovim. Tako štedimo novac i automobil, a imanje se umaramo.</span><br><br><span  data-url="audio/auto2.mp3" data-plays="1" dir=ltr>U mnogim europskim gradovima postoje organizacije u kojima nekoliko ljudi ima jedan automobil. Na vrijeme morate rezervirati automobil. Imate ga kada vam je potreban, a u ostalo vrijeme koristi ga netko drugi. Zajedno plaćate osiguranje, održavanje i registriranje automobila. Manje automobila, manje gužve na cestama, više parkirnih mjesta, manje novca za benzin i čistiji zrak!</span></p> <button class="init-page__btn btn koristenje-automobila">pokreni</button>')
+            $(".prica").html('<img src="slike/dijeljenje-auta.png"  class="senka"><p> <span data-url="audio/auto1.mp3" data-plays="1" dir=ltr>Najčešće jednim automobilom putuje jedna, ponekad dvije osobe. Zbog toga nastaju velike gužve na gradskim cestama. To je i skupo. Ako odlučimo na posao putovati sa susjedom iii kolegom, jedan dan putovat ćemo svojim automobilom, drugi dan njegovim. Tako štedimo novac i automobil, a imanje se umaramo.</span><br><br>  <span data-url="audio/auto2.mp3" data-plays="1" dir=ltr>U mnogim europskim gradovima postoje organizacije u kojima nekoliko ljudi ima jedan automobil. Na vrijeme morate rezervirati automobil. Imate ga kada vam je potreban, a u ostalo vrijeme koristi ga netko drugi. Zajedno plaćate osiguranje, održavanje i registriranje automobila. Manje automobila, manje gužve na cestama, više parkirnih mjesta, manje novca za benzin i čistiji zrak!</span></p> <button class="init-page__btn btn koristenje-automobila">pokreni</button>')
         }
         else if ($(this).hasClass( "tram-auto" )){
-            $(".prica").html('<img src="slike/tramvaj.jpg"  class="senka"><p><span  data-url="audio/tram1.mp3" data-plays="1" dir=ltr>Zagrepčani su 1891. godine dobili prvi tramvaj. Vukli su ga konji. Prvi električni tramvaji počeli su voziti 1905. godine. Četiri godine prije, 1901., prvi automobil pojavio se na zagrebačkim ulicama.</span><br><span  data-url="audio/tram2.mp3" data-plays="1" dir=ltr>A u svijetu?</span></br><span  data-url="audio/tram3.mp3" data-plays="1" dir=ltr>Prvi tramvaj postavljen je na tračnice 1832. godine u New Yorku. Također su ga vukli konji. Prvi električni tramvaj na svijetu izgrađen je u tvornici „Werner von Siemens” i pokrenut je 1881. godine u Berlinu, a vozio je maksimalnom brzinom od 20 kilometara na sat.</span></br><span  data-url="audio/tram4.mp3" data-plays="1" dir=ltr>Prvi automobil, marke Mercedes, konstruirao je Gotlieb Daimler 1885. U Francuskoj se prvi automobil pojavio 1890., a u Americi 1892. godine. Proizveo ga je Henry Ford.</span></p><button class="init-page__btn btn prvi-tram">pokreni</button>')
+            $(".prica").html('<img src="slike/tramvaj.jpg"  class="senka"><p> <span data-url="audio/tram1.mp3" data-plays="1" dir=ltr>Zagrepčani su 1891. godine dobili prvi tramvaj. Vukli su ga konji. Prvi električni tramvaji počeli su voziti 1905. godine. Četiri godine prije, 1901., prvi automobil pojavio se na zagrebačkim ulicama.</span><br> <span data-url="audio/tram2.mp3" data-plays="1" dir=ltr>A u svijetu?</span></br> <span data-url="audio/tram3.mp3" data-plays="1" dir=ltr>Prvi tramvaj postavljen je na tračnice 1832. godine u New Yorku. Također su ga vukli konji. Prvi električni tramvaj na svijetu izgrađen je u tvornici „Werner von Siemens” i pokrenut je 1881. godine u Berlinu, a vozio je maksimalnom brzinom od 20 kilometara na sat.</span></br> <span data-url="audio/tram4.mp3" data-plays="1" dir=ltr>Prvi automobil, marke Mercedes, konstruirao je Gotlieb Daimler 1885. U Francuskoj se prvi automobil pojavio 1890., a u Americi 1892. godine. Proizveo ga je Henry Ford.</span></p><button class="init-page__btn btn prvi-tram">pokreni</button>')
 
         }
         else{
             $(".prica").html('<img src="slike/auto.jpg"  class="senka"><p>Dobar životni standard za mnoge ljude znači mogućnost da kupe vlastiti automobil. Ta mogućnost postoji i zato što mnoge banke daju povoljne kredite za kupnju automobila. Zbog toga svuda u svijetu, pa tako i u Hrvatskoj, ima sve više i više automobila na ulicama, lako postoji organiziran javni prijevoz autobusima i tramvajima, ljudi se više vole voziti vlastitim automobilom. To izaziva velike probleme: gužve na cestama, osobito u vrijeme kad ljudi odlaze na posao i vraćaju se s posla, premalo mjesta za parkiranje i nečist zrak.</p><button class="init-page__btn btn auto">pokreni</button>')
         }
-
-
         $(".init-page__btn").click(function(){
             if($(this).hasClass("koristenje-automobila")){
                 quiz = p1
@@ -388,7 +384,7 @@ $(document).ready(function () {
             bodovi -= 10;
             swal({
                 title: "Isteklo je vrijeme.",
-                html: "<p style='text-align:center'><strong>Trebali ste odgovoriti: " + quiz[questionCounter].correctAnswer + "</strong></p><br>" + quiz[questionCounter].napomena,
+                html: "<p style='text-align:center'><strong>Trebali ste odgovoriti " + quiz[questionCounter].correctAnswer + ".</strong></p><br>" + quiz[questionCounter].napomena,
                 showCloseButton: false,
                 confirmButtonText: ' dalje',
                 backdrop: false,
@@ -402,12 +398,8 @@ $(document).ready(function () {
             })
             $(".swal2-confirm").unbind("click").click(function() {
                 clearInterval(countdownTimer)
-                if (ide == 1) {
-                    ProgressCountdown(30, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
+                    ProgressCountdown(60, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
                     nastavi()
-                return
-                }
-                
             })
         } else {
             // Evaluate if the user got the answer right or wrong
@@ -418,8 +410,8 @@ $(document).ready(function () {
                 $("#tocno")[0].play();
                 broj = vrijeme + 10
                 swal({
-                    title: "<span style='color:green'>Točno</span>",
-                    html: "+ <span class='zeleno'>" + broj + "</span><br>" + quiz[questionCounter].napomena,
+                    title: " <spanstyle='color:green'>Točno</span>",
+                    html: "+  <spanclass='zeleno'>" + broj + "</span><br>" + quiz[questionCounter].napomena,
                     showCloseButton: false,
                     confirmButtonText: ' dalje',
                     backdrop: false,
@@ -428,18 +420,17 @@ $(document).ready(function () {
                 });
                 $(".swal2-confirm").unbind("click").click(function() {
                     clearInterval(countdownTimer)
-                    if (ide == 1) {
-                        ProgressCountdown(30, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
+                    
+                        ProgressCountdown(60, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
                         nastavi()
-                        return
-                    }
+                      
                 })
             } else {
                 highlightIncorrectAnswerRed();
                 bodovi -= 10;
                 $("#krivo")[0].play();
                 swal({
-                    title: " <span style='color:#bb422a' >Netočno</span>",
+                    title: "  <spanstyle='color:#bb422a' >Netočno</span>",
                     html: "<p style='text-align:center'></p><br>" + quiz[questionCounter].napomena,
                     showCloseButton: false,
                     confirmButtonText: ' dalje',
@@ -449,11 +440,10 @@ $(document).ready(function () {
                 });
                 $(".swal2-confirm").unbind("click").click(function() {
                     clearInterval(countdownTimer)
-                    if (ide == 1) {
-                        ProgressCountdown(30, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
+                    
+                        ProgressCountdown(60, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
                         nastavi()
-                        return
-                    }
+                      
                 })
                 $(".nadopuni").html(quiz[questionCounter].correctAnswer)
                 $(".nadopuni").css({
@@ -472,9 +462,10 @@ $(document).ready(function () {
         $(".questions-page__answer-span").html("")
         prekidac=1;
         // Increment question number until there are no more questions, then advance to the next page
-        if (questionCounter < quiz.length - 1) {
+        if (questionCounter < quiz.length-1) {
             questionCounter++;
         } else {
+            prekidac=0;
             document.getElementsByClassName('questions-page')[0].style.display = "none"
             document.getElementsByClassName('sakri')[0].style.display = "block"
             document.getElementsByClassName('results-page')[0].style.display = "block"
@@ -565,25 +556,22 @@ p1 = [{
     answers: ["točno", "netočno"],
     correctAnswer: "točno",
     napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Najčešće jednim automobilom putuje jedna, ponekad dvije osobe.</em></p></div>",
-    boja_pozadine: "#FCE4EC"
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/dvije-osobe.jpg"
 }, {
     question: "Organizacije u kojima nekoliko ljudi dijeli jedan automobil nalaze se u Europi.",
     answers: ["točno", "netočno"],
     correctAnswer: "točno",
     napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>U mnogim europskim gradovima postoje organizacije u kojima nekoliko ljudi ima jedan automobil.</em></p></div>",
-    boja_pozadine: "#FCE4EC"
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/europa.jpg"
 }, {
     question: "U takvim su organizacijama osiguranje, registriranje i održavanje skuplji.",
     answers: ["točno", "netočno"],
     correctAnswer: "netočno",
     napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Imate ga kada vam je potreban, a u ostalo vrijeme koristi ga netko drugi. Zajedno plaćate osiguranje, održavanje i registriranje automobila. Manje automobila, manje gužve na cestama, više parkirnih mjesta, manje novca za benzin i čistiji zrak!</em></p></div>",
-    boja_pozadine: "#FCE4EC"
-}, {
-    question: "Za članove takvih organizacija održavanje auta je skuplje.",
-    answers: ["točno", "netočno"],
-    correctAnswer: "netočno",
-    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Imate ga kada vam je potreban, a u ostalo vrijeme koristi ga netko drugi. Zajedno plaćate osiguranje, održavanje i registriranje automobila. Manje automobila, manje gužve na cestama, više parkirnih mjesta, manje novca za benzin i čistiji zrak!</em></p></div>",
-    boja_pozadine: "#FCE4EC"
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/skuplje.jpg"
 }];
 
 
@@ -592,31 +580,37 @@ p2 = [{
     answers: ["točno", "netočno"],
     correctAnswer: "točno",
     napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Zagrepčani su 1891. godine dobili prvi tramvaj.</em></p></div>",
-    boja_pozadine: "#FCE4EC"
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/konjski.jpg"
 }, {
     question: "Konjski tramvaj u New Yorku prevozio je putnike od 30-ih godina 19. stoljeća.",
     answers: ["točno", "netočno"],
     correctAnswer: "točno",
     napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Prvi tramvaj postavljen je na tračnice 1832. godine u New Yorku. Također su ga vukli konji.</em></p></div>",
-    boja_pozadine: "#FCE4EC"
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/konjski2.jpg"
+
 }, {
     question: "Prvi električni tramvaj na svijetu kretao se brže od 20 km/h.",
     answers: ["točno", "netočno"],
     correctAnswer: "netočno",
-    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em> Prvi električni tramvaj na svijetu izgrađen je u tvornici „Werner von Siemens” i pokrenut je 1881. godine u Berlinu, a vozio je <span class='istaknuto'>maksimalnom</span> brzinom od 20 kilometara na sat.</em></p></div>",
-    boja_pozadine: "#FCE4EC"
+    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em> Prvi električni tramvaj na svijetu izgrađen je u tvornici „Werner von Siemens” i pokrenut je 1881. godine u Berlinu, a vozio je  <spanclass='istaknuto'>maksimalnom</span> brzinom od 20 kilometara na sat.</em></p></div>",
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/elektonicki-tram.jpg"
 }, {
     question: "Prvi automobil na svijetu bio je marke Ford i pojavio se 1890. godine.",
     answers: ["točno", "netočno"],
     correctAnswer: "netočno",
-    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Prvi automobil, marke <span class='istaknuto'>Mercedes</span>, konstruirao je Gotlieb Daimler 1885.</em></p></div>",
-    boja_pozadine: "#FCE4EC"
+    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Prvi automobil, marke  <spanclass='istaknuto'>Mercedes</span>, konstruirao je Gotlieb Daimler 1885.</em></p></div>",
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/prvi-auto.jpg"
 }, {
     question: "U Zagrebu se prvi automobil pojavio 1905. godine.",
     answers: ["točno", "netočno"],
     correctAnswer: "netočno",
-    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Četiri godine prije, <span class='istaknuto'>1901.</span>, prvi automobil pojavio se na zagrebačkim ulicama.</em></p></div>",
-    boja_pozadine: "#FCE4EC"
+    napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Četiri godine prije,  <spanclass='istaknuto'>1901.</span>, prvi automobil pojavio se na zagrebačkim ulicama.</em></p></div>",
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/zagreb-prvi-auto.jpg"
 }];
 
 
@@ -626,43 +620,50 @@ p3 = [{
     answers: ["točno", "netočno"],
     correctAnswer: "točno",
     napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Dobar životni standard za mnoge ljude znači mogućnost da kupe vlastiti automobil.</em></p></div>",
-    boja_pozadine: "#FCE4EC"
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/standard_auto.jpg"
 }, {
     question: "U bankama se mogu dobiti krediti za automobile.",
     answers: ["točno", "netočno"],
     correctAnswer: "točno",
     napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Ta mogućnost postoji i zato što mnoge banke daju povoljne kredite za kupnju automobila.</em></p></div>",
-    boja_pozadine: "#FCE4EC"
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/kupi_auto.jpg"
 }, {
     question: "Ima sve manje i manje automobila na ulicama.",
     answers: ["točno", "netočno"],
     correctAnswer: "netočno",
     napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Zbog toga svuda u svijetu, pa tako i u Hrvatskoj, ima sve više i više automobila na ulicama.</em></p></div>",
-    boja_pozadine: "#FCE4EC"
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/manje_auti.jpg"
 }, {
     question: "Ljudi koji imaju svoj automobil više vole autobus i tramvaj.",
     answers: ["točno", "netočno"],
     correctAnswer: "netočno",
     napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>Iako postoji organiziran javni prijevoz autobusima i tramvajima, ljudi se više vole voziti vlastitim automobilom.</em></p></div>",
-    boja_pozadine: "#FCE4EC"
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/bus_voznja.jpg"
 }, {
     question: "Najveće su gužve na cestama onda kad su ljudi na poslu.",
     answers: ["točno", "netočno"],
     correctAnswer: "netočno",
     napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>To izaziva velike probleme: gužve na cestama, osobito u vrijeme kad ljudi odlaze na posao i vraćaju se s posla, premalo mjesta za parkiranje i nečist zrak.</p></div>",
-    boja_pozadine: "#FCE4EC"
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/guzva.jpg"
 }, {
     question: "U gradovima ima dovoljno mjesta za parkiranje.",
     answers: ["točno", "netočno"],
     correctAnswer: "netočno",
     napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>To izaziva velike probleme: gužve na cestama, osobito u vrijeme kad ljudi odlaze na posao i vraćaju se s posla, premalo mjesta za parkiranje i nečist zrak.</em></p></div>",
-    boja_pozadine: "#FCE4EC"
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/parking.jpg"
 }, {
     question: "Zrak u gradovima prljav je zbog automobila.",
     answers: ["točno", "netočno"],
     correctAnswer: "točno",
     napomena: "<div class='odg_nap'><p> U tekstu je pisalo: <em>To izaziva velike probleme: gužve na cestama, osobito u vrijeme kad ljudi odlaze na posao i vraćaju se s posla, premalo mjesta za parkiranje i nečist zrak.</em></p></div>",
-    boja_pozadine: "#FCE4EC"
+    boja_pozadine: "#FCE4EC",
+    slika:"slike/zrak.jpg"
 }
 
 ];

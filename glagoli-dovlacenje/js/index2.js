@@ -1,3 +1,9 @@
+    
+    var sekunde = 0;
+    setInterval(function () {
+        ++sekunde;
+    }, 1000);
+
   function touchHandler(event) {
       var touches = event.changedTouches,
           first = touches[0],
@@ -15,8 +21,6 @@
           default:
               return;
       }
-
-
       // initMouseEvent(type, canBubble, cancelable, view, clickCount, 
       //                screenX, screenY, clientX, clientY, ctrlKey, 
       //                altKey, shiftKey, metaKey, button, relatedTarget);
@@ -50,7 +54,7 @@
     definicija: ["Kazati znači reći što, izraziti što riječima.","Slati znači upućivati što na čiju adresu, stvarnu ili virtualnu."],
     slika: ["slike/kazu.jpg", "slike/salju.jpg"],
     opisi: ["Nastavnici", "Restorani"],
-    opisi2: ["da moramo učiti kako bismo bili uspiješniji.", "hranu dostavnom službom."]
+    opisi2: ["da moramo učiti kako bismo bili uspješniji.", "hranu dostavnom službom."]
 },
 {
     question: "govoriti/smijati se",
@@ -72,56 +76,123 @@
 {
     question: "diviti se/prigovarati",
     answers: ["dive", "prigovaraju"],
-    definicija: ["Diviti se znači izražavati da se što smatra iznimno lijepim.","Prigovarati znači upućivati komu prigovor."],
+    definicija: ["Diviti se znači pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime.","Prigovarati znači upućivati komu prigovor."],
     slika: ["slike/dive.jpg", "slike/prigovaraju.jpg"],
     opisi: ["Ljudi se", "Djevojke"],
-    opisi2: ["junacima.", "momcima jer nisu pospremili sobu."]
+    opisi2: ["herojima.", "momcima jer nisu pospremili sobu."]
 },
 {
     question: "zahvaljivati/smetati",
     answers: ["zahvaljuju", "smetaju"],
-    definicija: ["Zahvaljivati znači izražavati zahvalnost, reći hvala.","Smetati znači uzemirivati koga."],
+    definicija: ["Zahvaljivati znači izražavati zahvalnost.","Smetati znači uzemirivati koga."],
     slika: ["slike/zahvaljuje.jpg", "slike/smetaju.jpg"],
     opisi: ["Organizatori skupa", "Komarci"],
     opisi2: ["predavačima.", "ljudima za vrijeme ljeta."]
 },
 {
     question: "približavati/vjerovati",
-    answers: ["približavaju", "vjeruju"],
-    definicija: ["Približavati se znači dolaziti blizu kome ili čemu. ","Vjerovati znači imati povjerenja u koga ili što."],
+    answers: ["približavaju se", "vjeruju"],
+    definicija: ["Približavati se znači dolaziti blizu kome ili čemu.","Vjerovati znači imati povjerenja u koga ili što."],
     slika: ["slike/priblizavaju.jpg", "slike/vjeruju.jpg"],
     opisi: ["Maja i Ivana", "U braku muž i žena"],
-    opisi2: ["se kući.", "jedan drugome."]
-}];
+    opisi2: ["kući.", "jedan drugome."]
+}
+,{
+    question: "čuditi se/pisati",
+    answers: ["Čudimo se", "Pišemo"],
+    definicija: ["Čuditi se znači biti u čudu, biti iznenađen čime neočekivanim.","Pisati znači bilježiti slova i brojke na papiru, ploči ili čemu drugom."],
+    slika: ["slike/cudimo.jpg", "slike/pisemo.jpg"],
+    opisi: ["", ""],
+    opisi2: ["neobičnoj situaciji.", "izvještaj za šefa."]
+}
+,{
+    question: "veseliti se/nadati se",
+    answers: ["Veselimo se", "Nadamo se"],
+    definicija: ["Veseliti se znači osjećati veselje ili radost, biti veseo.","Nadati se znači imati nadu, očekivati da će se ostvariti nešto što želimo."],
+    slika: ["slike/veselimo.jpg", "slike/nadamo.jpg"],
+    opisi: ["", ""],
+    opisi2: ["praznicima.", "da će naša nogometna reprezentacija pobijediti."]
+}
 
-  function quizIsFinished() {
-      questionCounter++
-      if (questionCounter == pitanja.length) {
-          swal({
-              title: "Čestitam! Došli ste do kraja igre.",
-              html: "<p>Vrijeme potrebno za rješavanje zadataka: </p><p style='text-align:center'>"+$("#basicUsage").text()+"</p><br><p>broj točnih odgovora: </p><p style='text-align:center'>"+bodovi +"</p>",
-              confirmButtonText: 'nova igra',
-              confirmButtonColor: '#009DE0',
-              backdrop: false,
-              closeOnCancel: false,
-              allowOutsideClick: false,
+];
 
-          })
-          $('.swal2-confirm').click(function () {
-             window.open("index.html","_self")
-          })
-         
-      } else {
-          $(".btn-holder").show(300);
-          $(".btn-holder").click(function () {
-              dragDropResetForm()
-              sranje()
-          })
+function quizIsFinished() {
+    questionCounter++
+    if (questionCounter == pitanja.length) {
+          rezultat=bodovi-(sekunde/2)
+          rezultat= rezultat.toString().replace(".",",")
+        swal({
+            title: "Završili ste igru.",
+            html: "<p>Vrijeme potrebno za rješavanje zadataka: "+$("#basicUsage").text()+"</p><form id='input-form' action='' method='POST' target='no-target' style='text-align: center;'><br><select id='ikona' style='height:30px'></select><label for='ime'>Ime : </label><input id='input-q1' name='q1' style='height:25px'><br> <br><label for='bodovi'>Bodovi : </label><input id='input-q2' placeholder='q2' name='q2' value='" +rezultat+ "' disabled style='display:none'> <label for='bodovi'>" + rezultat + "</label><br><br><button id='form-submit' type='submit' disabled='true' class='swal2-styled' style='background-color: rgb(0, 157, 224); border-left-color: rgb(0, 157, 224); border-right-color: rgb(0, 157, 224);'>predaj rezultat</button> </form><iframe src='#' id='no-target' name='no-target' style='visibility:hidden;display:none'></iframe>",
+            confirmButtonText: 'ponovite ovu igru',
+            confirmButtonColor: '#009DE0',
+            backdrop: false,
+            closeOnCancel: false,
+            allowOutsideClick: false,
+        })
+        $('.swal2-confirm').click(function () {
+            location.reload()
+        })
+        $('.swal2-cancel').click(function () {
+            window.open("../");
+        })
+
+        $(' #input-q1').keyup(function () {
+          $('#form-submit').prop('disabled', this.value == "" ? true : false);
+      })
+
+      var target = document.getElementById("ikona");
+      var emojiCount = emoji.length;
+
+      for(var index = 0; index < emojiCount; index++)
+      {
+      addEmoji(emoji[index]);
       }
-      // This function is called when everything is solved		
 
-  }
+      function addEmoji(code)
+      {
+      var option = document.createElement('option');
+      option.innerHTML =  code;
+          option.value=code;
+      target.appendChild(option);
+      }
+      
+       if (localStorage.getItem("ime") != null) {
+           $('#input-q1').val(localStorage.getItem("ime"))
+           $('#ikona').val(localStorage.getItem("ikona"))
+           $('#form-submit').prop('disabled', this.value == "true");
+       }
 
+       $('#input-form').one('submit', function () {
+          $('#input-form').hide(300)
+          localStorage.setItem('ikona', $('#ikona').val())
+          localStorage.setItem('ime', $('#input-q1').val())
+          localStorage.setItem('pokrenuto', "da")
+          var inputq1 = encodeURIComponent($('#ikona').val()+" "+$('#input-q1').val());
+          var inputq2 = encodeURIComponent($('#input-q2').val());
+          var q1ID = "entry.412821582";
+          var q2ID = "entry.902512960";
+
+          var baseURL =
+              'https://docs.google.com/forms/d/e/1FAIpQLSfjZpjgx0f-WK_aAXQUlTs37GHiF0HU74FVHHIEbxv0rsWj3g/formResponse?';
+          var submitRef = '&submit=970054585833720596';
+          var submitURL = (baseURL + q1ID + "=" + inputq1 + "&" + q2ID + "=" + inputq2 + submitRef);
+          console.log(submitURL);
+          $(this)[0].action = submitURL;
+          setTimeout(
+              function () {
+                  window.location.href = 'rez.html';
+              }, 2500);
+      });
+    } else {
+        $(".btn-holder").show(300);
+        $(".btn-holder").click(function () {
+            dragDropResetForm()
+            sranje()
+        })
+    }
+    // This function is called when everything is solved		
+}
 
   /* Don't change anything below here */
   var dragContentDiv = false;
@@ -304,11 +375,12 @@
                   dragSource.className = 'correctAnswer'+numericId;
                   $( ".definicija" +numericId).css({"opacity":"1"})
                   $(".correctAnswer"+numericId).parent().html( "<section class='correctAnswer"+numericId+"'>"+$(".correctAnswer"+numericId).text()+"</section>")
+                  bodovi+=10
                   checkAllAnswers();
                   
               } else {
                   dragSource.className = 'wrongAnswer';
-                  bodovi-=1
+                  bodovi-=10
               }
 
           }
