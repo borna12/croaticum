@@ -764,7 +764,7 @@ $(document).ready(function () {
         "boja_pozadine": "#FCE4EC",
         "time": 20,
         "pin": "",
-        "slika": "vrijeme.jpg"
+        "slika": "vrijem.jpg"
     },
     {
         "question": "popuni",
