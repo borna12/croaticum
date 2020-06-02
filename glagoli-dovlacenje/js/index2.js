@@ -41,7 +41,7 @@
   var questionCounter = 0;
   var bodovi = 0;
   var pitanja = [{
-    question: "dati/pomagati",
+    question: "dati / pomagati",
     answers: ["daju", "pomažu"],
     definicija: ["Dati označava da smo nekome nešto prepustili ili uručili bez traženja novca zauzvrat.","Pomagati znači davati komu podršku (ljudsku, moralnu, financijsku, fizičku i dr.), odnosno činiti komu što lakšim."],
     slika: ["slike/daju.jpg", "slike/pomazu.jpg"],
@@ -49,7 +49,7 @@
     opisi2: ["beskućnicima odjeću.", "žrtvama rata."]
 },
 {
-    question: "kazati/slati",
+    question: "kazati / slati",
     answers: ["kažu", "šalju"],
     definicija: ["Kazati znači reći što, izraziti što riječima.","Slati znači upućivati što na čiju adresu, stvarnu ili virtualnu."],
     slika: ["slike/kazu.jpg", "slike/salju.jpg"],
@@ -57,7 +57,7 @@
     opisi2: ["da moramo učiti kako bismo bili uspješniji.", "hranu dostavnom službom."]
 },
 {
-    question: "govoriti/smijati se",
+    question: "govoriti / smijati se",
     answers: ["govore", "se smiju"],
     definicija: ["Govoriti znači izgovarati riječi i rečenice koje postoje u nekom jeziku.","Smijati se znači razvući usta u osmijeh kao izraz veselja i opuštenosti."],
     slika: ["slike/govore.jpg", "slike/smiju.jpg"],
@@ -66,7 +66,7 @@
 },
 
 {
-    question: "radovati se/pokloniti",
+    question: "radovati se / pokloniti",
     answers: ["raduju", "poklone"],
     definicija: ["Radovati se znači biti veseo, izražavati radost.","Pokloniti znači dati komu bez plaćanja."],
     slika: ["slike/raduju.jpg", "slike/poklone.jpg"],
@@ -74,7 +74,7 @@
     opisi2: ["poklonima.", "školama."]
 },
 {
-    question: "diviti se/prigovarati",
+    question: "diviti se / prigovarati",
     answers: ["dive", "prigovaraju"],
     definicija: ["Diviti se znači pokazati da nam se tko ili što jako sviđa, da smo fascinirani kime ili čime.","Prigovarati znači upućivati komu prigovor."],
     slika: ["slike/dive.jpg", "slike/prigovaraju.jpg"],
@@ -82,7 +82,7 @@
     opisi2: ["herojima.", "momcima jer nisu pospremili sobu."]
 },
 {
-    question: "zahvaljivati/smetati",
+    question: "zahvaljivati / smetati",
     answers: ["zahvaljuju", "smetaju"],
     definicija: ["Zahvaljivati znači izražavati zahvalnost.","Smetati znači uzemirivati koga."],
     slika: ["slike/zahvaljuje.jpg", "slike/smetaju.jpg"],
@@ -90,7 +90,7 @@
     opisi2: ["predavačima.", "ljudima za vrijeme ljeta."]
 },
 {
-    question: "približavati/vjerovati",
+    question: "približavati / vjerovati",
     answers: ["približavaju se", "vjeruju"],
     definicija: ["Približavati se znači dolaziti blizu kome ili čemu.","Vjerovati znači imati povjerenja u koga ili što."],
     slika: ["slike/priblizavaju.jpg", "slike/vjeruju.jpg"],
@@ -98,7 +98,7 @@
     opisi2: ["kući.", "jedan drugome."]
 }
 ,{
-    question: "čuditi se/pisati",
+    question: "čuditi se / pisati",
     answers: ["Čudimo se", "Pišemo"],
     definicija: ["Čuditi se znači biti u čudu, biti iznenađen čime neočekivanim.","Pisati znači bilježiti slova i brojke na papiru, ploči ili čemu drugom."],
     slika: ["slike/cudimo.jpg", "slike/pisemo.jpg"],
@@ -106,7 +106,7 @@
     opisi2: ["neobičnoj situaciji.", "izvještaj za šefa."]
 }
 ,{
-    question: "veseliti se/nadati se",
+    question: "veseliti se / nadati se",
     answers: ["Veselimo se", "Nadamo se"],
     definicija: ["Veseliti se znači osjećati veselje ili radost, biti veseo.","Nadati se znači imati nadu, očekivati da će se ostvariti nešto što želimo."],
     slika: ["slike/veselimo.jpg", "slike/nadamo.jpg"],
