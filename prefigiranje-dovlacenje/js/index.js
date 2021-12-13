@@ -41,12 +41,12 @@
   var bodovi = 0;
   var pitanja = [{
     question: "čitati / pročitati",
-    answers: ["čitaš", "pročitaš"],
+    answers: ["čitaš", "Pročitaš"],
     opisi: ["Kad", ""],
     opisi2: ["ovu knjigu, posudit ću novu.", "knjigu na engleskome jeziku."]
 },{
     question: "piti / popiti",
-    answers: ["piješ", "popiješ"],
+    answers: ["Piješ", "popiješ"],
     opisi: ["", "Naručit ću novu rundu kada"],
     opisi2: ["kavu već dva sata.", "pivu."]
 },{
@@ -56,32 +56,32 @@
     opisi2: ["roštilj za vikend.", "zvat ću te."]
 },{
     question: "pisati / napisati",
-    answers: ["piše", "napiše"],
+    answers: ["Piše", "napiše"],
     opisi: ["", "Kada"],
     opisi2: ["diplomski već mjesec dana.", "pismo poslat će ti ga."]
 },{
     question: "učiti / naučiti",
-    answers: ["učiš", "naučiš"],
+    answers: ["Učiš", "naučiš"],
     opisi: ["", "Nakon što"],
     opisi2: ["španjolski već godinu dana.", "gradivo prijavi ispit."]
 },{
     question: "zvati / nazvati",
-    answers: ["zvao", "nazvao"],
+    answers: ["Zvao", "nazvao"],
     opisi: ["", "Jučer je"],
     opisi2: ["ju je imenom.", "majstora."]
 },{
     question: "pisati / napisati",
-    answers: ["pišem", "napišem"],
+    answers: ["Pišem", "napišem"],
     opisi: ["", ""],
     opisi2: ["pjesme već godinu dana.", "zadaću kad se vratim doma."]
 },{
     question: "jesti / pojesti",
-    answers: ["jedeš", "pojeo"],
+    answers: ["Jedeš", "pojeo"],
     opisi: ["", "Jučer je"],
     opisi2: ["žitarice svaki doručak.", "cijelu veliku pizzu."]
 },{
     question: "misliti / razmisliti",
-    answers: ["mislio", "razmislio"],
+    answers: ["Mislio", "Razmislio"],
     opisi: ["", ""],
     opisi2: ["sam da znam odgovor na to pitanje.", "sam dovoljno o tome koji auto želim kupiti."]
 }
@@ -94,7 +94,7 @@ function quizIsFinished() {
           rezultat= rezultat.toString().replace(".",",")
         swal({
             title: "Završili ste igru.",
-            html: "<p>Vrijeme potrebno za rješavanje zadataka: "+$("#basicUsage").text()+"</p><form id='input-form' action='' method='POST' target='no-target' style='text-align: center;'><br><select id='ikona' style='height:30px'></select><label for='ime'>Ime : </label><input id='input-q1' name='q1' style='height:25px'><br> <br><label for='bodovi'>Bodovi : </label><input id='input-q2' placeholder='q2' name='q2' value='" +rezultat+ "' disabled style='display:none'> <label for='bodovi'>" + rezultat + "</label><br><br><button id='form-submit' type='submit' disabled='true' class='swal2-styled' style='background-color: rgb(0, 157, 224); border-left-color: rgb(0, 157, 224); border-right-color: rgb(0, 157, 224);'>predaj rezultat</button> </form><iframe src='#' id='no-target' name='no-target' style='visibility:hidden;display:none'></iframe>",
+            html: "<p>Vrijeme potrebno za rješavanje zadataka: "+$("#basicUsage").text()+"</p><iframe src='#' id='no-target' name='no-target' style='visibility:hidden;display:none'></iframe>",
             confirmButtonText: 'ponovite ovu igru',
             confirmButtonColor: '#009DE0',
             backdrop: false,
@@ -338,18 +338,22 @@ function quizIsFinished() {
           destination.appendChild(dragSource);
           destination.className = 'destinationBox';
           // Check if position is correct, i.e. correct answer to the question
+          
           if (!destination.id || destination.id != 'answerDiv') {
               var previousEl = dragSource.parentNode.previousSibling;
               if (!previousEl.tagName) previousEl = previousEl.previousSibling;
               var numericId = previousEl.id.replace(/[^0-9]/g, '');
               var numericIdSource = dragSource.id.replace(/[^0-9]/g, '');
+              
+              
+
               if (numericId == numericIdSource) {
                   dragSource.className = 'correctAnswer'+numericId;
                   /*$( ".definicija" +numericId).css({"opacity":"1"})*/
                   $(".correctAnswer"+numericId).parent().html( "<section class='correctAnswer"+numericId+"'>"+$(".correctAnswer"+numericId).text()+"</section>")
                   bodovi+=10
                   checkAllAnswers();
-                  
+
               } else {
                   dragSource.className = 'wrongAnswer';
                   bodovi-=1
