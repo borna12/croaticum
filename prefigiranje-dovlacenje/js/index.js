@@ -47,48 +47,43 @@
 },{
     question: "piti / popiti",
     answers: ["piješ", "popiješ"],
-    opisi: ["", ""],
-    opisi2: ["", ""]
+    opisi: ["", "Naručit ću novu rundu kada"],
+    opisi2: ["kavu već dva sata.", "pivu."]
 },{
     question: "peći / ispeći",
-    answers: ["", ""],
-    opisi: ["", ""],
-    opisi2: ["", ""]
+    answers: ["peće", "ispeće"],
+    opisi: ["Mario", "Kada baka"],
+    opisi2: ["roštilj za vikend.", "zvat ću te."]
 },{
     question: "pisati / napisati",
-    answers: ["", ""],
-    opisi: ["", ""],
-    opisi2: ["", ""]
+    answers: ["piše", "napiše"],
+    opisi: ["", "Kada"],
+    opisi2: ["diplomski već mjesec dana.", "pismo poslat će ti ga."]
 },{
     question: "učiti / naučiti",
-    answers: ["", ""],
-    opisi: ["", ""],
-    opisi2: ["", ""]
+    answers: ["učiš", "naučiš"],
+    opisi: ["", "Nakon što"],
+    opisi2: ["španjolski već godinu dana.", "gradivo prijavi ispit."]
 },{
     question: "zvati / nazvati",
-    answers: ["", ""],
-    opisi: ["", ""],
-    opisi2: ["", ""]
+    answers: ["zvao", "nazvao"],
+    opisi: ["", "Jučer je"],
+    opisi2: ["ju je imenom.", "majstora."]
 },{
     question: "pisati / napisati",
-    answers: ["", ""],
+    answers: ["pišem", "napišem"],
     opisi: ["", ""],
-    opisi2: ["", ""]
+    opisi2: ["pjesme već godinu dana.", "zadaću kad se vratim doma."]
 },{
     question: "jesti / pojesti",
-    answers: ["", ""],
-    opisi: ["", ""],
-    opisi2: ["", ""]
+    answers: ["jedeš", "pojeo"],
+    opisi: ["", "Jučer je"],
+    opisi2: ["žitarice svaki doručak.", "cijelu veliku pizzu."]
 },{
     question: "misliti / razmisliti",
-    answers: ["", ""],
+    answers: ["mislio", "razmislio"],
     opisi: ["", ""],
-    opisi2: ["", ""]
-},{
-    question: "čitati / pročitati",
-    answers: ["", ""],
-    opisi: ["", ""],
-    opisi2: ["", ""]
+    opisi2: ["sam da znam odgovor na to pitanje.", "sam dovoljno o tome koji auto želim kupiti."]
 }
 ];
 
