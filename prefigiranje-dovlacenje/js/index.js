@@ -57,8 +57,8 @@
 },{
     question: "pisati / napisati",
     answers: ["Piše", "napiše"],
-    opisi: ["", "Kada"],
-    opisi2: ["diplomski već mjesec dana.", "pismo poslat će ti ga."]
+    opisi: ["", "Kad"],
+    opisi2: ["diplomski već mjesec dana.", "pismo, poslat će ti ga."]
 },{
     question: "učiti / naučiti",
     answers: ["Učiš", "naučiš"],
@@ -71,19 +71,19 @@
     opisi2: ["ju je imenom.", "majstora."]
 },{
     question: "pisati / napisati",
-    answers: ["Pišem", "napišem"],
+    answers: ["Pišem", "Napisat"],
     opisi: ["", ""],
-    opisi2: ["pjesme već godinu dana.", "zadaću kad se vratim doma."]
+    opisi2: ["pjesme već godinu dana.", "ću zadaću kad se vratim kući."]
 },{
     question: "jesti / pojesti",
     answers: ["Jedeš", "pojeo"],
     opisi: ["", "Jučer je"],
-    opisi2: ["žitarice svaki doručak.", "cijelu veliku pizzu."]
+    opisi2: ["žitarice  za svaki doručak.", "cijelu veliku <em>pizzu</em>."]
 },{
     question: "misliti / razmisliti",
-    answers: ["Mislio", "Razmislio"],
-    opisi: ["", ""],
-    opisi2: ["sam da znam odgovor na to pitanje.", "sam dovoljno o tome koji auto želim kupiti."]
+    answers: ["mislio", "razmislio"],
+    opisi: ["Često je", "Kad je"],
+    opisi2: ["na svoju djevojku koja je bila daleko.", "o tome, zaključio je da to nema smisla."]
 }
 ];
 
