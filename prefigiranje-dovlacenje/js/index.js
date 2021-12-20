@@ -41,34 +41,34 @@
   var bodovi = 0;
   var pitanja = [{
     question: "čitati / pročitati",
-    answers: ["čitaš", "Pročitaš"],
-    opisi: ["Kad", ""],
-    opisi2: ["ovu knjigu, posudit ću novu.", "knjigu na engleskome jeziku."]
+    answers: ["Čitaš", "pročitaš",""],
+    opisi: ["", "Kad"],
+    opisi2: ["knjigu na engleskome jeziku.", "ovu knjigu, posudit ću novu"]
 },{
     question: "piti / popiti",
-    answers: ["Piješ", "popiješ"],
+    answers: ["Piješ", "popiješ",""],
     opisi: ["", "Naručit ću novu rundu kada"],
     opisi2: ["kavu već dva sata.", "pivu."]
 },{
     question: "peći / ispeći",
-    answers: ["peće", "ispeće"],
-    opisi: ["Mario", "Kada baka"],
-    opisi2: ["roštilj za vikend.", "zvat ću te."]
+    answers: ["peče", "ispeče",""],
+    opisi: ["Ana", "Kada baka"],
+    opisi2: ["pitu za goste.", "kolače, zvat ću te."]
 },{
     question: "pisati / napisati",
-    answers: ["Piše", "napiše"],
+    answers: ["Piše", "napiše",""],
     opisi: ["", "Kad"],
     opisi2: ["diplomski već mjesec dana.", "pismo, poslat će ti ga."]
 },{
     question: "učiti / naučiti",
-    answers: ["Učiš", "naučiš"],
+    answers: ["Učiš", "naučiš",""],
     opisi: ["", "Nakon što"],
-    opisi2: ["španjolski već godinu dana.", "gradivo prijavi ispit."]
+    opisi2: ["španjolski već godinu dana.", "gradivo, prijavi ispit."]
 },{
     question: "zvati / nazvati",
-    answers: ["Zvao", "nazvao"],
-    opisi: ["", "Jučer je"],
-    opisi2: ["ju je imenom.", "majstora."]
+    answers: ["Zovem", "sam nazvao", "nazavao sam"],
+    opisi: ["", "Jučer"],
+    opisi2: ["te već pola sata.", "majstora."]
 },{
     question: "pisati / napisati",
     answers: ["Pišem", "Napisat"],
@@ -76,13 +76,13 @@
     opisi2: ["pjesme već godinu dana.", "ću zadaću kad se vratim kući."]
 },{
     question: "jesti / pojesti",
-    answers: ["Jedeš", "pojeo"],
-    opisi: ["", "Jučer je"],
-    opisi2: ["žitarice  za svaki doručak.", "cijelu veliku <em>pizzu</em>."]
+    answers: ["Jede", "je pojeo","pojeo je"],
+    opisi: ["", "Jučer"],
+    opisi2: ["žitarice za svaki doručak.", "cijelu veliku <em>pizzu</em>."]
 },{
     question: "misliti / razmisliti",
-    answers: ["mislio", "razmislio"],
-    opisi: ["Često je", "Kad je"],
+    answers: ["je mislio", "razmislio","mislio je"],
+    opisi: ["Često", "Kad je"],
     opisi2: ["na svoju djevojku koja je bila daleko.", "o tome, zaključio je da to nema smisla."]
 }
 ];
@@ -238,8 +238,17 @@ function quizIsFinished() {
 
       $("#a1").html(pitanja[questionCounter].answers[0])
       $("#a2").html(pitanja[questionCounter].answers[1])
+      try{
+      $("#a3").html(pitanja[questionCounter].answers[2])}
+      catch{}
       $(".opis").html(questionCounter + 1 + "/" + pitanja.length + "<br><br>" + pitanja[questionCounter].question)
-
+      if ($("#a3").html()==""){
+        $("#a3").hide()
+     
+      }
+      else{
+        $("#a3").show()
+      }
   }
 
 
@@ -415,17 +424,10 @@ function quizIsFinished() {
 
   function sranje() {
       randomPitanja();
-
       dragContentDiv = document.getElementById('dragContent');
-
       answerDiv = document.getElementById('answerDiv');
       answerDiv.onselectstart = cancelEvent;
       var divs = answerDiv.getElementsByTagName('DIV');
-
-
-
-
-
       questionDiv = document.getElementById('questionDiv');
 
       questionDiv.onselectstart = cancelEvent;
@@ -448,6 +450,8 @@ function quizIsFinished() {
           if (divs[no].className == 'dragDropSmallBox') {
               questions[questions.length] = divs[no];
           }
+
+       
 
       }
 
@@ -560,6 +564,7 @@ function quizIsFinished() {
       document.documentElement.onmousemove = dragDropMove;
       setTimeout('resetPositions()', 150);
       window.onresize = resetPositions;
+    
   }
 
 

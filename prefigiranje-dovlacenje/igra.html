@@ -65,6 +65,7 @@
         <div id="answerDiv">
             <div class="dragDropSmallBox" id="a1">tapiserija </div>
             <div class="dragDropSmallBox" id="a2">vitraj</div>
+            <div class="dragDropSmallBox" id="a3">vitraj</div>
             <section class="btn-holder">
                 <button class="questions-page__continue-btn btn">nastavi ❯</button>
             </section>
@@ -80,6 +81,10 @@
         document.getElementById('a2').addEventListener("touchmove", touchHandler, true);
         document.getElementById('a2').addEventListener("touchend", touchHandler, true);
         document.getElementById('a2').addEventListener("touchcancel", touchHandler, true);
+        document.getElementById('a3').addEventListener("touchstart", touchHandler, true);
+        document.getElementById('a3').addEventListener("touchmove", touchHandler, true);
+        document.getElementById('a3').addEventListener("touchend", touchHandler, true);
+        document.getElementById('a3').addEventListener("touchcancel", touchHandler, true);
     </script>
 </body>
 </html>
