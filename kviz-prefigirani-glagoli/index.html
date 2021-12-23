@@ -62,7 +62,9 @@
                     margin-left: auto;
                     display: block;
                     margin-right: auto; margin-top:20px" class="senka" />
-            <button class="init-page__btn btn uglata" onClick="uglata=1;obla=0">započni kviz</button>
+            <button class="btn vreme" onClick="vrijeme=1;">igra s vremenskim ograničenjem</button>
+            <button class="btn vreme" onClick="vrijeme=0;">igra bez vremenskoga ograničenja</button>
+            <button class="init-page__btn btn uglata" style="display: none;" onClick="uglata=1;obla=0">započni kviz</button>
 
 
         </div>
@@ -162,7 +164,7 @@
                     <input type="hidden" name="pageHistory" value="0">
                     <br>
                     <input class="btn" type="submit" id="predaj" value="predaj">-->
-                    <button class="results-page__retake-btn btn" onclick="localStorage.setItem('reset','da');location.reload();">ponovi kviz</button>
+                    <button class="results-page__retake-btn btn" onclick="location.reload();">ponovi kviz</button>
 
                 </form>
 

@@ -53,6 +53,7 @@
       vrijeme = 0;
 
   function ProgressCountdown(timeleft, bar, text) {
+      
       return new Promise((resolve, reject) => {
           countdownTimer = setInterval(() => {
               timeleft--;
@@ -179,7 +180,7 @@
               "background-color": quiz[questionCounter].boja_pozadine
           })
 
-          if (prekidac == 1) {
+          if (prekidac == 1 && vrijeme==1) {
               ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
           }
           question.html(quiz[questionCounter].question)
@@ -284,7 +285,14 @@
         localStorage.setItem('reset', "ne")
       }
 
+      $(".vreme").on('click', function() {
+        $(".vreme").hide()
+        $(".init-page__btn").show()
+        if (vrijeme==0){
+            $(".vrijeme").hide()
+        }
 
+      })
       // Clicking on start button:
       startBtn.on('click', function() {
 
@@ -374,7 +382,7 @@
               $(".swal2-confirm").click(function() {
                   clearInterval(countdownTimer)
                   if (ide == 1) {
-                      ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
+                    ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => odgovor());
                   }
               })
               $(".swal2-close").click(function() {
