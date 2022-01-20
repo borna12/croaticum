@@ -583,7 +583,7 @@ document.getElementsByClassName('sakri')[0].style.display = "flex"
   p1 = [{
       question: "Od sastojaka za tijesto <span class='nadopuni'>_______</span> palačinke i pustite da se malo ohlade.",
       answers: ["<span>is</span>pecite", "<span>iz</span>pecite",""],
-      correctAnswer: "<span>iz</span>pecite",
+      correctAnswer: "<span>is</span>pecite",
       boja_pozadine: "#FCE4EC"
   }, {
       question: "Naša momčad jako dugo nije <span class='nadopuni'>_______</span>.",
@@ -633,7 +633,7 @@ document.getElementsByClassName('sakri')[0].style.display = "flex"
 }, {
     question: "Htio bih ti <span class='nadopuni'>_______</span> svojega prijatelja.",
     answers: ["<span>pred</span>staviti", "<span>pret</span>staviti",""],
-    correctAnswer: "pretstaviti",
+    correctAnswer: "<span>pred</span>staviti",
     boja_pozadine: "#FCE4EC"
 }, {
     question: "Tko <span class='nadopuni'>_______</span> ovome sastanku.",
