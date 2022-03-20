@@ -601,27 +601,27 @@ document.getElementsByClassName('sakri')[0].style.display = "flex"
     correctAnswer: "piješ",
     boja_pozadine: "#FCE4EC"
 }, {
-    question: "Kad <span class='nadopuni'>_______</span> kavu, krenut ću na posao.",
+    question: "Nakon što <span class='nadopuni'>_______</span> kavu, krenut ću na posao.",
     answers: ["pijem", "popijem",""],
     correctAnswer: "popijem",
     boja_pozadine: "#FCE4EC"
 }, {
-    question: "Kad <span class='nadopuni'>_______</span> ručak, ići ću u šetnju.",
+    question: "Nakon što <span class='nadopuni'>_______</span> ručak, ići ću u šetnju.",
     answers: ["jedem", "pojedem",""],
     correctAnswer: "pojedem",
     boja_pozadine: "#FCE4EC"
 }, {
-    question: "Kad <span class='nadopuni'>_______</span> zadaću, gledat ću televiziju.",
+    question: "Nakon što <span class='nadopuni'>_______</span> zadaću, gledat ću televiziju.",
     answers: ["pišem", "napišem",""],
     correctAnswer: "napišem",
     boja_pozadine: "#FCE4EC"
 }, {
-    question: "Kad <span class='nadopuni'>_______</span> knjigu, mogu ti je posuditi.",
+    question: "Nakon što <span class='nadopuni'>_______</span> knjigu, mogu ti je posuditi.",
     answers: ["čitam", "pročitam",""],
     correctAnswer: "pročitam",
     boja_pozadine: "#FCE4EC"
 }, {
-    question: "Kad <span class='nadopuni'>_______</span> palačinke, zajedno ćemo večerati.",
+    question: "Nakon što <span class='nadopuni'>_______</span> palačinke, zajedno ćemo večerati.",
     answers: ["pečem", "ispečem",""],
     correctAnswer: "ispečem",
     boja_pozadine: "#FCE4EC"
